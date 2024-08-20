@@ -14,34 +14,38 @@
   color: var(--color-dark);
 }
 
-.darkModeDisplay {
-  display: none;
-}
-
+.darkModeDisplay,
 .lightModeDisplay {
   display: none;
 }
 
-body {
+body,
+h1,
+h2 {
   margin: 0;
 }
 
 header {
   position: fixed;
-  width: 100%;
+  width: calc(100% - 2 * 1.56vw);
+  height: 70px;
+  padding: 0 1.56vw;
   display: flex;
-  justify-content: flex-end;
-  /* background-color: green; */
+  justify-content: space-between;
+  align-items: center;
+}
+
+#switchDarkLightMode,
+#logoLightMode,
+#logoDarkMode {
+  width: 50px;
 }
 
 #switchDarkLightMode {
-  width: 50px;
-  margin-top: 10px;
-  margin-right: 1.56vw;
+  cursor: pointer;
 }
 
 main {
-  /* background-color: red; */
   width: calc(100% - 100px);
   height: calc(100vh - 100px);
   display: flex;
@@ -50,11 +54,6 @@ main {
   align-items: center;
   gap: 50px;
   padding: 50px;
-}
-
-h1,
-h2 {
-  margin: 0;
 }
 
 h1 {

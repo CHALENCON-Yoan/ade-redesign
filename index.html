@@ -13,7 +13,10 @@
       content="Ce site est encore en cours de développement. Une bêta sera bientôt proposée."
     />
     <meta property="og:url" content="https://ade-edt.fr" />
-    <meta property="og:image" content="https://ade-edt.fr/assets/logo.svg" />
+    <meta
+      property="og:image"
+      content="https://ade-edt.fr/assets/logoLight.png"
+    />
     <title>Site en construction.</title>
     <link rel="shortcut icon" href="/assets/favicon.svg" type="image/x-icon" />
     <link rel="stylesheet" href="/font.css" />
@@ -21,6 +24,12 @@
   </head>
   <body class="mode">
     <header>
+      <a href="/" class="darkModeDisplay">
+        <img id="logoDarkMode" src="/assets/logo/logoLight.svg" alt="Logo Soon"
+      /></a>
+      <a href="/" class="lightModeDisplay">
+        <img id="logoLightMode" src="/assets/logo/logoDark.svg" alt="Logo Soon"
+      /></a>
       <img
         id="switchDarkLightMode"
         src="/assets/switchDarkLightMode/darkMode.svg"

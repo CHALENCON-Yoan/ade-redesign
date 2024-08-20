@@ -30,6 +30,20 @@ function setMode(mode) {
     element.classList.add(`${mode}Mode`);
   });
 
+  // Display right elements to match the mode
+  modeDisplayElements = document.querySelectorAll(`.${mode}ModeDisplay`);
+  modeDisplayElements.forEach((element) => {
+    element.style.display = "block";
+  });
+
+  // Hide wrong elements that don't match the mode
+  oppositeModeDisplayElements = document.querySelectorAll(
+    `.${oppositeMode}ModeDisplay`
+  );
+  oppositeModeDisplayElements.forEach((element) => {
+    element.style.display = "none";
+  });
+
   // Set/Change the on mode switch button
   switchModeButton = document.querySelector("#switchDarkLightMode");
   switchModeButton.setAttribute(
