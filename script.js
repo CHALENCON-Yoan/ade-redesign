@@ -426,7 +426,7 @@ function addEvent(event, day) {
   divEvent.style.backgroundColor = couleur;
 
   divEvent.style.height = `${
-    parseInt(event.getAttribute("duration")) * 50 - 1
+    (parseInt(event.getAttribute("duration")) / 2) * 50 - 1
   }px`;
   contentStartEvent.appendChild(divEvent);
 }
@@ -530,7 +530,7 @@ async function xmlRequest(date, resource) {
   const loadingDiv = document.getElementById("loading");
   loadingDiv.style.display = "block";
   const request = await fetch(
-    `${BASE_URL}?function=getEvents&resources=${resource}&detail=8&date=${dateFormatted}&projectId=3&data=08281677eda1e7f64e2d372185934117103d4fbbeeae8daf5feb097f6d188a31fa91aec4c63f8a2413abf3eb0200af77893b24c3f0ea376490a4df59bbd7d7da460b0a6f56ac411319d64d8dfed64bea6c3bb0668c65d66a0d04db19746a31243d4cd04053e5151dbcfd0202341bc6b0961a5eb55e848bb1842c028822a1362d63f944f8541da5410375de3669ac42ea,1`
+    `${BASE_URL}?function=getEvents&resources=${resource}&detail=8&date=${dateFormatted}&projectId=${PORJECT_ID}&data=${PROJECT_DATA}`
   );
 
   if (!request.ok) {
