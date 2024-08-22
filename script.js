@@ -243,7 +243,7 @@ function datalistCondition() {
 
 async function makeDatalist() {
   const request = await fetch(
-    `?function=getResources&tree=true&detail=3&projectId=${PORJECT_ID}&data=${PROJECT_DATA}`
+    `${BASE_URL}?function=getResources&tree=true&detail=3&projectId=${PORJECT_ID}&data=${PROJECT_DATA}`
   );
 
   if (!request.ok) {
