@@ -13,9 +13,9 @@ function getOppositeMode(mode) {
 }
 
 function setMode(mode) {
-  // If mode is null, set it to dark
+  // If mode is null, set it to light (default value)
   if (mode === null) {
-    mode = "dark";
+    mode = "light";
   }
 
   const oppositeMode = getOppositeMode(mode);
@@ -23,7 +23,7 @@ function setMode(mode) {
   // Save the mode in local storage
   localStorage.setItem("mode", mode);
 
-  // Set/Change the mode on gloabl elements
+  // Set/Change the mode on global elements
   modeElements = document.querySelectorAll(".mode");
   modeElements.forEach((element) => {
     element.classList.remove(`${oppositeMode}Mode`);
@@ -44,7 +44,7 @@ function setMode(mode) {
     element.style.display = "none";
   });
 
-  // Set/Change the on mode switch button
+  // Set/Change the mode on mode switch button
   switchModeButton = document.querySelector("#switchDarkLightMode");
   switchModeButton.setAttribute(
     "src",

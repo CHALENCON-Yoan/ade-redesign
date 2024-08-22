@@ -14,8 +14,7 @@
   color: var(--color-dark);
 }
 
-.darkModeDisplay,
-.lightModeDisplay {
+.darkModeDisplay {
   display: none;
 }
 
