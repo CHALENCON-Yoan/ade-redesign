@@ -29,7 +29,7 @@ header p {
   animation: marquee 20s linear infinite;
 }
 
-header p:hover {
+header:hover p {
   animation-play-state: paused;
 }
 
