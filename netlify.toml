@@ -3,3 +3,8 @@
   to = "https://ade-uga-ro-vs.grenet.fr/jsp/webapi"
   status = 200
   force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
