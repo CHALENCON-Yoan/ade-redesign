@@ -1,4 +1,5 @@
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 404
+  from = "/requete"
+  to = "https://ade-iut-valence-ro.grenet.fr/jsp/webapi"
+  status = 200
+  force = true

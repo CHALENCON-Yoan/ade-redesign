@@ -1,116 +1,171 @@
-:root {
-  --color-dark: #101010;
-  --color-light: #f5f5f5;
-  font-family: Aptos;
+body {
+  font-family: Arial, sans-serif;
 }
 
-.darkMode {
-  background-color: var(--color-dark);
-  color: var(--color-light);
+#timeline {
+  width: 100%;
+  margin-top: 10px;
 }
 
-.lightMode {
-  background-color: var(--color-light);
-  color: var(--color-dark);
+.halfHour {
+  width: 100%;
+  height: 50px;
+  display: flex;
 }
 
-.darkModeDisplay {
+.hour {
+  width: 20%;
+  display: flex;
+  justify-content: end;
+  position: relative;
+  top: -10px;
+  padding-right: 10px;
+}
+
+.content {
+  border-top: 1px solid #000;
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  /* border-right: solid 1px #000; */
+}
+
+.event {
+  position: relative;
+  width: 90%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  overflow: auto;
+}
+
+.event::-webkit-scrollbar {
   display: none;
 }
 
-body,
-h1,
-h2 {
-  margin: 0;
+p {
+  margin: 0 5px;
+  width: fit-content;
+  text-align: center;
 }
 
-header {
-  position: fixed;
-  width: calc(100% - 2 * 1.56vw);
-  height: 70px;
-  padding: 0 1.56vw;
+.name {
+  font-weight: bold;
+}
+
+#date {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+}
+
+button {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0 10px;
+  display: flex;
   align-items: center;
 }
 
-#switchDarkLightMode,
-#logoLightMode,
-#logoDarkMode {
-  width: 50px;
-}
-
-#switchDarkLightMode {
+button:hover {
   cursor: pointer;
 }
 
-main {
-  width: calc(100% - 100px);
-  height: calc(100vh - 100px);
+#tools {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-wrap: wrap;
+  row-gap: 10px;
   align-items: center;
-  gap: 50px;
-  padding: 50px;
+}
+
+#fullScreen,
+#tools button {
+  background-color: lightgray;
+  border-radius: 5px;
+  border: solid 1px rgb(84, 84, 84);
+  padding: 10px;
+}
+
+#fullScreen img {
+  height: 20px;
+  margin-right: 5px;
+}
+
+#today {
+  background-color: lightgray;
+  padding: 10px;
+  border-radius: 5px;
+  border: solid 1px rgb(84, 84, 84);
+}
+
+/* #display {
+  background-color: green;
+} */
+
+h1,
+h2 {
+  text-align: center;
+  margin: 0;
+  font-weight: normal;
 }
 
 h1 {
-  text-align: center;
-  font-size: 100px;
-  font-weight: bold;
-  line-height: 80%;
+  font-size: 1.3em;
+  font-weight: 400;
 }
 
 h2 {
-  text-align: center;
-  font-size: 50px;
-  font-weight: lighter;
-  line-height: 100%;
+  font-size: 1.1em;
+  font-style: italic;
 }
 
-.emoji {
-  font-size: 200px;
+.noLesson {
+  background-color: #f0f0f0;
+  position: relative;
+  width: 90%;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bolder;
+  font-size: 3em;
 }
 
-@media (max-width: 680px) {
-  h1 {
-    font-size: 80px;
-  }
-
-  h2 {
-    font-size: 30px;
-  }
-
-  .emoji {
-    font-size: 150px;
-  }
+.emote {
+  font-size: 5em;
 }
 
-@media (max-width: 480px) {
-  h1 {
-    font-size: 60px;
-  }
-
-  h2 {
-    font-size: 20px;
-  }
-
-  .emoji {
-    font-size: 100px;
-  }
+.noLesson p {
+  margin: 25px;
 }
 
-@media (max-width: 360px) {
-  h1 {
-    font-size: 40px;
-  }
+#loading {
+  display: none;
+}
 
-  h2 {
-    font-size: 20px;
-  }
+#view {
+  display: flex;
+  align-items: center;
+}
 
-  .emoji {
-    font-size: 100px;
-  }
+#view button {
+  background-color: #f0f0f0;
+  padding: 5px;
+  border-radius: 5px;
+  border: solid 1px rgb(84, 84, 84);
+}
+
+#days {
+  /* background-color: green; */
+  display: flex;
+  justify-content: end;
+}
+
+a {
+  color: black;
+  text-decoration: none;
 }
