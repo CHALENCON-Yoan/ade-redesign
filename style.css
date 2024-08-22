@@ -24,6 +24,19 @@ h2 {
   margin: 0;
 }
 
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:visited {
+  color: inherit;
+}
+
 header {
   position: fixed;
   width: calc(100% - 2 * 1.56vw);
