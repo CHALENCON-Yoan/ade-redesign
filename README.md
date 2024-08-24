@@ -10,4 +10,4 @@ Vous vous trouvez actuellement sur la page principale du site qui regroupera les
 _Ce `README` sera complété au fur et à mesure de l'avancée du projet._
 
 **Le projet est actuellement en cours de développement. Le site web n'est pas encore disponible.\
-Une bêta sera prochainement proposée.**
+Une version bêta est accessible sur [beta.ade-edt.fr](https://beta.ade-edt.fr).**
