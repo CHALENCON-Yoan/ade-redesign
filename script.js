@@ -3217,11 +3217,6 @@ async function launchDisplay(date, resource) {
 }
 
 document.addEventListener("DOMContentLoaded", async function () {
-  console.log("OK !");
-  alert(
-    "L'IUT de Valence a décidé d'intégrer les emplois du temps à l'ADE de l'UGA.\nLa migration vers la nouvelle API est en cours.\n\nMerci pour votre patience."
-  );
-
   // Au chargement de la page
   makeDatalist();
   scheduleGrid();
