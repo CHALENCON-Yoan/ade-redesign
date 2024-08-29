@@ -6,73 +6,192 @@
     <title>Emploi du temps</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
+  <body class="mode lightMode">
     <header>
-      <p>
-        Ce site est actuellement une simple copie de la
-        <a
-          class="underlinedLinks"
-          href="https://alpha.ade-edt.fr"
-          target="_blank"
-          >version alpha</a
+      <!-- Logo -->
+      <a href="/" class="darkModeDisplay">
+        <img
+          id="logoDarkMode"
+          src="/assets/logo/logoLight.svg"
+          alt="Logo Temporaire"
+      /></a>
+      <a href="/" class="lightModeDisplay">
+        <img
+          id="logoLightMode"
+          src="/assets/logo/logoDark.svg"
+          alt="Logo Temporaire"
+      /></a>
+
+      <!-- Options -->
+      <div id="options">
+        <!-- Sélecteur de ressource -->
+        <div class="inputFloatingLabel">
+          <label for="resourceSelector" class="mode lightMode">Ressource</label>
+          <input
+            list="resourcesList"
+            id="resourceSelector"
+            placeholder="Choisissez un groupe."
+            class="inputMode lightModeInput"
+          />
+          <datalist id="resourcesList">
+            <option value="Test"></option>
+          </datalist>
+        </div>
+
+        <!-- Voir l'EDT des enseignants -->
+        <a href="/teachers.html" class="inSidebar" id="teachersResources">
+          <button class="CTA buttonMode lightModeButton">Enseignants</button>
+        </a>
+
+        <!-- Voir l'EDT des salles -->
+        <a href="/classrooms.html" class="inSidebar" id="classroomsResources">
+          <button class="CTA buttonMode lightModeButton">Salles</button>
+        </a>
+
+        <!-- Sélecteur de date -->
+        <div id="datePicker">
+          <!-- Jour/Semaine précédent(e) -->
+          <img
+            src="/assets/emojis/previous.svg"
+            alt="Reverse Emoji"
+            class="emojiButton"
+          />
+
+          <div class="inputFloatingLabel">
+            <label for="dateSelector" class="mode lightMode">Date</label>
+            <input
+              type="date"
+              id="dateSelector"
+              class="inputMode lightModeInput"
+            />
+          </div>
+
+          <!-- Jour/Semaine suivant(e) -->
+          <img
+            src="/assets/emojis/next.svg"
+            alt="Play Emoji"
+            class="emojiButton"
+          />
+
+          <!-- "Prochains cours" mobile -->
+          <img
+            src="/assets/emojis/calendar.svg"
+            alt="Calendar Emoji"
+            id="nextLessonsEmoji"
+            class="emojiButton"
+          />
+        </div>
+
+        <!-- "Prochains cours" desktop -->
+        <button
+          id="nextLessonsButton"
+          class="CTA inSidebar buttonMode lightModeButton"
         >
-        (elle-même un clône du site utilisé l'année dernière) mise à jour avec
-        la nouvelle API pour l'année universitaire 2024/2025. Des mises à jour
-        seront prochainement apportées, merci pour votre patience.<span
-          class="spacer"
-        ></span
-        >Ce site est actuellement une simple copie de la
-        <a
-          class="underlinedLinks"
-          href="https://alpha.ade-edt.fr"
-          target="_blank"
-          >version alpha</a
+          Afficher les prochains cours
+        </button>
+
+        <!-- Télécharger l'EDT -->
+        <button id="download" class="CTA inSidebar buttonMode lightModeButton">
+          Télécharger en image
+        </button>
+
+        <!-- Mettre en plein écran -->
+        <button
+          id="fullScreen"
+          class="CTA inSidebar buttonMode lightModeButton"
         >
-        (elle-même un clône du site utilisé l'année dernière) mise à jour avec
-        la nouvelle API pour l'année universitaire 2024/2025. Des mises à jour
-        seront prochainement apportées, merci pour votre patience.<span
-          class="spacer"
-        ></span>
-      </p>
-    </header>
-    <div id="form">
-      <div id="date">
-        <button id="previousDate">
-          <img src="Assets/Previous.svg" alt="Reverse emoji" />
+          Mettre en plein écran
         </button>
-        <input type="date" id="dateSelector" />
-        <button id="nextDate">
-          <img src="Assets/Next.svg" alt="Play emoji" />
-        </button>
-        <button id="today">Aujourd'hui</button>
-      </div>
-      <br /><br />
-      <div id="view">
-        Affichage :
-        <button id="1day">1 Jour</button><br />
-        <button id="week">
-          Semaine Entière (mobile : paysage uniquement (pour l'instant))
+
+        <!-- Changer l'affichage (semaine/jour) ⚠️ Voir comment implémenter le changement automatique selon le device -->
+        <button
+          id="dayWeekSwitch"
+          class="CTA inSidebar buttonMode lightModeButton"
+        >
+          Afficher la semaine
         </button>
       </div>
-      <br /><br />
-      <div id="tools">
-        <button id="fullScreen">
-          <img src="./Assets/FullScreen.svg" alt="Full Screen Icon" />
-          Plein &Eacute;cran
-        </button>
-        <button id="imageDownload">Télécharger l'EDT</button>
-      </div>
-      <br /><br />
-      <label for="resourceSelector">Ressource :</label>
-      <input
-        list="resourcesList"
-        id="resourceSelector"
-        placeholder="Entrez une ressource"
+
+      <!-- Switch de mode -->
+      <img
+        id="switchDarkLightMode"
+        src="/assets/switchDarkLightMode/lightMode.svg"
+        alt="Switch Dark/Light Mode"
+        class="inSidebar"
       />
-      <datalist id="resourcesList"></datalist>
-    </div>
+
+      <!-- Ouverture de la sidebar -->
+      <img
+        src="/assets/icons/openSidebarDark.svg"
+        alt="Open sidebar Icon"
+        id="openSidebar"
+      />
+
+      <!-- Sidebar -->
+      <aside id="sidebar" class="sidebar mode lightMode">
+        <!-- Fermeture de la sidebar -->
+        <img
+          src="/assets/icons/closeSidebarDark.svg"
+          alt="Close sidebar Icon"
+          id="closeSidebar"
+        />
+
+        <!-- Switch de mode -->
+        <button class="sidebarButton" id="sidebarSwitchDarkLightMode">
+          <img
+            src="/assets/switchDarkLightMode/lightMode.svg"
+            alt="Switch Dark/Light Mode"
+          />
+          Changer de mode
+        </button>
+
+        <!-- Switch d'affichage -->
+        <button class="sidebarButton">
+          <img src="/assets/emojis/calendar.svg" alt="Calendar Emoji" />
+          Afficher la semaine complète
+        </button>
+
+        <!-- Plein écran -->
+        <button class="sidebarButton">
+          <img src="/assets/emojis/fullScreen.svg" alt="Full Screen Emoji" />
+          Mettre en plein écran
+        </button>
+
+        <!-- Télécharger l'EDT -->
+        <button class="sidebarButton">
+          <img src="/assets/emojis/picture.svg" alt="Picture Emoji" />
+          Télécharger en image
+        </button>
+
+        <!-- Ressource favorite -->
+        <button class="sidebarButton">
+          <img src="/assets/emojis/star.svg" alt="Star Emoji" />
+          Définir cette ressource par défaut
+        </button>
+
+        <!-- EDT des enseignants -->
+        <a href="/teachers.html">
+          <button class="sidebarButton">
+            <img src="/assets/emojis/teacher.svg" alt="Teacher Emoji" />
+            Voir l'EDT des enseignants
+          </button>
+        </a>
+
+        <!-- EDT des salles -->
+        <a href="/classrooms.html">
+          <button class="sidebarButton">
+            <img src="/assets/emojis/door.svg" alt="Door Emoji" />
+            Voir l'EDT des salles
+          </button>
+        </a>
+      </aside>
+    </header>
+
+    <!-- Fond de transparence pour la sidebar -->
+    <div id="backgroundBlur" class="backgroundBlur"></div>
+
     <br /><br /><br />
-    <div id="loading">Chargement en cours...</div>
+    <!-- <div id="loading">Chargement en cours...</div> -->
     <br />
     <div id="display">
       <h2 id="currentResource"></h2>
@@ -80,6 +199,7 @@
       <div id="days"></div>
     </div>
     <script src="resources.js"></script>
+    <script src="schedules.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
