@@ -44,7 +44,7 @@ header p:hover {
   width: 200px;
 }
 
-#timeline {
+/* #timeline {
   width: 100%;
   margin-top: 10px;
 }
@@ -69,10 +69,10 @@ header p:hover {
   width: 80%;
   display: flex;
   justify-content: center;
-  /* border-right: solid 1px #000; */
-}
+  border-right: solid 1px #000; 
+} */
 
-.event {
+/* .event {
   position: relative;
   width: 90%;
   border-radius: 10px;
@@ -82,13 +82,14 @@ header p:hover {
   justify-content: space-around;
   align-items: center;
   overflow: auto;
-}
+  padding: 5px;
+} */
 
-.event::-webkit-scrollbar {
+/* .event::-webkit-scrollbar {
   display: none;
-}
+} */
 
-p {
+/* p {
   margin: 0 5px;
   width: fit-content;
   text-align: center;
@@ -96,7 +97,7 @@ p {
 
 .name {
   font-weight: bold;
-}
+} */
 
 #date {
   display: flex;
@@ -201,11 +202,11 @@ h2 {
   border: solid 1px rgb(84, 84, 84);
 }
 
-#days {
-  /* background-color: green; */
+/* #days {
+  background-color: green;
   display: flex;
   justify-content: end;
-}
+} */
 
 a {
   color: black;

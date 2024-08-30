@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Emploi du temps</title>
     <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   </head>
   <body class="mode lightMode">
     <header>
@@ -33,9 +34,7 @@
             placeholder="Choisissez un groupe."
             class="inputMode lightModeInput"
           />
-          <datalist id="resourcesList">
-            <option value="Test"></option>
-          </datalist>
+          <datalist id="resourcesList"> </datalist>
         </div>
 
         <!-- Voir l'EDT des enseignants -->
@@ -55,6 +54,7 @@
             src="/assets/emojis/previous.svg"
             alt="Reverse Emoji"
             class="emojiButton"
+            id="previousButton"
           />
 
           <div class="inputFloatingLabel">
@@ -71,6 +71,7 @@
             src="/assets/emojis/next.svg"
             alt="Play Emoji"
             class="emojiButton"
+            id="nextButton"
           />
 
           <!-- "Prochains cours" mobile -->
@@ -78,35 +79,38 @@
             src="/assets/emojis/calendar.svg"
             alt="Calendar Emoji"
             id="nextLessonsEmoji"
-            class="emojiButton"
+            class="emojiButton nextLessonsButton"
           />
         </div>
 
         <!-- "Prochains cours" desktop -->
         <button
           id="nextLessonsButton"
-          class="CTA inSidebar buttonMode lightModeButton"
+          class="CTA inSidebar buttonMode lightModeButton nextLessonsButton"
         >
           Afficher les prochains cours
         </button>
 
         <!-- Télécharger l'EDT -->
-        <button id="download" class="CTA inSidebar buttonMode lightModeButton">
+        <button
+          id="download"
+          class="CTA inSidebar buttonMode lightModeButton downloadButton"
+        >
           Télécharger en image
         </button>
 
         <!-- Mettre en plein écran -->
         <button
           id="fullScreen"
-          class="CTA inSidebar buttonMode lightModeButton"
+          class="CTA inSidebar buttonMode lightModeButton fullScreenButton"
         >
           Mettre en plein écran
         </button>
 
-        <!-- Changer l'affichage (semaine/jour) ⚠️ Voir comment implémenter le changement automatique selon le device -->
+        <!-- Changer l'affichage (semaine/jour) -->
         <button
-          id="dayWeekSwitch"
-          class="CTA inSidebar buttonMode lightModeButton"
+          class="CTA inSidebar buttonMode lightModeButton weekDayDisplayButton"
+          id="weekDayDisplayButton"
         >
           Afficher la semaine
         </button>
@@ -146,25 +150,28 @@
         </button>
 
         <!-- Switch d'affichage -->
-        <button class="sidebarButton">
+        <button
+          class="sidebarButton weekDayDisplayButton"
+          id="weekDayDisplaySidebarButton"
+        >
           <img src="/assets/emojis/calendar.svg" alt="Calendar Emoji" />
-          Afficher la semaine complète
+          <span>Afficher la semaine complète</span>
         </button>
 
         <!-- Plein écran -->
-        <button class="sidebarButton">
+        <button class="sidebarButton fullScreenButton">
           <img src="/assets/emojis/fullScreen.svg" alt="Full Screen Emoji" />
           Mettre en plein écran
         </button>
 
         <!-- Télécharger l'EDT -->
-        <button class="sidebarButton">
+        <button class="sidebarButton downloadButton">
           <img src="/assets/emojis/picture.svg" alt="Picture Emoji" />
           Télécharger en image
         </button>
 
         <!-- Ressource favorite -->
-        <button class="sidebarButton">
+        <button class="sidebarButton" id="favoriteButton">
           <img src="/assets/emojis/star.svg" alt="Star Emoji" />
           Définir cette ressource par défaut
         </button>
@@ -189,16 +196,14 @@
 
     <!-- Fond de transparence pour la sidebar -->
     <div id="backgroundBlur" class="backgroundBlur"></div>
+    <main>
+      <div id="display">
+        <div id="days"></div>
+      </div>
+    </main>
 
-    <br /><br /><br />
-    <!-- <div id="loading">Chargement en cours...</div> -->
-    <br />
-    <div id="display">
-      <h2 id="currentResource"></h2>
-      <br />
-      <div id="days"></div>
-    </div>
     <script src="resources.js"></script>
+    <script src="calendar.js"></script>
     <script src="schedules.js"></script>
     <script src="script.js"></script>
   </body>

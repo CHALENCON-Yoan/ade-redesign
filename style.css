@@ -187,7 +187,7 @@ header {
   right: 0;
   transform: translateX(100%);
   transition: transform 0.3s ease-in-out;
-  z-index: 1;
+  z-index: 2;
 }
 
 .sidebarButton {
@@ -231,9 +231,10 @@ header {
   visibility: hidden;
   background-color: var(--color-dark-80);
   width: 100%;
-  height: 100vh;
+  height: 100%;
   opacity: 0;
   transition: 0.5s ease-in-out;
+  z-index: 1;
 }
 
 .backgroundBlurActive {
@@ -241,33 +242,156 @@ header {
   opacity: 1;
 }
 
-@media (min-width: 1750px) {
-  #fullScreen,
-  #switchDarkLightMode {
-    display: flex;
+main {
+  display: flex;
+  width: 100%;
+}
+
+#days {
+  display: flex;
+  justify-content: center;
+  margin-left: 53.02px; /* le dernier margin pour le responsive */
+  margin-bottom: 10px;
+}
+
+.day {
+  width: 20%;
+  text-align: center;
+  font-size: 10px;
+  padding: 0 5px;
+  box-sizing: border-box;
+}
+
+#display {
+  width: 100%;
+  margin: 40px 2.6vw;
+  margin-bottom: 0;
+}
+
+#scheduleGrid {
+  width: 100%;
+}
+
+.halfHour {
+  width: 100%;
+  height: 50px;
+  display: flex;
+}
+
+.hour {
+  display: flex;
+  justify-content: end;
+  position: relative;
+  top: -6px;
+  padding-right: 10px;
+  font-size: 10px;
+}
+
+.content {
+  border-top: 1px solid #000;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.event {
+  position: relative;
+  width: 90%;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  overflow: auto;
+  scrollbar-width: none;
+  padding: 5px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  box-sizing: border-box;
+}
+
+.weekEvent {
+  font-size: 8px;
+}
+
+.dayEvent {
+  font-size: 16px;
+}
+
+.event::-webkit-scrollbar {
+  display: none;
+}
+
+.name,
+.title {
+  font-weight: bold;
+  font-weight: bolder;
+}
+
+p {
+  margin: 0 5px;
+  width: fit-content;
+  text-align: center;
+}
+
+@media (max-width: 360px) {
+}
+
+@media (min-width: 480px) {
+  header {
+    align-items: center;
   }
 
-  #openSidebar {
-    display: none;
+  #options {
+    padding-top: 0;
+  }
+
+  .hour {
+    font-size: 12px;
+    top: -7px;
+  }
+
+  .weekEvent {
+    font-size: 10px;
+  }
+
+  .day {
+    font-size: 12px;
   }
 }
 
-@media (min-width: 1600px) {
-  #download {
-    display: flex;
+@media (min-width: 680px) {
+  #options {
+    flex-direction: row;
+  }
+
+  .hour {
+    font-size: 14px;
+    top: -9px;
+  }
+
+  .weekEvent {
+    font-size: 12px;
+  }
+
+  .day {
+    font-size: 14px;
   }
 }
 
-@media (min-width: 1400px) {
-  #dayWeekSwitch {
-    display: flex;
+@media (min-width: 768px) {
+  .hour {
+    font-size: 16px;
+    top: -10px;
   }
-}
 
-@media (min-width: 1200px) {
-  #teachersResources,
-  #classroomsResources {
-    display: flex;
+  .weekEvent {
+    font-size: 14px;
+  }
+
+  .day {
+    font-size: 16px;
   }
 }
 
@@ -279,26 +403,41 @@ header {
   #nextLessonsEmoji {
     display: none;
   }
-}
+  .weekEvent {
+    font-size: 16px;
+  }
 
-@media (min-width: 768px) {
-}
-
-@media (min-width: 680px) {
-  #options {
-    flex-direction: row;
+  .day {
+    font-size: 18px;
   }
 }
 
-@media (min-width: 480px) {
-  header {
-    align-items: center;
-  }
-
-  #options {
-    padding-top: 0;
+@media (min-width: 1200px) {
+  #teachersResources,
+  #classroomsResources {
+    display: flex;
   }
 }
 
-@media (max-width: 360px) {
+@media (min-width: 1400px) {
+  #weekDayDisplayButton {
+    display: flex;
+  }
+}
+
+@media (min-width: 1600px) {
+  #download {
+    display: flex;
+  }
+}
+
+@media (min-width: 1750px) {
+  #fullScreen,
+  #switchDarkLightMode {
+    display: flex;
+  }
+
+  #openSidebar {
+    display: none;
+  }
 }

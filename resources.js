@@ -1,4 +1,4 @@
-const xmlDataResourcesTree = `<?xml version="1.0" encoding="UTF-8"?>
+const xmlResourcesTreeExample = `<?xml version="1.0" encoding="UTF-8"?>
 <tree>
 	<category category="trainee">
 		<branch id="353" name="CAMPUS Valence" path="" category="trainee">
