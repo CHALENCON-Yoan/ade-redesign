@@ -1,7 +1,7 @@
 const DEV_MAIL = "yoan@ade-edt.fr";
-const LOCALHOST = true;
-const BASE_URL =
-  "https://cors-anywhere.herokuapp.com/https://ade-uga-ro-vs.grenet.fr/jsp/webapi";
+const LOCALHOST = false;
+const BASE_URL = "request";
+// "https://cors-anywhere.herokuapp.com/https://ade-uga-ro-vs.grenet.fr/jsp/webapi";
 const PORJECT_ID = "3";
 const PROJECT_DATA =
   "08281677eda1e7f64e2d372185934117103d4fbbeeae8daf5feb097f6d188a31fa91aec4c63f8a2413abf3eb0200af77893b24c3f0ea376490a4df59bbd7d7dac1ce1c636bfed8c261cddb98478bb779bd1ac4646cfd5693729bf4b8e78c5956e3959a1b8d7feaef71a4b247eddc63b2,1";
@@ -365,7 +365,7 @@ async function makeDatalist() {
   });
 }
 
-function restoreResourceValue() {
+async function restoreResourceValue() {
   const resourceInput = document.querySelector("#resourceSelector");
   const favoriteResource = localStorage.getItem("favoriteResource");
   if (favoriteResource !== null) {
@@ -378,7 +378,7 @@ function restoreResourceValue() {
     }
   }
 
-  setNextLessonsDate();
+  await setNextLessonsDate();
 }
 
 function getResourceName(id) {
@@ -403,7 +403,10 @@ async function setNextLessonsDate() {
   setDays();
 
   // displayLessons(currentDate, localStorage.getItem("lastResource"));
-  displayLessons(new Date(1725235200000), localStorage.getItem("lastResource"));
+  await displayLessons(
+    new Date(1725235200000),
+    localStorage.getItem("lastResource")
+  );
   // displayLessons(new Date(1725148800000), localStorage.getItem("lastResource"));
 }
 
@@ -434,8 +437,23 @@ async function haveLessons(date) {
   const xmlDoc = parser.parseFromString(result, "text/xml");
 
   const events = xmlDoc.getElementsByTagName("event");
+  if (events.length === 0) {
+    return false;
+  } else {
+    let lastEndHour = events[0].getAttribute("endHour");
+    for (let i = 1; i < events.length; i++) {
+      if (events[i].getAttribute("endHour") > lastEndHour) {
+        lastEndHour = events[i].getAttribute("endHour");
+      }
+    }
+    if (lastEndHour.substring(0, 2) < date.getHours()) {
+      return false;
+    } else if (lastEndHour.substring(2, 4) < date.getMinutes()) {
+      return false;
+    }
+  }
 
-  return events.length > 0;
+  return true;
 }
 
 function convertDate(date) {
@@ -864,6 +882,7 @@ function dragTimetableToChangeDate() {
 
   scheduleGrid.addEventListener("touchstart", (event) => {
     startX = event.touches[0].clientX;
+    currentX = event.touches[0].clientX;
   });
 
   scheduleGrid.addEventListener("touchmove", (event) => {
@@ -872,11 +891,12 @@ function dragTimetableToChangeDate() {
 
   scheduleGrid.addEventListener("touchend", () => {
     const translateX = currentX - startX;
-
-    if (translateX > 200) {
-      previousDate();
-    } else if (translateX < -200) {
-      nextDate();
+    if (Math.abs(translateX) > 200) {
+      if (currentX > startX) {
+        previousDate();
+      } else {
+        nextDate();
+      }
     }
   });
 }
