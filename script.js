@@ -402,11 +402,11 @@ async function setNextLessonsDate() {
 
   setDays();
 
-  // displayLessons(currentDate, localStorage.getItem("lastResource"));
-  await displayLessons(
-    new Date(1725235200000),
-    localStorage.getItem("lastResource")
-  );
+  await displayLessons(currentDate, localStorage.getItem("lastResource"));
+  // await displayLessons(
+  //   new Date(1725235200000),
+  //   localStorage.getItem("lastResource")
+  // );
   // displayLessons(new Date(1725148800000), localStorage.getItem("lastResource"));
 }
 
@@ -869,8 +869,6 @@ function keyPressed(event) {
     nextDate();
   } else if (event.key === "ArrowLeft") {
     previousDate();
-  } else if (event.key === "f") {
-    fullScreen();
   }
 }
 
