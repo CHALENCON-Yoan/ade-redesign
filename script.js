@@ -1,5 +1,5 @@
 const DEV_MAIL = "yoan@ade-edt.fr";
-const LOCALHOST = false;
+const LOCALHOST = location.hostname == "127.0.0.1";
 const BASE_URL = "request";
 // "https://cors-anywhere.herokuapp.com/https://ade-uga-ro-vs.grenet.fr/jsp/webapi";
 const PORJECT_ID = "3";
@@ -369,8 +369,11 @@ async function makeDatalist() {
 
   leafs = leafs.filter((leaf) => {
     return (
-      leaf.getAttribute("category") === "trainee" &&
-      leaf.getAttribute("path").startsWith("CAMPUS Valence.VALENCE-IUT")
+      leaf.getAttribute("category") === getRightCategory() &&
+      (leaf.getAttribute("path").startsWith("CAMPUS Valence.VALENCE-IUT") ||
+        leaf.getAttribute("path").startsWith("CAMPUS VALENCE.VALENCE-IUT") ||
+        leaf.getAttribute("path").startsWith("IUT VALENCE")) &&
+      !leaf.getAttribute("path").includes("temporaire")
     );
   });
 
@@ -385,6 +388,17 @@ async function makeDatalist() {
     option.value = leaf.getAttribute("name");
     datalist.appendChild(option);
   });
+}
+
+function getRightCategory() {
+  if (document.title.includes("Étudiants")) {
+    return "trainee";
+  } else if (document.title.includes("Enseignants")) {
+    return "instructor";
+  } else if (document.title.includes("Salles")) {
+    return "classroom";
+  }
+  return "";
 }
 
 async function restoreResourceValue() {
@@ -713,15 +727,15 @@ async function refreshData() {
 
   const resourceInput = document.querySelector("#resourceSelector");
   const dateInput = document.querySelector("#dateSelector");
-  if (parseInt(resourceInput.value)) {
+  if (resourceInput.value in resourcesMap) {
+    localStorage.setItem("lastResource", resourcesMap[resourceInput.value]);
+  } else if (parseInt(resourceInput.value)) {
     const resourceId = parseInt(resourceInput.value);
     const resourceName = getResourceName(resourceId);
     if (resourceName !== null) {
       resourceInput.value = resourceName;
     }
     localStorage.setItem("lastResource", resourceId);
-  } else if (resourceInput.value in resourcesMap) {
-    localStorage.setItem("lastResource", resourcesMap[resourceInput.value]);
   } else {
     localStorage.setItem("lastResource", null);
   }

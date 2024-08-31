@@ -4,62 +4,62 @@
 // const PROJECT_DATA =
 //   "08281677eda1e7f64e2d372185934117103d4fbbeeae8daf5feb097f6d188a31fa91aec4c63f8a2413abf3eb0200af77893b24c3f0ea376490a4df59bbd7d7dac1ce1c636bfed8c261cddb98478bb779bd1ac4646cfd5693729bf4b8e78c5956e3959a1b8d7feaef71a4b247eddc63b2,1";
 
-let touchStartX = 0;
-let touchEndX = 0;
+// let touchStartX = 0;
+// let touchEndX = 0;
 
-// Fonction appelée lorsqu'un utilisateur commence à toucher l'écran
-function handleTouchStart(event) {
-  console.log("touchstart");
-  touchStartX = event.touches[0].clientX;
-}
+// // Fonction appelée lorsqu'un utilisateur commence à toucher l'écran
+// function handleTouchStart(event) {
+//   console.log("touchstart");
+//   touchStartX = event.touches[0].clientX;
+// }
 
-// Fonction appelée lorsqu'un utilisateur arrête de toucher l'écran
-function handleTouchEnd(event) {
-  touchEndX = event.changedTouches[0].clientX;
-  handleSwipe();
-}
+// // Fonction appelée lorsqu'un utilisateur arrête de toucher l'écran
+// function handleTouchEnd(event) {
+//   touchEndX = event.changedTouches[0].clientX;
+//   handleSwipe();
+// }
 
-// Fonction pour déterminer la direction du swipe et appeler la fonction appropriée
-function handleSwipe() {
-  const swipeDistance = touchEndX - touchStartX;
-  const threshold = 100; // Seuil pour considérer un swipe comme valide
+// // Fonction pour déterminer la direction du swipe et appeler la fonction appropriée
+// function handleSwipe() {
+//   const swipeDistance = touchEndX - touchStartX;
+//   const threshold = 100; // Seuil pour considérer un swipe comme valide
 
-  const selectedDate = new Date(document.getElementById("dateSelector").value);
+//   const selectedDate = new Date(document.getElementById("dateSelector").value);
 
-  if (swipeDistance > threshold) {
-    // Swipe vers la droite
-    if (weekDisplay) {
-      const newDate = selectedDate;
-      newDate.setDate(newDate.getDate() - 7);
-      document.getElementById("dateSelector").valueAsDate = newDate;
-      const selectedResource =
-        document.getElementById("resourceSelector").value;
-      launchDisplay(newDate, selectedResource);
-    } else {
-      const newDate = previousDate(selectedDate);
-      document.getElementById("dateSelector").valueAsDate = newDate;
-      const selectedResource =
-        document.getElementById("resourceSelector").value;
-      launchDisplay(newDate, selectedResource);
-    }
-  } else if (swipeDistance < -threshold) {
-    // Swipe vers la gauche
-    if (weekDisplay) {
-      const newDate = selectedDate;
-      newDate.setDate(newDate.getDate() + 7);
-      document.getElementById("dateSelector").valueAsDate = newDate;
-      const selectedResource =
-        document.getElementById("resourceSelector").value;
-      launchDisplay(newDate, selectedResource);
-    } else {
-      const newDate = nextDate(selectedDate);
-      document.getElementById("dateSelector").valueAsDate = newDate;
-      const selectedResource =
-        document.getElementById("resourceSelector").value;
-      launchDisplay(newDate, selectedResource);
-    }
-  }
-}
+//   if (swipeDistance > threshold) {
+//     // Swipe vers la droite
+//     if (weekDisplay) {
+//       const newDate = selectedDate;
+//       newDate.setDate(newDate.getDate() - 7);
+//       document.getElementById("dateSelector").valueAsDate = newDate;
+//       const selectedResource =
+//         document.getElementById("resourceSelector").value;
+//       launchDisplay(newDate, selectedResource);
+//     } else {
+//       const newDate = previousDate(selectedDate);
+//       document.getElementById("dateSelector").valueAsDate = newDate;
+//       const selectedResource =
+//         document.getElementById("resourceSelector").value;
+//       launchDisplay(newDate, selectedResource);
+//     }
+//   } else if (swipeDistance < -threshold) {
+//     // Swipe vers la gauche
+//     if (weekDisplay) {
+//       const newDate = selectedDate;
+//       newDate.setDate(newDate.getDate() + 7);
+//       document.getElementById("dateSelector").valueAsDate = newDate;
+//       const selectedResource =
+//         document.getElementById("resourceSelector").value;
+//       launchDisplay(newDate, selectedResource);
+//     } else {
+//       const newDate = nextDate(selectedDate);
+//       document.getElementById("dateSelector").valueAsDate = newDate;
+//       const selectedResource =
+//         document.getElementById("resourceSelector").value;
+//       launchDisplay(newDate, selectedResource);
+//     }
+//   }
+// }
 
 // function getSavedView() {
 //   if (localStorage.getItem("weekDisplay") === "true") {
@@ -135,24 +135,24 @@ function datalistCondition() {
 //   }
 // }
 
-async function endHourCurrentDay(date, resource) {
-  const dayScheduleXml = await xmlRequest(date, resource);
-  // const dayScheduleXml = await scheduleData;
-  const parser = new DOMParser();
-  const xmlDoc = parser.parseFromString(dayScheduleXml, "text/xml");
-  const events = Array.from(xmlDoc.getElementsByTagName("event"));
-  if (events.length != 0) {
-    let endHourDay = events[0].getAttribute("endHour");
-    for (let i = 1; i < events.length; i++) {
-      if (events[i].getAttribute("endHour") > endHourDay) {
-        endHourDay = events[i].getAttribute("endHour");
-      }
-    }
-    return endHourDay;
-  } else {
-    return "23:59";
-  }
-}
+// async function endHourCurrentDay(date, resource) {
+//   const dayScheduleXml = await xmlRequest(date, resource);
+//   // const dayScheduleXml = await scheduleData;
+//   const parser = new DOMParser();
+//   const xmlDoc = parser.parseFromString(dayScheduleXml, "text/xml");
+//   const events = Array.from(xmlDoc.getElementsByTagName("event"));
+//   if (events.length != 0) {
+//     let endHourDay = events[0].getAttribute("endHour");
+//     for (let i = 1; i < events.length; i++) {
+//       if (events[i].getAttribute("endHour") > endHourDay) {
+//         endHourDay = events[i].getAttribute("endHour");
+//       }
+//     }
+//     return endHourDay;
+//   } else {
+//     return "23:59";
+//   }
+// }
 
 // async function nextDay() {
 //   const currentDate = new Date();
@@ -282,29 +282,29 @@ async function endHourCurrentDay(date, resource) {
 //   contentStartEvent.appendChild(divEvent);
 // }
 
-function colorCheck(color) {
-  const rgb = color.split(",");
-  const brightness =
-    (parseInt(rgb[0]) * 0.299 +
-      parseInt(rgb[1]) * 0.587 +
-      parseInt(rgb[2]) * 0.114) /
-    255;
-  if (brightness < 0.3) {
-    // console.log("Couleur de base :", color);
-    // console.log("Luminostié :", brightness);
-    const newColor = rgb;
-    for (let i = 0; i < 3; i++) {
-      newColor[i] =
-        parseInt(newColor[i]) + 80 > 255
-          ? "255"
-          : (parseInt(newColor[i]) + 80).toString();
-    }
-    // console.log("Nouvelle couleur :", newColor.join(","));
-    return newColor.join(",");
-  } else {
-    return color;
-  }
-}
+// function colorCheck(color) {
+//   const rgb = color.split(",");
+//   const brightness =
+//     (parseInt(rgb[0]) * 0.299 +
+//       parseInt(rgb[1]) * 0.587 +
+//       parseInt(rgb[2]) * 0.114) /
+//     255;
+//   if (brightness < 0.3) {
+//     // console.log("Couleur de base :", color);
+//     // console.log("Luminostié :", brightness);
+//     const newColor = rgb;
+//     for (let i = 0; i < 3; i++) {
+//       newColor[i] =
+//         parseInt(newColor[i]) + 80 > 255
+//           ? "255"
+//           : (parseInt(newColor[i]) + 80).toString();
+//     }
+//     // console.log("Nouvelle couleur :", newColor.join(","));
+//     return newColor.join(",");
+//   } else {
+//     return color;
+//   }
+// }
 
 // function displayNoLesson(day) {
 //   const startEvent = document.getElementById(`07_30_${day}`);
@@ -471,203 +471,203 @@ function colorCheck(color) {
 //   }
 // }
 
-document.addEventListener("DOMContentLoaded", async function () {
-  // Au chargement de la page
-  // makeDatalist();
-  // scheduleGrid();
-  // const selectedResource = localStorage.getItem("selectedResource")
-  //   ? localStorage.getItem("selectedResource")
-  //   : null;
-  // document.getElementById("resourceSelector").value = selectedResource;
-  // const displayDate = await firstDate();
-  // document.getElementById("dateSelector").valueAsDate = displayDate;
-  // launchDisplay(displayDate, selectedResource);
+// document.addEventListener("DOMContentLoaded", async function () {
+// Au chargement de la page
+// makeDatalist();
+// scheduleGrid();
+// const selectedResource = localStorage.getItem("selectedResource")
+//   ? localStorage.getItem("selectedResource")
+//   : null;
+// document.getElementById("resourceSelector").value = selectedResource;
+// const displayDate = await firstDate();
+// document.getElementById("dateSelector").valueAsDate = displayDate;
+// launchDisplay(displayDate, selectedResource);
 
-  // Au changement de la date dans le sélecteur
-  // document
-  //   .getElementById("dateSelector")
-  //   .addEventListener("change", async function () {
-  //     const selectedResource =
-  //       document.getElementById("resourceSelector").value;
-  // xmlContent = await xmlRequest(new Date(this.value), selectedResource);
-  // displaySchedule(xmlContent);
-  // displayInfos(new Date(this.value), selectedResource);
-  //   launchDisplay(new Date(this.value), selectedResource);
-  // });
+// Au changement de la date dans le sélecteur
+// document
+//   .getElementById("dateSelector")
+//   .addEventListener("change", async function () {
+//     const selectedResource =
+//       document.getElementById("resourceSelector").value;
+// xmlContent = await xmlRequest(new Date(this.value), selectedResource);
+// displaySchedule(xmlContent);
+// displayInfos(new Date(this.value), selectedResource);
+//   launchDisplay(new Date(this.value), selectedResource);
+// });
 
-  // Au clic sur le bouton précédent
-  // document
-  //   .getElementById("previousDate")
-  //   .addEventListener("click", async function () {
-  //     const selectedDate = new Date(
-  //       document.getElementById("dateSelector").value
-  //     );
-  //     if (weekDisplay) {
-  //       const newDate = selectedDate;
-  //       newDate.setDate(newDate.getDate() - 7);
-  //       document.getElementById("dateSelector").valueAsDate = newDate;
-  //       const selectedResource =
-  //         document.getElementById("resourceSelector").value;
-  //       launchDisplay(newDate, selectedResource);
-  //     } else {
-  //       const newDate = previousDate(selectedDate);
-  //       document.getElementById("dateSelector").valueAsDate = newDate;
-  //       const selectedResource =
-  //         document.getElementById("resourceSelector").value;
-  //       launchDisplay(newDate, selectedResource);
-  //     }
-  // xmlContent = await xmlRequest(selectedDate, selectedResource);
-  // displaySchedule(xmlContent);
-  // displayInfos(selectedDate, selectedResource);
-  // });
+// Au clic sur le bouton précédent
+// document
+//   .getElementById("previousDate")
+//   .addEventListener("click", async function () {
+//     const selectedDate = new Date(
+//       document.getElementById("dateSelector").value
+//     );
+//     if (weekDisplay) {
+//       const newDate = selectedDate;
+//       newDate.setDate(newDate.getDate() - 7);
+//       document.getElementById("dateSelector").valueAsDate = newDate;
+//       const selectedResource =
+//         document.getElementById("resourceSelector").value;
+//       launchDisplay(newDate, selectedResource);
+//     } else {
+//       const newDate = previousDate(selectedDate);
+//       document.getElementById("dateSelector").valueAsDate = newDate;
+//       const selectedResource =
+//         document.getElementById("resourceSelector").value;
+//       launchDisplay(newDate, selectedResource);
+//     }
+// xmlContent = await xmlRequest(selectedDate, selectedResource);
+// displaySchedule(xmlContent);
+// displayInfos(selectedDate, selectedResource);
+// });
 
-  // Au clic sur le bouton suivant
-  // document
-  //   .getElementById("nextDate")
-  //   .addEventListener("click", async function () {
-  //     const selectedDate = new Date(
-  //       document.getElementById("dateSelector").value
-  //     );
-  //     if (weekDisplay) {
-  //       const newDate = selectedDate;
-  //       newDate.setDate(newDate.getDate() + 7);
-  //       document.getElementById("dateSelector").valueAsDate = newDate;
-  //       const selectedResource =
-  //         document.getElementById("resourceSelector").value;
-  //       launchDisplay(newDate, selectedResource);
-  //     } else {
-  //       const newDate = nextDate(selectedDate);
-  //       document.getElementById("dateSelector").valueAsDate = newDate;
-  //       const selectedResource =
-  //         document.getElementById("resourceSelector").value;
-  //       launchDisplay(newDate, selectedResource);
-  //     }
-  // xmlContent = await xmlRequest(selectedDate, selectedResource);
-  // displaySchedule(xmlContent);
-  // displayInfos(selectedDate, selectedResource);
-  // });
+// Au clic sur le bouton suivant
+// document
+//   .getElementById("nextDate")
+//   .addEventListener("click", async function () {
+//     const selectedDate = new Date(
+//       document.getElementById("dateSelector").value
+//     );
+//     if (weekDisplay) {
+//       const newDate = selectedDate;
+//       newDate.setDate(newDate.getDate() + 7);
+//       document.getElementById("dateSelector").valueAsDate = newDate;
+//       const selectedResource =
+//         document.getElementById("resourceSelector").value;
+//       launchDisplay(newDate, selectedResource);
+//     } else {
+//       const newDate = nextDate(selectedDate);
+//       document.getElementById("dateSelector").valueAsDate = newDate;
+//       const selectedResource =
+//         document.getElementById("resourceSelector").value;
+//       launchDisplay(newDate, selectedResource);
+//     }
+// xmlContent = await xmlRequest(selectedDate, selectedResource);
+// displaySchedule(xmlContent);
+// displayInfos(selectedDate, selectedResource);
+// });
 
-  // Au clic sur le bouton today
-  // document.getElementById("today").addEventListener("click", async function () {
-  //   const currentDate = await firstDate();
-  //   document.getElementById("dateSelector").valueAsDate = currentDate;
-  //   const selectedResource = document.getElementById("resourceSelector").value;
-  //   // xmlContent = await xmlRequest(currentDate, selectedResource);
-  //   // displaySchedule(xmlContent);
-  //   // displayInfos(currentDate, selectedResource);
-  //   launchDisplay(currentDate, selectedResource);
-  // });
+// Au clic sur le bouton today
+// document.getElementById("today").addEventListener("click", async function () {
+//   const currentDate = await firstDate();
+//   document.getElementById("dateSelector").valueAsDate = currentDate;
+//   const selectedResource = document.getElementById("resourceSelector").value;
+//   // xmlContent = await xmlRequest(currentDate, selectedResource);
+//   // displaySchedule(xmlContent);
+//   // displayInfos(currentDate, selectedResource);
+//   launchDisplay(currentDate, selectedResource);
+// });
 
-  // Au changement de la ressource dans le sélecteur
-  // document
-  //   .getElementById("resourceSelector")
-  //   .addEventListener("change", async function () {
-  //     localStorage.setItem("selectedResource", this.value);
-  //     const selectedDate = new Date(
-  //       document.getElementById("dateSelector").value
-  //     );
-  //     // xmlContent = await xmlRequest(selectedDate, this.value);
-  //     // displaySchedule(xmlContent);
-  //     // displayInfos(selectedDate, this.value);
-  //     launchDisplay(selectedDate, this.value);
-  //   });
+// Au changement de la ressource dans le sélecteur
+// document
+//   .getElementById("resourceSelector")
+//   .addEventListener("change", async function () {
+//     localStorage.setItem("selectedResource", this.value);
+//     const selectedDate = new Date(
+//       document.getElementById("dateSelector").value
+//     );
+//     // xmlContent = await xmlRequest(selectedDate, this.value);
+//     // displaySchedule(xmlContent);
+//     // displayInfos(selectedDate, this.value);
+//     launchDisplay(selectedDate, this.value);
+//   });
 
-  // document.getElementById("1day").addEventListener("click", function () {
-  //   localStorage.setItem("weekDisplay", "false");
-  //   const timeline = document.getElementById("timeline");
-  //   timeline.remove();
-  //   weekDisplay = false;
-  //   scheduleGrid();
-  //   const selectedDate = new Date(
-  //     document.getElementById("dateSelector").value
-  //   );
-  //   const selectedResource = document.getElementById("resourceSelector").value;
-  //   launchDisplay(selectedDate, selectedResource);
-  // });
+// document.getElementById("1day").addEventListener("click", function () {
+//   localStorage.setItem("weekDisplay", "false");
+//   const timeline = document.getElementById("timeline");
+//   timeline.remove();
+//   weekDisplay = false;
+//   scheduleGrid();
+//   const selectedDate = new Date(
+//     document.getElementById("dateSelector").value
+//   );
+//   const selectedResource = document.getElementById("resourceSelector").value;
+//   launchDisplay(selectedDate, selectedResource);
+// });
 
-  // document.getElementById("week").addEventListener("click", function () {
-  //   localStorage.setItem("weekDisplay", "true");
-  //   const timeline = document.getElementById("timeline");
-  //   timeline.remove();
-  //   weekDisplay = true;
-  //   scheduleGrid();
-  //   const selectedDate = new Date(
-  //     document.getElementById("dateSelector").value
-  //   );
-  //   const selectedResource = document.getElementById("resourceSelector").value;
-  //   launchDisplay(selectedDate, selectedResource);
-  // });
+// document.getElementById("week").addEventListener("click", function () {
+//   localStorage.setItem("weekDisplay", "true");
+//   const timeline = document.getElementById("timeline");
+//   timeline.remove();
+//   weekDisplay = true;
+//   scheduleGrid();
+//   const selectedDate = new Date(
+//     document.getElementById("dateSelector").value
+//   );
+//   const selectedResource = document.getElementById("resourceSelector").value;
+//   launchDisplay(selectedDate, selectedResource);
+// });
 
-  // Au clic sur le bouton plein écran
-  // document
-  //   .querySelector("#fullScreen")
-  //   .addEventListener("click", () =>
-  //     document.fullscreenElement
-  //       ? document.exitFullscreen()
-  //       : document.documentElement.requestFullscreen()
-  //   );
+// Au clic sur le bouton plein écran
+// document
+//   .querySelector("#fullScreen")
+//   .addEventListener("click", () =>
+//     document.fullscreenElement
+//       ? document.exitFullscreen()
+//       : document.documentElement.requestFullscreen()
+//   );
 
-  // À l'appui sur les flèches
-  // addEventListener("keydown", (event) => {
-  //   const selectedDate = new Date(
-  //     document.getElementById("dateSelector").value
-  //   );
+// À l'appui sur les flèches
+// addEventListener("keydown", (event) => {
+//   const selectedDate = new Date(
+//     document.getElementById("dateSelector").value
+//   );
 
-  //   if (event.key === "ArrowLeft") {
-  //     if (weekDisplay) {
-  //       const newDate = selectedDate;
-  //       newDate.setDate(newDate.getDate() - 7);
-  //       document.getElementById("dateSelector").valueAsDate = newDate;
-  //       const selectedResource =
-  //         document.getElementById("resourceSelector").value;
-  //       launchDisplay(newDate, selectedResource);
-  //     } else {
-  //       const newDate = previousDate(selectedDate);
-  //       document.getElementById("dateSelector").valueAsDate = newDate;
-  //       const selectedResource =
-  //         document.getElementById("resourceSelector").value;
-  //       launchDisplay(newDate, selectedResource);
-  //     }
-  //   } else if (event.key === "ArrowRight") {
-  //     if (weekDisplay) {
-  //       const newDate = selectedDate;
-  //       newDate.setDate(newDate.getDate() + 7);
-  //       document.getElementById("dateSelector").valueAsDate = newDate;
-  //       const selectedResource =
-  //         document.getElementById("resourceSelector").value;
-  //       launchDisplay(newDate, selectedResource);
-  //     } else {
-  //       const newDate = nextDate(selectedDate);
-  //       document.getElementById("dateSelector").valueAsDate = newDate;
-  //       const selectedResource =
-  //         document.getElementById("resourceSelector").value;
-  //       launchDisplay(newDate, selectedResource);
-  //     }
-  //   }
-  //   // xmlContent = await xmlRequest(selectedDate, selectedResource);
-  //   // displaySchedule(xmlContent);
-  //   // displayInfos(selectedDate, selectedResource);
-  // });
-  // document
-  //   .getElementById("imageDownload")
-  //   .addEventListener("click", function () {
-  //     // Sélectionnez la div contenant l'emploi du temps
-  //     const element = document.getElementById("display");
+//   if (event.key === "ArrowLeft") {
+//     if (weekDisplay) {
+//       const newDate = selectedDate;
+//       newDate.setDate(newDate.getDate() - 7);
+//       document.getElementById("dateSelector").valueAsDate = newDate;
+//       const selectedResource =
+//         document.getElementById("resourceSelector").value;
+//       launchDisplay(newDate, selectedResource);
+//     } else {
+//       const newDate = previousDate(selectedDate);
+//       document.getElementById("dateSelector").valueAsDate = newDate;
+//       const selectedResource =
+//         document.getElementById("resourceSelector").value;
+//       launchDisplay(newDate, selectedResource);
+//     }
+//   } else if (event.key === "ArrowRight") {
+//     if (weekDisplay) {
+//       const newDate = selectedDate;
+//       newDate.setDate(newDate.getDate() + 7);
+//       document.getElementById("dateSelector").valueAsDate = newDate;
+//       const selectedResource =
+//         document.getElementById("resourceSelector").value;
+//       launchDisplay(newDate, selectedResource);
+//     } else {
+//       const newDate = nextDate(selectedDate);
+//       document.getElementById("dateSelector").valueAsDate = newDate;
+//       const selectedResource =
+//         document.getElementById("resourceSelector").value;
+//       launchDisplay(newDate, selectedResource);
+//     }
+//   }
+//   // xmlContent = await xmlRequest(selectedDate, selectedResource);
+//   // displaySchedule(xmlContent);
+//   // displayInfos(selectedDate, selectedResource);
+// });
+// document
+//   .getElementById("imageDownload")
+//   .addEventListener("click", function () {
+//     // Sélectionnez la div contenant l'emploi du temps
+//     const element = document.getElementById("display");
 
-  //     // Utilisez html2canvas pour capturer l'élément en tant qu'image
-  //     html2canvas(element).then(function (canvas) {
-  //       // Convertissez le canevas en une URL de données
-  //       const imgData = canvas.toDataURL("image/png");
+//     // Utilisez html2canvas pour capturer l'élément en tant qu'image
+//     html2canvas(element).then(function (canvas) {
+//       // Convertissez le canevas en une URL de données
+//       const imgData = canvas.toDataURL("image/png");
 
-  //       // Créez un élément <a> pour télécharger l'image
-  //       const link = document.createElement("a");
-  //       link.download = "emploiDuTemps.png";
-  //       link.href = imgData;
-  //       link.click();
-  //     });
-  //   });
+//       // Créez un élément <a> pour télécharger l'image
+//       const link = document.createElement("a");
+//       link.download = "emploiDuTemps.png";
+//       link.href = imgData;
+//       link.click();
+//     });
+//   });
 
-  const timetableContainer = document.getElementById("display");
-  timetableContainer.addEventListener("touchstart", handleTouchStart);
-  timetableContainer.addEventListener("touchend", handleTouchEnd);
-});
+// const timetableContainer = document.getElementById("display");
+// timetableContainer.addEventListener("touchstart", handleTouchStart);
+// timetableContainer.addEventListener("touchend", handleTouchEnd);
+// });

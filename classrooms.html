@@ -3,22 +3,22 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Étudiants - ADE Redesign - IUT Valence</title>
+    <title>Salles - ADE Redesign - IUT Valence</title>
     <meta
       name="description"
       content="Nouvelle interface de visualisation des emplois du temps d'ADE."
     />
-    <meta property="og:title" content="Étudiants - IUT de Valence" />
+    <meta property="og:title" content="Salles - IUT de Valence" />
     <meta
       property="og:description"
-      content="Retrouve ton emploi du temps de l'IUT de Valence sur une toute nouvelle interface."
+      content="Retrouvez les emploi du temps des salle de l'IUT de Valence sur une toute nouvelle interface."
     />
     <meta property="og:site_name" content="ADE Redesign" />
-    <meta property="og:url" content="https://iutv.ade-edt.fr" />
+    <meta property="og:url" content="https://iutv.ade-edt.fr/classrooms" />
     <meta property="og:image" content="/assets/cover.png" />
     <link
       rel="shortcut icon"
-      href="/assets/emojis/student.svg"
+      href="/assets/emojis/door.svg"
       type="image/x-icon"
     />
     <link rel="stylesheet" href="style.css" />
@@ -50,20 +50,20 @@
           <input
             list="resourcesList"
             id="resourceSelector"
-            placeholder="Choisir un groupe."
+            placeholder="Choisir une salle."
             class="inputMode lightModeInput"
           />
           <datalist id="resourcesList"> </datalist>
         </div>
 
+        <!-- Voir l'EDT des étudiants -->
+        <a href="/" class="inSidebar" id="studentsResources">
+          <button class="CTA buttonMode lightModeButton">Étudiants</button>
+        </a>
+
         <!-- Voir l'EDT des enseignants -->
         <a href="/teachers.html" class="inSidebar" id="teachersResources">
           <button class="CTA buttonMode lightModeButton">Enseignants</button>
-        </a>
-
-        <!-- Voir l'EDT des salles -->
-        <a href="/classrooms.html" class="inSidebar" id="classroomsResources">
-          <button class="CTA buttonMode lightModeButton">Salles</button>
         </a>
 
         <!-- Sélecteur de date -->
@@ -195,19 +195,19 @@
           Définir cette ressource par défaut
         </button>
 
+        <!-- EDT des étudiants -->
+        <a href="/">
+          <button class="sidebarButton">
+            <img src="/assets/emojis/student.svg" alt="Student Emoji" />
+            Voir l'EDT des étudiants
+          </button>
+        </a>
+
         <!-- EDT des enseignants -->
         <a href="/teachers.html">
           <button class="sidebarButton">
             <img src="/assets/emojis/teacher.svg" alt="Teacher Emoji" />
             Voir l'EDT des enseignants
-          </button>
-        </a>
-
-        <!-- EDT des salles -->
-        <a href="/classrooms.html">
-          <button class="sidebarButton">
-            <img src="/assets/emojis/door.svg" alt="Door Emoji" />
-            Voir l'EDT des salles
           </button>
         </a>
       </aside>

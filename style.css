@@ -256,7 +256,6 @@ main {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: var(--color-light);
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 20px 5px var(--color-dark-50);
@@ -444,6 +443,7 @@ p {
 
 @media (min-width: 1200px) {
   #teachersResources,
+  #studentsResources,
   #classroomsResources {
     display: flex;
   }
