@@ -441,7 +441,7 @@ async function haveLessons(date) {
   console.log(`get ${events.length} events for ${date}`);
   if (events.length === 0) {
     return false;
-  } else {
+  } else if (date.getDate() === new Date().getDate()) {
     let lastEndHour = events[0].getAttribute("endHour");
     console.log(`last hour for first event is ${lastEndHour}`);
     for (let i = 1; i < events.length; i++) {
