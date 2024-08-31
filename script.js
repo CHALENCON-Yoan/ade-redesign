@@ -392,7 +392,7 @@ function getResourceName(id) {
 
 async function setNextLessonsDate() {
   const dateSelector = document.querySelector("#dateSelector");
-  let currentDate = new Date();
+  let currentDate = new Date(1725296459000);
   if (localStorage.getItem("lastResource") !== null) {
     while (!(await haveLessons(currentDate))) {
       currentDate.setDate(currentDate.getDate() + 1);
@@ -777,9 +777,7 @@ function nextDate() {
 
 async function nextLessons() {
   const date = new Date();
-  console.log(`current date: ${date}, haveLessons? ${haveLessons(date)}`);
   while (!(await haveLessons(date))) {
-    console.log(`current date: ${date}, haveLessons? ${haveLessons(date)}`);
     date.setDate(date.getDate() + 1);
   }
   document.querySelector("#dateSelector").valueAsDate = date;
