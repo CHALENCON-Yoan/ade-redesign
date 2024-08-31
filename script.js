@@ -441,7 +441,7 @@ async function haveLessons(date) {
   console.log(`get ${events.length} events for ${date}`);
   if (events.length === 0) {
     return false;
-  } else if (date.getDate() === new Date().getDate()) {
+  } else if (sameDay(date, new Date(1725296519000))) {
     let lastEndHour = events[0].getAttribute("endHour");
     console.log(`last hour for first event is ${lastEndHour}`);
     for (let i = 1; i < events.length; i++) {
@@ -474,6 +474,13 @@ async function haveLessons(date) {
   }
 
   return true;
+}
+function sameDay(date1, date2) {
+  return (
+    date1.getFullYear() === date2.getFullYear() &&
+    date1.getMonth() === date2.getMonth() &&
+    date1.getDate() === date2.getDate()
+  );
 }
 
 function convertDate(date) {
