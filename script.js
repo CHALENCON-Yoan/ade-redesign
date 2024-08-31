@@ -411,6 +411,7 @@ async function setNextLessonsDate() {
 }
 
 async function haveLessons(date) {
+  console.log(`test for ${date}`);
   let result;
   if (LOCALHOST) {
     result = dayExample;
@@ -437,18 +438,37 @@ async function haveLessons(date) {
   const xmlDoc = parser.parseFromString(result, "text/xml");
 
   const events = xmlDoc.getElementsByTagName("event");
+  console.log(`get ${events.length} events for ${date}`);
   if (events.length === 0) {
     return false;
   } else {
     let lastEndHour = events[0].getAttribute("endHour");
+    console.log(`last hour for first event is ${lastEndHour}`);
     for (let i = 1; i < events.length; i++) {
+      console.log(
+        `last hour for event ${i} is ${events[i].getAttribute("endHour")}`
+      );
+
       if (events[i].getAttribute("endHour") > lastEndHour) {
         lastEndHour = events[i].getAttribute("endHour");
+        console.log(`new last hour: ${lastEndHour}`);
       }
     }
     if (lastEndHour.substring(0, 2) < date.getHours()) {
+      console.log(
+        `lastHours: ${lastEndHour.substring(
+          0,
+          2
+        )}, dateHours ${date.getHours()}`
+      );
       return false;
     } else if (lastEndHour.substring(2, 4) < date.getMinutes()) {
+      console.log(
+        `lastMinutes: ${lastEndHour.substring(
+          2,
+          4
+        )}, dateMinutes ${date.getMinutes()}`
+      );
       return false;
     }
   }
