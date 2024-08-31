@@ -1,5 +1,5 @@
 const DEV_MAIL = "yoan@ade-edt.fr";
-const LOCALHOST = false;
+const LOCALHOST = true;
 const BASE_URL = "request";
 // "https://cors-anywhere.herokuapp.com/https://ade-uga-ro-vs.grenet.fr/jsp/webapi";
 const PORJECT_ID = "3";
@@ -60,9 +60,12 @@ function getOppositeMode(mode) {
 }
 
 function setMode(mode) {
-  // If mode is null, set it to light (default value)
+  // If mode is null, set it to default browser theme
   if (mode === null) {
-    mode = "light";
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+      mode = "dark";
+    else mode = "light";
+    // mode = "light";
   }
 
   const oppositeMode = getOppositeMode(mode);
@@ -167,10 +170,12 @@ function switchMode() {
   // Switch the mode on click
   switchModeButton.addEventListener("click", () => {
     setMode(getOppositeMode(localStorage.getItem("mode")));
+    refreshData();
   });
 
   switchModeSidebarButton.addEventListener("click", () => {
     setMode(getOppositeMode(localStorage.getItem("mode")));
+    refreshData();
   });
 }
 
@@ -320,6 +325,8 @@ function displayScheduleGrid() {
             j === 0 ? "00" : "30"
           }_${k}`;
           content.classList.add("content");
+          content.classList.add("mode");
+          content.classList.add(`${localStorage.getItem("mode")}Mode`);
           content.id = idHour;
           halfHourDiv.appendChild(content);
 
@@ -654,7 +661,9 @@ function displayEvent(event, dayIndex) {
   //   eventDiv.appendChild(resource);
   // }
 
-  eventDiv.style.backgroundColor = `rgb(${event.getAttribute("color")})`;
+  eventDiv.style.backgroundColor = `rgb(${checkColor(
+    event.getAttribute("color")
+  )})`;
 
   eventDiv.style.height = `${
     (parseInt(event.getAttribute("duration")) / 2) * 50 - 1
@@ -684,7 +693,11 @@ function displayBlankDay(dayIndex) {
 
   eventDiv.style.height = `${50 * 23 - 1}px`;
 
-  eventDiv.style.backgroundColor = `rgba(200, 200, 200, 1)`;
+  if (localStorage.getItem("mode") == "dark") {
+    eventDiv.style.backgroundColor = `rgba(55, 55, 55, 1)`;
+  } else {
+    eventDiv.style.backgroundColor = `rgba(200, 200, 200, 1)`;
+  }
 
   contentStartEvent.appendChild(eventDiv);
 }
@@ -889,10 +902,14 @@ function startWeekDate(date) {
 }
 
 function keyPressed(event) {
-  if (event.key === "ArrowRight") {
-    nextDate();
-  } else if (event.key === "ArrowLeft") {
-    previousDate();
+  if (event.target.tagName.toLowerCase() != "input") {
+    if (event.key === "ArrowRight") {
+      nextDate();
+    } else if (event.key === "ArrowLeft") {
+      previousDate();
+    } else if (event.key === "f") {
+      fullScreen();
+    }
   }
 }
 
@@ -944,4 +961,42 @@ function loader(visible) {
   } else {
     loaderDiv.style.display = "none";
   }
+}
+
+function checkColor(color) {
+  const rgb = color.split(",").map(Number);
+  const [r, g, b] = rgb;
+
+  const a = [r, g, b].map((v) => {
+    v /= 255;
+    return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+  });
+  const luminance = a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
+
+  const threshold = 0.25;
+
+  const mode = localStorage.getItem("mode");
+  if (mode == "light" && luminance < threshold) return lightenColor(color, 0.5);
+  else if (mode == "dark" && luminance > 0.4) return darkenColor(color, 0.5);
+
+  return color;
+}
+
+function lightenColor(color, percent) {
+  const rgb = color.split(",");
+  for (let i = 0; i < rgb.length; i++) {
+    rgb[i] = Math.min(
+      255,
+      Math.floor(parseInt(rgb[i]) + (255 - parseInt(rgb[i])) * percent)
+    );
+  }
+  return rgb.join(",");
+}
+
+function darkenColor(color, percent) {
+  const rgb = color.split(",");
+  for (let i = 0; i < rgb.length; i++) {
+    rgb[i] = Math.max(0, Math.floor(parseInt(rgb[i]) * (1 - percent)));
+  }
+  return rgb.join(",");
 }

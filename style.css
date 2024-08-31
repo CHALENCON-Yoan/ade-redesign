@@ -29,11 +29,13 @@ button {
 .darkMode {
   background-color: var(--color-dark);
   color: var(--color-light);
+  border-color: var(--color-light);
 }
 
 .lightMode {
   background-color: var(--color-light);
   color: var(--color-dark);
+  border-color: var(--color-dark);
 }
 
 .lightModeInput,
@@ -292,7 +294,7 @@ main {
 
 #display {
   width: 100%;
-  margin: 40px 2.6vw;
+  margin: 40px 1.56vw;
   margin-bottom: 0;
 }
 
@@ -316,7 +318,7 @@ main {
 }
 
 .content {
-  border-top: 1px solid #000;
+  border-top: 1px solid;
   width: 100%;
   display: flex;
   justify-content: center;
