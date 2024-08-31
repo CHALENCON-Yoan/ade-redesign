@@ -775,9 +775,11 @@ function nextDate() {
   refreshData();
 }
 
-function nextLessons() {
+async function nextLessons() {
   const date = new Date();
-  while (!haveLessons(date)) {
+  console.log(`current date: ${date}, haveLessons? ${haveLessons(date)}`);
+  while (!(await haveLessons(date))) {
+    console.log(`current date: ${date}, haveLessons? ${haveLessons(date)}`);
     date.setDate(date.getDate() + 1);
   }
   document.querySelector("#dateSelector").valueAsDate = date;
