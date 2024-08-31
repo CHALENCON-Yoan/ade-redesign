@@ -1,818 +1,1011 @@
+const DEV_MAIL = "yoan@ade-edt.fr";
+const LOCALHOST = false;
 const BASE_URL = "request";
 const PORJECT_ID = "3";
 const PROJECT_DATA =
   "08281677eda1e7f64e2d372185934117103d4fbbeeae8daf5feb097f6d188a31fa91aec4c63f8a2413abf3eb0200af77893b24c3f0ea376490a4df59bbd7d7dac1ce1c636bfed8c261cddb98478bb779bd1ac4646cfd5693729bf4b8e78c5956e3959a1b8d7feaef71a4b247eddc63b2,1";
 
-const scheduleData = `<?xml version="1.0" encoding="UTF-8"?>
-<events>
-	<event id="12698" activityId="10067" session="0" repetition="1" name="DÃ©veloppement d&apos;applications avec IHM" endHour="18:30" startHour="17:00" date="05/02/2024" absoluteSlot="3619" slot="19" day="0" week="24" additionalResources="0" duration="3" info="" note="" color="255,51,51" isLockPosition="false" oldDuration="3" oldSlot="4" oldDay="1" oldWeek="24" lastUpdate="01/25/2024 10:28" creation="07/18/2023 07:07" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
-		<resources>
-			<resource fromWorkflow="false" nodeId="58424" nodeOrId="-1" quantity="1" category="trainee" name="INFO1-TD1-TP1B" id="67"/>
-			<resource fromWorkflow="false" nodeId="29027" nodeOrId="-1" quantity="1" category="instructor" name="MOKNI YANIS" id="6268"/>
-			<resource fromWorkflow="false" nodeId="58421" nodeOrId="-1" quantity="1" category="category5" name="R2.02 DÃ©veloppement d&apos;applications avec IHM" id="623"/>
-			<resource fromWorkflow="false" nodeId="58423" nodeOrId="58422" quantity="1" category="classroom" name="B102" id="60"/>
-		</resources>
-		<additional/>
-	</event>
-	<event id="10222" activityId="10072" session="0" repetition="1" name="DÃ©veloppement d&apos;applications avec IHM" endHour="17:00" startHour="16:00" date="05/02/2024" absoluteSlot="3617" slot="17" day="0" week="24" additionalResources="0" duration="2" info="" note="" color="255,51,51" isLockPosition="false" oldDuration="2" oldSlot="1" oldDay="0" oldWeek="23" lastUpdate="11/30/2023 11:02" creation="07/18/2023 07:07" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
-		<resources>
-			<resource fromWorkflow="false" nodeId="58449" nodeOrId="-1" quantity="1" category="trainee" name="INFO1" id="24"/>
-			<resource fromWorkflow="false" nodeId="34430" nodeOrId="-1" quantity="1" category="instructor" name="GENTHIAL DAMIEN" id="3689"/>
-			<resource fromWorkflow="false" nodeId="58446" nodeOrId="-1" quantity="1" category="category5" name="R2.02 DÃ©veloppement d&apos;applications avec IHM" id="623"/>
-			<resource fromWorkflow="false" nodeId="58454" nodeOrId="58450" quantity="1" category="classroom" name="C001" id="113"/>
-		</resources>
-		<additional/>
-	</event>
-	<event id="12810" activityId="705" session="0" repetition="1" name="DÃ©veloppement orientÃ© objet" endHour="12:30" startHour="11:00" date="05/02/2024" absoluteSlot="3607" slot="7" day="0" week="24" additionalResources="0" duration="3" info="" note="" color="0,0,255" isLockPosition="false" oldDuration="3" oldSlot="1" oldDay="0" oldWeek="24" lastUpdate="01/08/2024 10:08" creation="07/18/2023 07:07" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
-		<resources>
-			<resource fromWorkflow="false" nodeId="20717" nodeOrId="-1" quantity="1" category="trainee" name="INFO1-TD1" id="59"/>
-			<resource fromWorkflow="false" nodeId="20378" nodeOrId="-1" quantity="1" category="instructor" name="OCCELLO MICHEL" id="5294"/>
-			<resource fromWorkflow="false" nodeId="57466" nodeOrId="-1" quantity="1" category="category5" name="R2.01 DÃ©veloppement orientÃ© objets" id="1534"/>
-			<resource fromWorkflow="false" nodeId="23633" nodeOrId="23424" quantity="1" category="classroom" name="B116" id="80"/>
-		</resources>
-		<additional/>
-	</event>
-	<event id="12674" activityId="2120" session="0" repetition="1" name="Communication technique" endHour="15:30" startHour="14:00" date="05/02/2024" absoluteSlot="3613" slot="13" day="0" week="24" additionalResources="0" duration="3" info="" note="" color="217,0,217" isLockPosition="false" oldDuration="3" oldSlot="7" oldDay="0" oldWeek="26" lastUpdate="07/19/2023 08:49" creation="07/19/2023 08:33" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
-		<resources>
-			<resource fromWorkflow="false" nodeId="21159" nodeOrId="-1" quantity="1" category="trainee" name="INFO1-TD1" id="59"/>
-			<resource fromWorkflow="false" nodeId="20635" nodeOrId="-1" quantity="1" category="instructor" name="DE SAUZA GUILLAUME" id="2834"/>
-			<resource fromWorkflow="false" nodeId="57607" nodeOrId="-1" quantity="1" category="category5" name="R2.13 Communication technique" id="1037"/>
-			<resource fromWorkflow="false" nodeId="38065" nodeOrId="38026" quantity="1" category="classroom" name="B121" id="81"/>
-		</resources>
-		<additional/>
-	</event>
-	<event id="12630" activityId="1772" session="0" repetition="1" name="Anglais" endHour="11:00" startHour="09:30" date="05/02/2024" absoluteSlot="3604" slot="4" day="0" week="24" additionalResources="0" duration="3" info="" note="" color="255,51,153" isLockPosition="false" oldDuration="3" oldSlot="4" oldDay="4" oldWeek="24" lastUpdate="01/26/2024 08:34" creation="07/19/2023 08:33" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
-		<resources>
-			<resource fromWorkflow="false" nodeId="21133" nodeOrId="-1" quantity="1" category="trainee" name="INFO1-TD1" id="59"/>
-			<resource fromWorkflow="false" nodeId="20623" nodeOrId="-1" quantity="1" category="instructor" name="METGE CECILE" id="4990"/>
-			<resource fromWorkflow="false" nodeId="57598" nodeOrId="-1" quantity="1" category="category5" name="R2.12 Anglais" id="721"/>
-			<resource fromWorkflow="false" nodeId="38004" nodeOrId="37967" quantity="1" category="classroom" name="B118" id="22"/>
-		</resources>
-		<additional/>
-	</event>
-</events>`;
+let resourcesMap = {};
+let weekMap = {};
 
-const scheduleDataNoLesson = `<?xml version="1.0" encoding="UTF-8"?>
-<events>
-</events>`;
+window.addEventListener("load", async () => {
+  // Load Lottie file
+  loadLottie();
 
-const scheduleDataDoubleResource = `<?xml version="1.0" encoding="UTF-8"?>
-<events>
-	<event id="12866" activityId="717" session="0" repetition="0" name="DÃ©veloppement orientÃ© objet" endHour="11:00" startHour="09:30" date="06/02/2024" absoluteSlot="3629" slot="4" day="1" week="24" additionalResources="0" duration="3" info="" note="" color="0,0,255" isLockPosition="false" oldDuration="3" oldSlot="13" oldDay="1" oldWeek="23" lastUpdate="07/18/2023 11:53" creation="07/18/2023 07:07" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
-		<resources>
-			<resource fromWorkflow="false" nodeId="20714" nodeOrId="-1" quantity="1" category="trainee" name="INFO1-TD2-TP2D" id="72"/>
-			<resource fromWorkflow="false" nodeId="20384" nodeOrId="-1" quantity="1" category="instructor" name="OCCELLO MICHEL" id="5294"/>
-			<resource fromWorkflow="false" nodeId="57469" nodeOrId="-1" quantity="1" category="category5" name="R2.01 DÃ©veloppement orientÃ© objets" id="1534"/>
-			<resource fromWorkflow="false" nodeId="14243" nodeOrId="13841" quantity="1" category="classroom" name="B101" id="58"/>
-		</resources>
-		<additional/>
-	</event>
-	<event id="12871" activityId="710" session="0" repetition="0" name="DÃ©veloppement orientÃ© objet" endHour="12:30" startHour="11:00" date="06/02/2024" absoluteSlot="3632" slot="7" day="1" week="24" additionalResources="0" duration="3" info="" note="" color="0,0,255" isLockPosition="false" oldDuration="3" oldSlot="16" oldDay="1" oldWeek="23" lastUpdate="07/18/2023 11:53" creation="07/18/2023 07:07" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
-		<resources>
-			<resource fromWorkflow="false" nodeId="7370" nodeOrId="-1" quantity="1" category="trainee" name="INFO1-TD2-TP2C" id="70"/>
-			<resource fromWorkflow="false" nodeId="20382" nodeOrId="-1" quantity="1" category="instructor" name="OCCELLO MICHEL" id="5294"/>
-			<resource fromWorkflow="false" nodeId="57468" nodeOrId="-1" quantity="1" category="category5" name="R2.01 DÃ©veloppement orientÃ© objets" id="1534"/>
-			<resource fromWorkflow="false" nodeId="14291" nodeOrId="14290" quantity="1" category="classroom" name="B102" id="60"/>
-		</resources>
-		<additional/>
-	</event>
-	<event id="13256" activityId="7224" session="0" repetition="3" name="MÃ©thodes d&apos;optimisation" endHour="17:00" startHour="15:30" date="06/02/2024" absoluteSlot="3641" slot="16" day="1" week="24" additionalResources="0" duration="3" info="" note="" color="153,51,255" isLockPosition="false" oldDuration="3" oldSlot="18" oldDay="1" oldWeek="24" lastUpdate="09/19/2023 09:53" creation="07/19/2023 08:33" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
-		<resources>
-			<resource fromWorkflow="false" nodeId="27866" nodeOrId="-1" quantity="1" category="trainee" name="INFO2-TD2-TP2J" id="197"/>
-			<resource fromWorkflow="false" nodeId="27851" nodeOrId="-1" quantity="1" category="instructor" name="CHARENSOL SYLVAIN" id="2404"/>
-			<resource fromWorkflow="false" nodeId="62961" nodeOrId="-1" quantity="1" category="category5" name="R4.04 : MÃ©thodes d&apos;optimisation" id="4375"/>
-			<resource fromWorkflow="false" nodeId="27855" nodeOrId="27852" quantity="1" category="classroom" name="B122" id="63"/>
-		</resources>
-		<additional/>
-	</event>
-	<event id="12877" activityId="1522" session="0" repetition="1" name="Outils numÃ©riques pour les statistiques descriptives" endHour="11:00" startHour="09:30" date="06/02/2024" absoluteSlot="3629" slot="4" day="1" week="24" additionalResources="0" duration="3" info="" note="" color="124,0,166" isLockPosition="false" oldDuration="3" oldSlot="13" oldDay="1" oldWeek="23" lastUpdate="07/19/2023 09:53" creation="07/19/2023 08:33" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
-		<resources>
-			<resource fromWorkflow="false" nodeId="20973" nodeOrId="-1" quantity="1" category="trainee" name="INFO1-TD1-TP1A" id="62"/>
-			<resource fromWorkflow="false" nodeId="20580" nodeOrId="-1" quantity="1" category="instructor" name="CHARENSOL SYLVAIN" id="2404"/>
-			<resource fromWorkflow="false" nodeId="57567" nodeOrId="-1" quantity="1" category="category5" name="R2.08 Outils numÃ©riques pour les statistiques descriptives" id="708"/>
-			<resource fromWorkflow="false" nodeId="26792" nodeOrId="26790" quantity="1" category="classroom" name="B122" id="63"/>
-		</resources>
-		<additional/>
-	</event>
-	<event id="12593" activityId="10069" session="0" repetition="1" name="DÃ©veloppement d&apos;applications avec IHM" endHour="18:30" startHour="17:00" date="06/02/2024" absoluteSlot="3644" slot="19" day="1" week="24" additionalResources="0" duration="3" info="" note="" color="255,51,51" isLockPosition="false" oldDuration="3" oldSlot="19" oldDay="1" oldWeek="23" lastUpdate="11/06/2023 16:39" creation="07/18/2023 07:07" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
-		<resources>
-			<resource fromWorkflow="false" nodeId="58442" nodeOrId="-1" quantity="1" category="trainee" name="INFO1-TD2-TP2D" id="72"/>
-			<resource fromWorkflow="false" nodeId="35714" nodeOrId="-1" quantity="1" category="instructor" name="GAUCHE SYLVAIN" id="1555"/>
-			<resource fromWorkflow="false" nodeId="58430" nodeOrId="-1" quantity="1" category="category5" name="R2.02 DÃ©veloppement d&apos;applications avec IHM" id="623"/>
-			<resource fromWorkflow="false" nodeId="58432" nodeOrId="58431" quantity="1" category="classroom" name="B122" id="63"/>
-		</resources>
-		<additional/>
-	</event>
-	<event id="12497" activityId="1705" session="0" repetition="0" name="Introduction Ã  la GSI" endHour="11:00" startHour="09:30" date="06/02/2024" absoluteSlot="3629" slot="4" day="1" week="24" additionalResources="0" duration="3" info="" note="" color="153,255,51" isLockPosition="false" oldDuration="3" oldSlot="7" oldDay="1" oldWeek="23" lastUpdate="07/19/2023 08:43" creation="07/19/2023 08:33" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
-		<resources>
-			<resource fromWorkflow="false" nodeId="21104" nodeOrId="-1" quantity="1" category="trainee" name="INFO1-TD2-TP2C" id="70"/>
-			<resource fromWorkflow="false" nodeId="20616" nodeOrId="-1" quantity="1" category="instructor" name="CONSTANT BLANDINE" id="2611"/>
-			<resource fromWorkflow="false" nodeId="62731" nodeOrId="-1" quantity="1" category="category5" name="R2.10 Introduction Ã  la gestion des systÃ¨mes..." id="4380"/>
-			<resource fromWorkflow="false" nodeId="19043" nodeOrId="18830" quantity="1" category="classroom" name="B102" id="60"/>
-		</resources>
-		<additional/>
-	</event>
-	<event id="20375" activityId="5413" session="0" repetition="0" name="rattrapage BUT 2 FI" endHour="17:30" startHour="13:30" date="06/02/2024" absoluteSlot="3637" slot="12" day="1" week="24" additionalResources="0" duration="8" info="" note="" color="255,255,255" isLockPosition="false" oldDuration="-1" oldSlot="-1" oldDay="-1" oldWeek="-1" lastUpdate="01/29/2024 17:22" creation="01/29/2024 17:21" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
-		<resources>
-			<resource fromWorkflow="false" nodeId="33143" nodeOrId="-1" quantity="1" category="classroom" name="B011" id="167"/>
-			<resource fromWorkflow="false" nodeId="33151" nodeOrId="-1" quantity="1" category="classroom" name="B103" id="61"/>
-		</resources>
-		<additional/>
-	</event>
-	<event id="13274" activityId="12903" session="0" repetition="3" name="SAÃ‰-S4.A.01 - 2J" endHour="12:30" startHour="11:00" date="06/02/2024" absoluteSlot="3632" slot="7" day="1" week="24" additionalResources="0" duration="3" info="" note="" color="0,217,108" isLockPosition="false" oldDuration="3" oldSlot="13" oldDay="0" oldWeek="24" lastUpdate="12/04/2023 09:50" creation="07/19/2023 08:33" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
-		<resources>
-			<resource fromWorkflow="false" nodeId="60370" nodeOrId="-1" quantity="1" category="trainee" name="INFO2-TD2-TP2J" id="197"/>
-			<resource fromWorkflow="false" nodeId="63035" nodeOrId="-1" quantity="1" category="category5" name="S4.A.01 : DÃ©veloppement d&apos;une application complexe" id="4341"/>
-			<resource fromWorkflow="false" nodeId="60384" nodeOrId="60374" quantity="1" category="classroom" name="A105" id="161"/>
-			<resource fromWorkflow="false" nodeId="60385" nodeOrId="60374" quantity="1" category="classroom" name="B103" id="61"/>
-		</resources>
-		<additional/>
-	</event>
-	<event id="12580" activityId="1655" session="0" repetition="0" name="Introduction Ã  la GSI" endHour="12:30" startHour="11:00" date="06/02/2024" absoluteSlot="3632" slot="7" day="1" week="24" additionalResources="0" duration="3" info="" note="" color="153,255,51" isLockPosition="false" oldDuration="3" oldSlot="16" oldDay="0" oldWeek="23" lastUpdate="07/19/2023 08:43" creation="07/19/2023 08:33" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
-		<resources>
-			<resource fromWorkflow="false" nodeId="21105" nodeOrId="-1" quantity="1" category="trainee" name="INFO1-TD2-TP2D" id="72"/>
-			<resource fromWorkflow="false" nodeId="20617" nodeOrId="-1" quantity="1" category="instructor" name="CONSTANT BLANDINE" id="2611"/>
-			<resource fromWorkflow="false" nodeId="62739" nodeOrId="-1" quantity="1" category="category5" name="R2.10 Introduction Ã  la gestion des systÃ¨mes..." id="4380"/>
-			<resource fromWorkflow="false" nodeId="18829" nodeOrId="18826" quantity="1" category="classroom" name="B101" id="58"/>
-		</resources>
-		<additional/>
-	</event>
-	<event id="13271" activityId="12901" session="0" repetition="3" name="SAÃ‰-S4.A.01 - 1G" endHour="17:00" startHour="15:30" date="06/02/2024" absoluteSlot="3641" slot="16" day="1" week="24" additionalResources="0" duration="3" info="" note="" color="0,217,108" isLockPosition="false" oldDuration="3" oldSlot="22" oldDay="1" oldWeek="24" lastUpdate="01/17/2024 08:50" creation="07/19/2023 08:33" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
-		<resources>
-			<resource fromWorkflow="false" nodeId="60367" nodeOrId="-1" quantity="1" category="trainee" name="INFO2-TD1-TP1G" id="90"/>
-			<resource fromWorkflow="false" nodeId="63032" nodeOrId="-1" quantity="1" category="category5" name="S4.A.01 : DÃ©veloppement d&apos;une application complexe" id="4341"/>
-			<resource fromWorkflow="false" nodeId="60375" nodeOrId="60371" quantity="1" category="classroom" name="A105" id="161"/>
-			<resource fromWorkflow="false" nodeId="60379" nodeOrId="60371" quantity="1" category="classroom" name="B102" id="60"/>
-		</resources>
-		<additional/>
-	</event>
-	<event id="12931" activityId="1253" session="0" repetition="1" name="QualitÃ© de dÃ©veloppement outils" endHour="11:00" startHour="09:30" date="06/02/2024" absoluteSlot="3629" slot="4" day="1" week="24" additionalResources="0" duration="3" info="" note="" color="0,255,255" isLockPosition="false" oldDuration="3" oldSlot="1" oldDay="3" oldWeek="24" lastUpdate="01/08/2024 15:38" creation="07/18/2023 15:09" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
-		<resources>
-			<resource fromWorkflow="false" nodeId="20783" nodeOrId="-1" quantity="1" category="trainee" name="INFO1-TD1-TP1B" id="67"/>
-			<resource fromWorkflow="false" nodeId="20463" nodeOrId="-1" quantity="1" category="instructor" name="JEAN SEBASTIEN" id="4191"/>
-			<resource fromWorkflow="false" nodeId="57513" nodeOrId="-1" quantity="1" category="category5" name="R2.03 QualitÃ© de dÃ©veloppement" id="574"/>
-			<resource fromWorkflow="false" nodeId="17257" nodeOrId="17203" quantity="1" category="classroom" name="B103" id="61"/>
-		</resources>
-		<additional/>
-	</event>
-</events>`;
+  // Set the mode
+  setMode(localStorage.getItem("mode"));
 
-let touchStartX = 0;
-let touchEndX = 0;
+  // Allow to switch the mode
+  switchMode();
 
-// Fonction appelée lorsqu'un utilisateur commence à toucher l'écran
-function handleTouchStart(event) {
-  console.log("touchstart");
-  touchStartX = event.touches[0].clientX;
+  // Allow to open and close the sidebar
+  sidebar();
+
+  // Set the correct display (week/day)
+  setWeekDayDisplay();
+
+  // Display the schedule grid
+  displayScheduleGrid();
+
+  // Make the datalist for resources
+  loader(true);
+  await makeDatalist();
+
+  // Get week map
+  await getCalendar();
+
+  // Restore resource value, set the next lesson date and display next lessons
+  await restoreResourceValue();
+  loader(false);
+
+  loadEventListeners();
+});
+
+function loadLottie() {
+  let animation = lottie.loadAnimation({
+    container: document.getElementById("loaderImage"),
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: "/assets/loader.json",
+  });
 }
 
-// Fonction appelée lorsqu'un utilisateur arrête de toucher l'écran
-function handleTouchEnd(event) {
-  touchEndX = event.changedTouches[0].clientX;
-  handleSwipe();
+function getOppositeMode(mode) {
+  if (mode === "dark") {
+    return "light";
+  }
+  return "dark";
 }
 
-// Fonction pour déterminer la direction du swipe et appeler la fonction appropriée
-function handleSwipe() {
-  const swipeDistance = touchEndX - touchStartX;
-  const threshold = 100; // Seuil pour considérer un swipe comme valide
-
-  const selectedDate = new Date(document.getElementById("dateSelector").value);
-
-  if (swipeDistance > threshold) {
-    // Swipe vers la droite
-    if (weekDisplay) {
-      const newDate = selectedDate;
-      newDate.setDate(newDate.getDate() - 7);
-      document.getElementById("dateSelector").valueAsDate = newDate;
-      const selectedResource =
-        document.getElementById("resourceSelector").value;
-      launchDisplay(newDate, selectedResource);
-    } else {
-      const newDate = previousDate(selectedDate);
-      document.getElementById("dateSelector").valueAsDate = newDate;
-      const selectedResource =
-        document.getElementById("resourceSelector").value;
-      launchDisplay(newDate, selectedResource);
-    }
-  } else if (swipeDistance < -threshold) {
-    // Swipe vers la gauche
-    if (weekDisplay) {
-      const newDate = selectedDate;
-      newDate.setDate(newDate.getDate() + 7);
-      document.getElementById("dateSelector").valueAsDate = newDate;
-      const selectedResource =
-        document.getElementById("resourceSelector").value;
-      launchDisplay(newDate, selectedResource);
-    } else {
-      const newDate = nextDate(selectedDate);
-      document.getElementById("dateSelector").valueAsDate = newDate;
-      const selectedResource =
-        document.getElementById("resourceSelector").value;
-      launchDisplay(newDate, selectedResource);
-    }
+function setMode(mode) {
+  // If mode is null, set it to default browser theme
+  if (mode === null) {
+    if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+      mode = "dark";
+    else mode = "light";
   }
-}
 
-function getSavedView() {
-  if (localStorage.getItem("weekDisplay") === "true") {
-    return true;
-  } else {
-    localStorage.setItem("weekDisplay", false);
-    return false;
-  }
-}
+  const oppositeMode = getOppositeMode(mode);
 
-let weekDisplay = getSavedView();
+  // Save the mode in local storage
+  localStorage.setItem("mode", mode);
 
-function datalistCondition() {
-  const title = document.title;
-  if (title === "Emploi du temps" || title === "EDT - Groups") {
-    return "trainee";
-  }
-  if (title === "EDT - Classrooms") {
-    return "classroom";
-  }
-  if (title === "EDT - Teachers") {
-    return "instructor";
-  }
-  if (title === "EDT - Resources") {
-    return "category5";
-  }
-}
+  // Set/Change the mode on global elements
+  modeElements = document.querySelectorAll(".mode");
+  modeElements.forEach((element) => {
+    element.classList.remove(`${oppositeMode}Mode`);
+    element.classList.add(`${mode}Mode`);
+  });
 
-async function makeDatalist() {
-  const request = await fetch(
-    `${BASE_URL}?function=getResources&tree=true&detail=3&projectId=${PORJECT_ID}&data=${PROJECT_DATA}`
+  // Set/Change the mode on input elements
+  inputElements = document.querySelectorAll(".inputMode");
+  inputElements.forEach((element) => {
+    element.classList.remove(`${oppositeMode}ModeInput`);
+    element.classList.add(`${mode}ModeInput`);
+  });
+
+  // Set/Change the mode on button elements
+  buttonElements = document.querySelectorAll(".buttonMode");
+  buttonElements.forEach((element) => {
+    element.classList.remove(`${oppositeMode}ModeButton`);
+    element.classList.add(`${mode}ModeButton`);
+  });
+
+  // Display right elements to match the mode
+  modeDisplayElements = document.querySelectorAll(`.${mode}ModeDisplay`);
+  modeDisplayElements.forEach((element) => {
+    element.style.display = "block";
+  });
+
+  // Hide wrong elements that don't match the mode
+  oppositeModeDisplayElements = document.querySelectorAll(
+    `.${oppositeMode}ModeDisplay`
+  );
+  oppositeModeDisplayElements.forEach((element) => {
+    element.style.display = "none";
+  });
+
+  // Set/Change the mode on mode switch buttons
+  switchModeButton = document.querySelector("#switchDarkLightMode");
+  switchModeButton.setAttribute(
+    "src",
+    `/assets/switchDarkLightMode/${mode}Mode.svg`
   );
 
-  if (!request.ok) {
-    throw new Error(`Erreur HTTP ! Statut : ${request.status}`);
-  } else {
-    console.log("Requête effectuée avec succès !");
-  }
-  const resourceTreeXml = await request.text();
-  //   const resourceTreeXml = xmlDataResourcesTree;
-  const parser = new DOMParser();
-  const xmlDoc = parser.parseFromString(resourceTreeXml, "text/xml");
+  switchModeSidebar = document.querySelector(
+    "#sidebarSwitchDarkLightMode > img"
+  );
+  switchModeSidebar.setAttribute(
+    "src",
+    `/assets/switchDarkLightMode/${mode}Mode.svg`
+  );
 
-  let leafs = Array.from(xmlDoc.getElementsByTagName("leaf"));
-  console.log(leafs.length);
+  // Set the mode on the open sidebar button
+  openSidebarButton = document.querySelector("#openSidebar");
+  const oppositeModeWithUpperCase =
+    oppositeMode.charAt(0).toUpperCase() + oppositeMode.slice(1);
+  openSidebarButton.setAttribute(
+    "src",
+    `/assets/icons/openSidebar${oppositeModeWithUpperCase}.svg`
+  );
 
-  leafs = leafs.filter((leaf) => {
-    return (
-      leaf.getAttribute("category") === "trainee" &&
-      leaf.getAttribute("path").startsWith("CAMPUS Valence.VALENCE-IUT")
+  // Set the mode on the close sidebar button
+  closeSidebarButton = document.querySelector("#closeSidebar");
+  closeSidebarButton.setAttribute(
+    "src",
+    `/assets/icons/closeSidebar${oppositeModeWithUpperCase}.svg`
+  );
+}
+
+function switchMode() {
+  switchModeButton = document.querySelector("#switchDarkLightMode");
+  switchModeSidebarButton = document.querySelector(
+    "#sidebarSwitchDarkLightMode"
+  );
+
+  // Set the pressed image on mouse down
+  switchModeButton.addEventListener("mousedown", () => {
+    switchModeButton.setAttribute(
+      "src",
+      `/assets/switchDarkLightMode/${localStorage.getItem(
+        "mode"
+      )}ModePressed.svg`
     );
   });
-  console.log(leafs.length);
-  leafs.sort((a, b) =>
-    a.getAttribute("name").localeCompare(b.getAttribute("name"))
-  );
 
-  const datalist = document.getElementById("resourcesList");
-  for (let i = 0; i < leafs.length; i++) {
-    if (
-      document.title === "EDT - All" ||
-      leafs[i].getAttribute("category") === datalistCondition()
-    ) {
-      const option = document.createElement("option");
-      option.value = leafs[i].getAttribute("id");
-      option.textContent = leafs[i].getAttribute("name");
-      datalist.appendChild(option);
+  switchModeSidebarButton.addEventListener("mousedown", () => {
+    document
+      .querySelector("#sidebarSwitchDarkLightMode > img")
+      .setAttribute(
+        "src",
+        `/assets/switchDarkLightMode/${localStorage.getItem(
+          "mode"
+        )}ModePressed.svg`
+      );
+  });
+
+  // Switch the mode on click
+  switchModeButton.addEventListener("click", () => {
+    setMode(getOppositeMode(localStorage.getItem("mode")));
+    refreshData();
+  });
+
+  switchModeSidebarButton.addEventListener("click", () => {
+    setMode(getOppositeMode(localStorage.getItem("mode")));
+    refreshData();
+  });
+}
+
+function dragSidebarToClose() {
+  let startX = 0;
+  let currentX = 0;
+
+  const sidebar = document.querySelector("#sidebar");
+
+  sidebar.addEventListener("touchstart", (event) => {
+    startX = event.touches[0].clientX;
+    sidebar.style.transition = "none";
+  });
+
+  sidebar.addEventListener("touchmove", (event) => {
+    currentX = event.touches[0].clientX;
+    const translateX = Math.max(0, currentX - startX);
+    sidebar.style.transform = `translateX(${translateX}px)`;
+  });
+
+  sidebar.addEventListener("touchend", () => {
+    const translateX = currentX - startX;
+    sidebar.style.transition = "transform 0.3s ease-in-out";
+
+    if (translateX > 100) {
+      closeSidebar();
+    } else {
+      sidebar.style.transform = "translateX(0)";
     }
+  });
+}
+
+function openSidebar() {
+  const sidebar = document.querySelector("#sidebar");
+  const backgroundBlur = document.querySelector("#backgroundBlur");
+
+  sidebar.classList.add("sidebarActive");
+  sidebar.style.transform = "translateX(0)";
+  backgroundBlur.classList.add("backgroundBlurActive");
+
+  dragSidebarToClose();
+}
+
+function closeSidebar() {
+  const sidebar = document.querySelector("#sidebar");
+  const backgroundBlur = document.querySelector("#backgroundBlur");
+
+  sidebar.classList.remove("sidebarActive");
+  sidebar.style.transform = "translateX(100%)";
+  backgroundBlur.classList.remove("backgroundBlurActive");
+}
+
+function sidebar() {
+  openSidebarButton = document.querySelector("#openSidebar");
+  backgroundBlur = document.querySelector("#backgroundBlur");
+  closeSidebarButton = document.querySelector("#closeSidebar");
+
+  // To open the sidebar
+  openSidebarButton.addEventListener("click", openSidebar);
+
+  // To close the sidebar
+  closeSidebarButton.addEventListener("click", closeSidebar);
+  backgroundBlur.addEventListener("click", closeSidebar);
+}
+
+function setWeekDayDisplay() {
+  if (localStorage.getItem("weekDisplay") === null) {
+    if (window.innerWidth > 800) {
+      localStorage.setItem("weekDisplay", true);
+    } else {
+      localStorage.setItem("weekDisplay", false);
+    }
+  }
+  const weekDayDisplaySidebarButton = document.querySelector(
+    "#weekDayDisplaySidebarButton > span"
+  );
+  const weekDayDisplayButton = document.querySelector("#weekDayDisplayButton");
+
+  if (localStorage.getItem("weekDisplay") == "true") {
+    weekDayDisplaySidebarButton.textContent = "Afficher un seul jour";
+    weekDayDisplayButton.textContent = "Afficher un jour";
+  } else {
+    weekDayDisplaySidebarButton.textContent = "Afficher la semaine complète";
+    weekDayDisplayButton.textContent = "Afficher la semaine";
   }
 }
 
-async function endHourCurrentDay(date, resource) {
-  const dayScheduleXml = await xmlRequest(date, resource);
-  // const dayScheduleXml = await scheduleData;
+async function getCalendar() {
+  let calendar;
+
+  if (LOCALHOST) {
+    calendar = calendarExample;
+  } else {
+    const request = await fetch(
+      `${BASE_URL}?function=getCalendar&projectId=${PORJECT_ID}&data=${PROJECT_DATA}`
+    );
+
+    if (!request.ok) {
+      console.error(
+        `Une erreur est survenue lors du chargement de la page. Merci de prévenir le développeur à l'adresse ${DEV_MAIL} en indiquant le code erreur ER02-${request.status}.`
+      );
+      displayError("ER02", request);
+      throw new Error(`HTTP error! Status: ${request.status}`);
+    }
+    calendar = await request.text();
+  }
+
   const parser = new DOMParser();
-  const xmlDoc = parser.parseFromString(dayScheduleXml, "text/xml");
-  const events = Array.from(xmlDoc.getElementsByTagName("event"));
-  if (events.length != 0) {
-    let endHourDay = events[0].getAttribute("endHour");
-    for (let i = 1; i < events.length; i++) {
-      if (events[i].getAttribute("endHour") > endHourDay) {
-        endHourDay = events[i].getAttribute("endHour");
-      }
-    }
-    return endHourDay;
-  } else {
-    return "23:59";
+  const xmlDoc = parser.parseFromString(calendar, "text/xml");
+
+  const weeks = xmlDoc.getElementsByTagName("week");
+
+  for (let i = 0; i < weeks.length; i++) {
+    weekMap[weeks[i].getAttribute("date")] = weeks[i].getAttribute("id") - 1;
   }
 }
 
-async function nextDay() {
-  const currentDate = new Date();
-  const endHour = await endHourCurrentDay(
-    currentDate,
-    localStorage.getItem("selectedResource")
-  );
-  const endHours = `${endHour[0]}${endHour[1]}`;
-  const endMinutes = `${endHour[3]}${endHour[4]}`;
-  if (endHours < currentDate.getHours()) {
-    return true;
-  } else if (
-    endHours == currentDate.getHours() &&
-    endMinutes < currentDate.getMinutes()
-  ) {
-    return true;
-  } else {
-    return false;
-  }
-}
+function displayScheduleGrid() {
+  const days = document.querySelectorAll(".day");
+  days.forEach((day) => {
+    day.remove();
+  });
 
-function scheduleGrid() {
-  const displayDiv = document.getElementById("display");
-  const timeline = document.createElement("div");
-  timeline.setAttribute("id", "timeline");
-  for (let i = 7; i <= 19; i++) {
+  const displayDiv = document.querySelector("#display");
+  const scheduleGrid = document.createElement("div");
+  scheduleGrid.id = "scheduleGrid";
+  const daysDiv = document.querySelector("#days");
+
+  for (let i = 7; i <= 19; i++)
     for (let j = 0; j <= 1; j++) {
-      if (i != 7 || j != 0) {
-        if (i != 19 || j != 1) {
-          const halfHourDiv = document.createElement("div");
-          halfHourDiv.classList.add("halfHour");
-          timeline.appendChild(halfHourDiv);
-          const hourDiv = document.createElement("div");
-          hourDiv.classList.add("hour");
-          hourDiv.textContent = i + "h" + (j === 0 ? "00" : "30");
-          halfHourDiv.appendChild(hourDiv);
-          for (let k = 1; weekDisplay ? k <= 5 : k <= 1; k++) {
-            const content = document.createElement("div");
-            const idHour = `${i < 10 ? `0${i}` : i}_${
-              j === 0 ? "00" : "30"
-            }_${k}`;
-            content.classList.add("content");
-            content.setAttribute("id", idHour);
-            halfHourDiv.appendChild(content);
+      if (!(i == 7 && j == 0) && !(i == 19 && j == 1)) {
+        const halfHourDiv = document.createElement("div");
+        halfHourDiv.classList.add("halfHour");
+        scheduleGrid.appendChild(halfHourDiv);
+
+        const hourDiv = document.createElement("div");
+        hourDiv.classList.add("hour");
+        hourDiv.textContent = `${i < 10 ? `0${i}` : i}h${
+          j === 0 ? "00" : "30"
+        }`;
+        halfHourDiv.appendChild(hourDiv);
+
+        const weekDisplay = localStorage.getItem("weekDisplay");
+        for (let k = 1; weekDisplay == "true" ? k <= 5 : k <= 1; k++) {
+          const content = document.createElement("div");
+          const idHour = `${i < 10 ? `0${i}` : i}_${
+            j === 0 ? "00" : "30"
+          }_${k}`;
+          content.classList.add("content");
+          content.classList.add("mode");
+          content.classList.add(`${localStorage.getItem("mode")}Mode`);
+          content.id = idHour;
+          halfHourDiv.appendChild(content);
+
+          if (i === 7 && j === 1) {
+            const dayDiv = document.createElement("div");
+            dayDiv.classList.add("day");
+            dayDiv.textContent = "";
+            daysDiv.appendChild(dayDiv);
           }
         }
       }
     }
-  }
-  displayDiv.appendChild(timeline);
+  displayDiv.appendChild(scheduleGrid);
 }
 
-function addEvent(event, day) {
-  const startHour = `${event.getAttribute("startHour")[0]}${
-    event.getAttribute("startHour")[1]
-  }_${event.getAttribute("startHour")[3]}${
-    event.getAttribute("startHour")[4]
-  }_${day}`;
+async function makeDatalist() {
+  let resourcesTree;
+  if (LOCALHOST) {
+    resourcesTree = xmlResourcesTreeExample;
+  } else {
+    const request = await fetch(
+      `${BASE_URL}?function=getResources&tree=true&detail=3&projectId=${PORJECT_ID}&data=${PROJECT_DATA}`
+    );
 
-  const contentStartEvent = document.getElementById(startHour);
-  const divEvent = document.createElement("div");
-  divEvent.classList.add("event");
+    if (!request.ok) {
+      console.error(
+        `Une erreur est survenue lors du chargement de la page. Merci de prévenir le développeur à l'adresse ${DEV_MAIL} en indiquant le code erreur ER01-${request.status}.`
+      );
+      displayError("ER01", request);
+      throw new Error(`HTTP error! Status: ${request.status}`);
+    }
+
+    resourcesTree = await request.text();
+  }
+
+  const parser = new DOMParser();
+  const xmlDoc = parser.parseFromString(resourcesTree, "text/xml");
+
+  let leafs = Array.from(xmlDoc.getElementsByTagName("leaf"));
+
+  leafs = leafs.filter((leaf) => {
+    return (
+      leaf.getAttribute("category") === getRightCategory() &&
+      (leaf.getAttribute("path").startsWith("CAMPUS Valence.VALENCE-IUT") ||
+        leaf.getAttribute("path").startsWith("CAMPUS VALENCE.VALENCE-IUT") ||
+        leaf.getAttribute("path").startsWith("IUT VALENCE")) &&
+      !leaf.getAttribute("path").includes("temporaire")
+    );
+  });
+
+  leafs.sort((a, b) => {
+    return a.getAttribute("name").localeCompare(b.getAttribute("name"));
+  });
+
+  const datalist = document.querySelector("#resourcesList");
+  leafs.forEach((leaf) => {
+    resourcesMap[leaf.getAttribute("name")] = parseInt(leaf.getAttribute("id"));
+    const option = document.createElement("option");
+    option.value = leaf.getAttribute("name");
+    datalist.appendChild(option);
+  });
+}
+
+function getRightCategory() {
+  if (document.title.includes("Étudiants")) {
+    return "trainee";
+  } else if (document.title.includes("Enseignants")) {
+    return "instructor";
+  } else if (document.title.includes("Salles")) {
+    return "classroom";
+  }
+  return "";
+}
+
+async function restoreResourceValue() {
+  const resourceInput = document.querySelector("#resourceSelector");
+  const favoriteResource = localStorage.getItem("favoriteResource");
+  if (favoriteResource !== null) {
+    resourceInput.value = getResourceName(favoriteResource);
+    localStorage.setItem("lastResource", favoriteResource);
+  } else {
+    const lastResource = localStorage.getItem("lastResource");
+    if (lastResource !== null) {
+      resourceInput.value = getResourceName(lastResource);
+    }
+  }
+
+  await setNextLessonsDate();
+}
+
+function getResourceName(id) {
+  for (const resource in resourcesMap) {
+    if (resourcesMap[resource] == id) {
+      return resource;
+    }
+  }
+  return null;
+}
+
+async function setNextLessonsDate() {
+  const dateSelector = document.querySelector("#dateSelector");
+  let currentDate = new Date();
+  if (localStorage.getItem("lastResource") !== null) {
+    while (!(await haveLessons(currentDate))) {
+      currentDate.setDate(currentDate.getDate() + 1);
+    }
+  }
+  dateSelector.valueAsDate = currentDate;
+
+  setDays();
+
+  await displayLessons(currentDate, localStorage.getItem("lastResource"));
+}
+
+async function haveLessons(date) {
+  let result;
+  if (LOCALHOST) {
+    result = dayExample;
+  } else {
+    const request = await fetch(
+      `${BASE_URL}?function=getEvents&resources=${localStorage.getItem(
+        "lastResource"
+      )}&projectId=${PORJECT_ID}&data=${PROJECT_DATA}&detail=8&date=${convertDate(
+        date
+      )}`
+    );
+
+    if (!request.ok) {
+      console.error(
+        `Une erreur est survenue lors du chargement de la page. Merci de prévenir le développeur à l'adresse ${DEV_MAIL} en indiquant le code erreur ER03-${request.status}.`
+      );
+      displayError("ER03", request);
+      throw new Error(`HTTP error! Status: ${request.status}`);
+    }
+
+    result = await request.text();
+  }
+  const parser = new DOMParser();
+  const xmlDoc = parser.parseFromString(result, "text/xml");
+
+  const events = xmlDoc.getElementsByTagName("event");
+  if (events.length === 0) {
+    return false;
+  } else if (sameDay(date, new Date())) {
+    let lastEndHour = events[0].getAttribute("endHour");
+    for (let i = 1; i < events.length; i++) {
+      if (events[i].getAttribute("endHour") > lastEndHour) {
+        lastEndHour = events[i].getAttribute("endHour");
+      }
+    }
+    if (lastEndHour.substring(0, 2) < date.getHours()) {
+      return false;
+    } else if (lastEndHour.substring(2, 4) < date.getMinutes()) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function sameDay(date1, date2) {
+  return (
+    date1.getFullYear() === date2.getFullYear() &&
+    date1.getMonth() === date2.getMonth() &&
+    date1.getDate() === date2.getDate()
+  );
+}
+
+function convertDate(date) {
+  if (typeof date === "number") {
+    date = new Date(date);
+  }
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+
+  return `${month < 10 ? `0${month}` : month}/${
+    day < 10 ? `0${day}` : day
+  }/${year}`;
+}
+
+function convertFrenchDate(date) {
+  if (typeof date === "number") {
+    date = new Date(date);
+  }
+  const day = date.getDate();
+  const month = date.getMonth() + 1;
+  const year = date.getFullYear();
+  return `${day < 10 ? `0${day}` : day}/${
+    month < 10 ? `0${month}` : month
+  }/${year}`;
+}
+
+async function displayLessons(date, resource) {
+  if (localStorage.getItem("weekDisplay") == "true") {
+    date.setDate(startWeekDate(date).getDate());
+  }
+
+  let frenchDate = convertFrenchDate(date);
+
+  if (localStorage.getItem("weekDisplay") == "true") {
+    let weekTree;
+    if (LOCALHOST) {
+      weekTree = weekExample;
+    } else {
+      const weekId = weekMap[frenchDate];
+      const request = await fetch(
+        `${BASE_URL}?function=getEvents&projectId=${PORJECT_ID}&data=${PROJECT_DATA}&weeks=${weekId}&resources=${resource}&detail=8`
+      );
+
+      if (!request.ok) {
+        console.error(
+          `Une erreur est survenue lors du chargement de la page. Merci de prévenir le développeur à l'adresse ${DEV_MAIL} en indiquant le code erreur ER04-${request.status}.`
+        );
+        displayError("ER04", request);
+        throw new Error(`HTTP error! Status: ${request.status}`);
+      }
+
+      weekTree = await request.text();
+    }
+
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(weekTree, "text/xml");
+
+    for (let i = 0; i < 5; i++) {
+      const newFrenchDate = convertFrenchDate(
+        i !== 0 ? date.setDate(date.getDate() + 1) : date
+      );
+      displayDay(xmlDoc, newFrenchDate, i + 1);
+    }
+  } else {
+    let dayTree;
+    if (LOCALHOST) {
+      dayTree = dayExample;
+    } else {
+      const request = await fetch(
+        `${BASE_URL}?function=getEvents&resources=${resource}&projectId=${PORJECT_ID}&data=${PROJECT_DATA}&detail=8&date=${convertDate(
+          date
+        )}`
+      );
+
+      if (!request.ok) {
+        console.error(
+          `Une erreur est survenue lors du chargement de la page. Merci de prévenir le développeur à l'adresse ${DEV_MAIL} en indiquant le code erreur ER05-${request.status}.`
+        );
+        displayError("ER05", request);
+        throw new Error(`HTTP error! Status: ${request.status}`);
+      }
+
+      dayTree = await request.text();
+    }
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(dayTree, "text/xml");
+
+    displayDay(xmlDoc, frenchDate);
+  }
+}
+
+function displayDay(xml, date, dayIndex = 1) {
+  let events = Array.from(xml.getElementsByTagName("event"));
+
+  events = events.filter((event) => {
+    return event.getAttribute("date") === date;
+  });
+
+  if (events.length === 0) {
+    displayBlankDay(dayIndex);
+  } else {
+    events.forEach((event) => {
+      displayEvent(event, dayIndex);
+    });
+  }
+}
+
+function displayEvent(event, dayIndex) {
+  const startHourId = `${event
+    .getAttribute("startHour")
+    .substring(0, 2)}_${event
+    .getAttribute("startHour")
+    .substring(3, 5)}_${dayIndex}`;
+
+  const contentStartEvent = document.getElementById(startHourId);
+  const eventDiv = document.createElement("div");
+  eventDiv.classList.add("event");
+
+  if (localStorage.getItem("weekDisplay") == "true") {
+    eventDiv.classList.add("weekEvent");
+  } else {
+    eventDiv.classList.add("dayEvent");
+  }
 
   const infos = event.getElementsByTagName("resource");
 
   const name = document.createElement("p");
   name.classList.add("name");
   name.textContent = event.getAttribute("name");
-  divEvent.appendChild(name);
+  eventDiv.appendChild(name);
 
-  const prof = document.createElement("p");
-  name.classList.add("prof");
-  const salle = document.createElement("p");
-  name.classList.add("salle");
-  const groupe = document.createElement("p");
-  name.classList.add("groupe");
-  const ressource = document.createElement("p");
-  name.classList.add("ressource");
+  const teacher = document.createElement("p");
+  name.classList.add("teacher");
+  const classroom = document.createElement("p");
+  name.classList.add("classroom");
+  const group = document.createElement("p");
+  name.classList.add("group");
+  const resource = document.createElement("p");
+  name.classList.add("resource");
 
   for (let i = 0; i < infos.length; i++) {
-    if (infos[i].getAttribute("category") == "trainee") {
-      groupe.textContent = `${
-        groupe.textContent.length === 0
+    if (infos[i].getAttribute("category") === "trainee") {
+      group.textContent = `${
+        group.textContent.length === 0
           ? infos[i].getAttribute("name")
-          : `${groupe.textContent}, ${infos[i].getAttribute("name")}`
+          : `${group.textContent}, ${infos[i].getAttribute("name")}`
       }`;
-    } else if (infos[i].getAttribute("category") == "instructor") {
-      prof.textContent = `${
-        prof.textContent.length === 0
+    } else if (infos[i].getAttribute("category") === "instructor") {
+      teacher.textContent = `${
+        teacher.textContent.length === 0
           ? infos[i].getAttribute("name")
-          : `${prof.textContent}, ${infos[i].getAttribute("name")}`
+          : `${teacher.textContent}, ${infos[i].getAttribute("name")}`
       }`;
-    } else if (infos[i].getAttribute("category") == "category5") {
-      ressource.textContent = `${
-        ressource.textContent.length === 0
+    } else if (infos[i].getAttribute("category") === "category5") {
+      resource.textContent = `${
+        resource.textContent.length === 0
           ? infos[i].getAttribute("name")
-          : `${ressource.textContent}, ${infos[i].getAttribute("name")}`
+          : `${resource.textContent}, ${infos[i].getAttribute("name")}`
       }`;
-    } else if (infos[i].getAttribute("category") == "classroom") {
-      salle.textContent = `${
-        salle.textContent.length === 0
+    } else if (infos[i].getAttribute("category") === "classroom") {
+      classroom.textContent = `${
+        classroom.textContent.length === 0
           ? infos[i].getAttribute("name")
-          : `${salle.textContent}, ${infos[i].getAttribute("name")}`
+          : `${classroom.textContent}, ${infos[i].getAttribute("name")}`
       }`;
     }
   }
-  if (prof.textContent.length != 0) {
-    divEvent.appendChild(prof);
+
+  if (classroom.textContent.length != 0) {
+    eventDiv.appendChild(classroom);
   }
-  if (salle.textContent.length != 0) {
-    divEvent.appendChild(salle);
+  if (teacher.textContent.length != 0) {
+    eventDiv.appendChild(teacher);
   }
-  if (groupe.textContent.length != 0) {
-    divEvent.appendChild(groupe);
-  }
-  if (ressource.textContent.length != 0) {
-    divEvent.appendChild(ressource);
+  if (group.textContent.length != 0) {
+    eventDiv.appendChild(group);
   }
 
-  // Vérifier la couleur
-  const couleur = `rgb(${colorCheck(event.getAttribute("color"))})`;
-  divEvent.style.backgroundColor = couleur;
+  eventDiv.style.backgroundColor = `rgb(${checkColor(
+    event.getAttribute("color")
+  )})`;
 
-  divEvent.style.height = `${
+  eventDiv.style.height = `${
     (parseInt(event.getAttribute("duration")) / 2) * 50 - 1
   }px`;
-  contentStartEvent.appendChild(divEvent);
+
+  contentStartEvent.appendChild(eventDiv);
 }
 
-function colorCheck(color) {
-  const rgb = color.split(",");
-  const brightness =
-    (parseInt(rgb[0]) * 0.299 +
-      parseInt(rgb[1]) * 0.587 +
-      parseInt(rgb[2]) * 0.114) /
-    255;
-  if (brightness < 0.3) {
-    // console.log("Couleur de base :", color);
-    // console.log("Luminostié :", brightness);
-    const newColor = rgb;
-    for (let i = 0; i < 3; i++) {
-      newColor[i] =
-        parseInt(newColor[i]) + 80 > 255
-          ? "255"
-          : (parseInt(newColor[i]) + 80).toString();
+function displayBlankDay(dayIndex) {
+  const startHourId = `07_30_${dayIndex}`;
+
+  const contentStartEvent = document.getElementById(startHourId);
+  const eventDiv = document.createElement("div");
+  eventDiv.classList.add("event");
+  eventDiv.classList.add("blankEvent");
+
+  if (localStorage.getItem("weekDisplay") == "true") {
+    eventDiv.classList.add("weekEvent");
+  } else {
+    eventDiv.classList.add("dayEvent");
+  }
+
+  const title = document.createElement("p");
+  title.classList.add("title");
+  title.textContent = "Aucun cours";
+  eventDiv.appendChild(title);
+
+  eventDiv.style.height = `${50 * 23 - 1}px`;
+
+  if (localStorage.getItem("mode") == "dark") {
+    eventDiv.style.backgroundColor = `rgba(55, 55, 55, 1)`;
+  } else {
+    eventDiv.style.backgroundColor = `rgba(200, 200, 200, 1)`;
+  }
+
+  contentStartEvent.appendChild(eventDiv);
+}
+
+async function refreshData() {
+  const errorDiv = document.querySelector("#error");
+  errorDiv.style.display = "none";
+
+  document.querySelector("#scheduleGrid").remove();
+  displayScheduleGrid();
+
+  loader(true);
+
+  const resourceInput = document.querySelector("#resourceSelector");
+  const dateInput = document.querySelector("#dateSelector");
+  if (resourceInput.value in resourcesMap) {
+    localStorage.setItem("lastResource", resourcesMap[resourceInput.value]);
+  } else if (parseInt(resourceInput.value)) {
+    const resourceId = parseInt(resourceInput.value);
+    const resourceName = getResourceName(resourceId);
+    if (resourceName !== null) {
+      resourceInput.value = resourceName;
     }
-    // console.log("Nouvelle couleur :", newColor.join(","));
-    return newColor.join(",");
+    localStorage.setItem("lastResource", resourceId);
   } else {
-    return color;
+    localStorage.setItem("lastResource", null);
   }
-}
-
-function displayNoLesson(day) {
-  const startEvent = document.getElementById(`07_30_${day}`);
-  const noLesson = document.createElement("div");
-  noLesson.classList.add("noLesson", "event");
-  noLesson.style.height = "1150px";
-  const noLessonText = document.createElement("p");
-  const noLessonEmote1 = document.createElement("p");
-  const noLessonEmote2 = document.createElement("p");
-  noLessonText.textContent = "Aucun cours aujourd'hui !";
-  noLessonEmote1.textContent = "🥳";
-  noLessonEmote2.textContent = "💤";
-  noLessonEmote1.classList.add("emote");
-  noLessonEmote2.classList.add("emote");
-  noLesson.appendChild(noLessonEmote1);
-  noLesson.appendChild(noLessonText);
-  noLesson.appendChild(noLessonEmote2);
-  startEvent.appendChild(noLesson);
-}
-
-function displaySchedule(xmlData, day) {
-  // Ajoute les événements
-  const parser = new DOMParser();
-  const xmlDoc = parser.parseFromString(xmlData, "text/xml");
-  const events = xmlDoc.getElementsByTagName("event");
-  if (events.length === 0) {
-    displayNoLesson(day);
-    console.warn("C'est ce qu'on appelle le chômage !");
-  } else {
-    for (let i = 0; i < events.length; i++) {
-      addEvent(events[i], day);
-    }
-  }
-}
-
-function displayInfos(date, resource) {
-  const currentDaysAlreadyPresent = Array.from(
-    document.getElementsByClassName("currentDay")
+  setDays();
+  await displayLessons(
+    new Date(dateInput.value),
+    localStorage.getItem("lastResource")
   );
-  currentDaysAlreadyPresent.forEach((day) => day.remove());
-
-  const widthContent = document.getElementById("07_30_1").offsetWidth;
-
-  const days = document.getElementById("days");
-  const currentDate = weekDisplay ? startWeek(date) : new Date(date);
-  for (let i = 1; weekDisplay ? i <= 5 : i <= 1; i++) {
-    const currentDay = document.createElement("h1");
-    currentDay.classList.add("currentDay");
-    currentDay.textContent = currentDate.toLocaleDateString("fr-FR", {
-      weekday: "long",
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-    currentDay.style.width = `${widthContent}px`;
-    days.appendChild(currentDay);
-    currentDate.setDate(currentDate.getDate() + 1);
-  }
-
-  const h2_resource = document.getElementById("currentResource");
-  h2_resource.textContent = `Ressource : ${resource}`;
+  loader(false);
+  dragTimetableToChangeDate();
 }
 
-async function xmlRequest(date, resource) {
-  // Convertir la date en format MM/JJ/AAAA
-  const month = date.getMonth() + 1;
-  const day = date.getDate();
-  const year = date.getFullYear();
-  const dateFormatted = `${month < 10 ? `0${month}` : month}/${
-    day < 10 ? `0${day}` : day
-  }/${year}`;
+function loadEventListeners() {
+  // Resource update
+  const resourceInput = document.querySelector("#resourceSelector");
+  resourceInput.addEventListener("change", refreshData);
 
-  // Réalisation de la requête
-  const loadingDiv = document.getElementById("loading");
-  loadingDiv.style.display = "block";
-  const request = await fetch(
-    `${BASE_URL}?function=getEvents&resources=${resource}&detail=8&date=${dateFormatted}&projectId=${PORJECT_ID}&data=${PROJECT_DATA}`
+  // Date update
+  const dateInput = document.querySelector("#dateSelector");
+  dateInput.addEventListener("change", refreshData);
+
+  // Previous date
+  const previousDateButton = document.querySelector("#previousButton");
+  previousDateButton.addEventListener("click", previousDate);
+
+  // Next date
+  const nextDateButton = document.querySelector("#nextButton");
+  nextDateButton.addEventListener("click", nextDate);
+
+  // Next lessons
+  const nextLessonsButtons = document.querySelectorAll(".nextLessonsButton");
+  nextLessonsButtons.forEach((button) => {
+    button.addEventListener("click", nextLessons);
+  });
+
+  // Week/Day display
+  const weekDayDisplayButton = document.querySelectorAll(
+    ".weekDayDisplayButton"
   );
+  weekDayDisplayButton.forEach((button) => {
+    button.addEventListener("click", changeDisplay);
+  });
 
-  if (!request.ok) {
-    throw new Error(`Erreur HTTP ! Statut : ${request.status}`);
-  } else {
-    console.log("Requête effectuée avec succès !");
-    loadingDiv.style.display = "none";
-  }
+  // Full Screen
+  const fullScreenButtons = document.querySelectorAll(".fullScreenButton");
+  fullScreenButtons.forEach((button) => {
+    button.addEventListener("click", fullScreen);
+  });
 
-  const xml = await request.text();
+  // Download
+  const downloadButtons = document.querySelectorAll(".downloadButton");
+  downloadButtons.forEach((button) => {
+    button.addEventListener("click", downloadAsImage);
+  });
 
-  // En local :
-  // const xml = scheduleData;
-  return xml;
+  // Favorite
+  const favoriteButton = document.querySelector("#favoriteButton");
+  favoriteButton.addEventListener("click", favoriteResource);
+
+  // Key Events
+  addEventListener("keydown", (event) => keyPressed(event));
+
+  // Drag timetable to change date
+  dragTimetableToChangeDate();
 }
 
-function nextDate(date) {
-  if (date.getDay() == 5) {
-    date.setDate(date.getDate() + 3);
-  } else if (date.getDay() == 6) {
-    date.setDate(date.getDate() + 2);
-  } else {
-    date.setDate(date.getDate() + 1);
-  }
-  return date;
-}
-
-function previousDate(date) {
-  if (date.getDay() == 1) {
-    date.setDate(date.getDate() - 3);
-  } else if (date.getDay() == 0) {
-    date.setDate(date.getDate() - 2);
+function previousDate() {
+  const dateInput = document.querySelector("#dateSelector");
+  const date = new Date(dateInput.value);
+  if (localStorage.getItem("weekDisplay") == "true") {
+    date.setDate(date.getDate() - 7);
   } else {
     date.setDate(date.getDate() - 1);
   }
-  return date;
+  dateInput.valueAsDate = date;
+  refreshData();
 }
 
-async function firstDate() {
-  const currentDate = new Date();
-  if (currentDate.getDay() == 6) {
-    currentDate.setDate(currentDate.getDate() + 2);
-  } else if (currentDate.getDay() == 5 && (await nextDay())) {
-    currentDate.setDate(currentDate.getDate() + 3);
-  } else if (currentDate.getDay() == 0 || (await nextDay())) {
-    currentDate.setDate(currentDate.getDate() + 1);
-  }
-  return currentDate;
-}
-
-function startWeek(date) {
-  if (date.getDay() == 1) {
-    return date;
-  } else if (date.getDay() == 0) {
-    const startWeekDate = date;
-    startWeekDate.setDate(startWeekDate.getDate() - 6);
-    return startWeekDate;
+function nextDate() {
+  const dateInput = document.querySelector("#dateSelector");
+  const date = new Date(dateInput.value);
+  if (localStorage.getItem("weekDisplay") == "true") {
+    date.setDate(date.getDate() + 7);
   } else {
-    const startWeekDate = date;
-    startWeekDate.setDate(date.getDate() - (date.getDay() - 1));
-    return startWeekDate;
+    date.setDate(date.getDate() + 1);
   }
+  dateInput.valueAsDate = date;
+  refreshData();
 }
 
-async function launchDisplay(date, resource) {
-  // Supprime les cours présents
-  const eventsAlreadyPresent = Array.from(
-    document.getElementsByClassName("event")
+async function nextLessons() {
+  const date = new Date();
+  while (!(await haveLessons(date))) {
+    date.setDate(date.getDate() + 1);
+  }
+  document.querySelector("#dateSelector").valueAsDate = date;
+  refreshData();
+}
+
+function changeDisplay() {
+  const weekDayDisplaySidebarButton = document.querySelector(
+    "#weekDayDisplaySidebarButton > span"
   );
-  eventsAlreadyPresent.forEach((event) => event.remove());
-  displayInfos(date, resource);
+  const weekDayDisplayButton = document.querySelector("#weekDayDisplayButton");
 
-  if (weekDisplay) {
-    let currentDate = startWeek(date);
-    for (let i = 1; i <= 5; i++) {
-      const xmlContent = await xmlRequest(currentDate, resource);
-      displaySchedule(xmlContent, i);
-      currentDate.setDate(currentDate.getDate() + 1);
-    }
+  if (localStorage.getItem("weekDisplay") == "true") {
+    localStorage.setItem("weekDisplay", false);
+    weekDayDisplaySidebarButton.textContent = "Afficher la semaine complète";
+    weekDayDisplayButton.textContent = "Afficher la semaine";
   } else {
-    const xmlContent = await xmlRequest(date, resource);
-    displaySchedule(xmlContent, 1);
+    localStorage.setItem("weekDisplay", true);
+    weekDayDisplaySidebarButton.textContent = "Afficher un seul jour";
+    weekDayDisplayButton.textContent = "Afficher un jour";
+  }
+  refreshData();
+}
+
+function fullScreen() {
+  document.fullscreenElement
+    ? document.exitFullscreen()
+    : document.documentElement.requestFullscreen();
+}
+
+function downloadAsImage() {
+  const timetable = document.querySelector("#display");
+
+  html2canvas(timetable, { scale: 4 }).then(function (canvas) {
+    let link = document.createElement("a");
+    link.download = "Emploi du temps.jpeg";
+    link.href = canvas.toDataURL("image/jpeg", 1);
+
+    link.click();
+  });
+}
+
+function favoriteResource() {
+  const resourceInput = document.querySelector("#resourceSelector");
+
+  if (parseInt(resourceInput.value)) {
+    localStorage.setItem("favoriteResource", parseInt(resourceInput.value));
+  } else if (resourceInput.value in resourcesMap) {
+    localStorage.setItem("favoriteResource", resourcesMap[resourceInput.value]);
+  } else {
+    localStorage.setItem("favoriteResource", null);
   }
 }
 
-document.addEventListener("DOMContentLoaded", async function () {
-  // Au chargement de la page
-  makeDatalist();
-  scheduleGrid();
-  const selectedResource = localStorage.getItem("selectedResource")
-    ? localStorage.getItem("selectedResource")
-    : null;
-  document.getElementById("resourceSelector").value = selectedResource;
-  const displayDate = await firstDate();
-  document.getElementById("dateSelector").valueAsDate = displayDate;
-  launchDisplay(displayDate, selectedResource);
+function setDays() {
+  const options = {
+    weekday: "long",
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
+  const dateFormatter = new Intl.DateTimeFormat("fr-FR", options);
+  const date = document.querySelector("#dateSelector").valueAsDate;
+  const days = document.querySelectorAll(".day");
+  let startDate = date;
+  if (localStorage.getItem("weekDisplay") == "true") {
+    startDate = startWeekDate(date);
+  }
+  for (
+    let i = 0;
+    localStorage.getItem("weekDisplay") == "true" ? i < 5 : i < 1;
+    i++
+  ) {
+    const day = days[i];
+    i != 0 ? startDate.setDate(startDate.getDate() + 1) : startDate;
 
-  // Au changement de la date dans le sélecteur
-  document
-    .getElementById("dateSelector")
-    .addEventListener("change", async function () {
-      const selectedResource =
-        document.getElementById("resourceSelector").value;
-      // xmlContent = await xmlRequest(new Date(this.value), selectedResource);
-      // displaySchedule(xmlContent);
-      // displayInfos(new Date(this.value), selectedResource);
-      launchDisplay(new Date(this.value), selectedResource);
-    });
+    day.textContent = dateFormatter.format(startDate);
+  }
+}
 
-  // Au clic sur le bouton précédent
-  document
-    .getElementById("previousDate")
-    .addEventListener("click", async function () {
-      const selectedDate = new Date(
-        document.getElementById("dateSelector").value
-      );
-      if (weekDisplay) {
-        const newDate = selectedDate;
-        newDate.setDate(newDate.getDate() - 7);
-        document.getElementById("dateSelector").valueAsDate = newDate;
-        const selectedResource =
-          document.getElementById("resourceSelector").value;
-        launchDisplay(newDate, selectedResource);
-      } else {
-        const newDate = previousDate(selectedDate);
-        document.getElementById("dateSelector").valueAsDate = newDate;
-        const selectedResource =
-          document.getElementById("resourceSelector").value;
-        launchDisplay(newDate, selectedResource);
-      }
-      // xmlContent = await xmlRequest(selectedDate, selectedResource);
-      // displaySchedule(xmlContent);
-      // displayInfos(selectedDate, selectedResource);
-    });
+function startWeekDate(date) {
+  let startDate = new Date(date);
+  startDate.setDate(startDate.getDate() - startDate.getDay() + 1);
+  return startDate;
+}
 
-  // Au clic sur le bouton suivant
-  document
-    .getElementById("nextDate")
-    .addEventListener("click", async function () {
-      const selectedDate = new Date(
-        document.getElementById("dateSelector").value
-      );
-      if (weekDisplay) {
-        const newDate = selectedDate;
-        newDate.setDate(newDate.getDate() + 7);
-        document.getElementById("dateSelector").valueAsDate = newDate;
-        const selectedResource =
-          document.getElementById("resourceSelector").value;
-        launchDisplay(newDate, selectedResource);
-      } else {
-        const newDate = nextDate(selectedDate);
-        document.getElementById("dateSelector").valueAsDate = newDate;
-        const selectedResource =
-          document.getElementById("resourceSelector").value;
-        launchDisplay(newDate, selectedResource);
-      }
-      // xmlContent = await xmlRequest(selectedDate, selectedResource);
-      // displaySchedule(xmlContent);
-      // displayInfos(selectedDate, selectedResource);
-    });
+function keyPressed(event) {
+  if (event.target.tagName.toLowerCase() != "input") {
+    if (event.key === "ArrowRight") {
+      nextDate();
+    } else if (event.key === "ArrowLeft") {
+      previousDate();
+    } else if (event.key === "f") {
+      fullScreen();
+    }
+  }
+}
 
-  // Au clic sur le bouton today
-  document.getElementById("today").addEventListener("click", async function () {
-    const currentDate = await firstDate();
-    document.getElementById("dateSelector").valueAsDate = currentDate;
-    const selectedResource = document.getElementById("resourceSelector").value;
-    // xmlContent = await xmlRequest(currentDate, selectedResource);
-    // displaySchedule(xmlContent);
-    // displayInfos(currentDate, selectedResource);
-    launchDisplay(currentDate, selectedResource);
+function dragTimetableToChangeDate() {
+  let startX = 0;
+  let currentX = 0;
+
+  const scheduleGrid = document.querySelector("#scheduleGrid");
+
+  scheduleGrid.addEventListener("touchstart", (event) => {
+    startX = event.touches[0].clientX;
+    currentX = event.touches[0].clientX;
   });
 
-  // Au changement de la ressource dans le sélecteur
-  document
-    .getElementById("resourceSelector")
-    .addEventListener("change", async function () {
-      localStorage.setItem("selectedResource", this.value);
-      const selectedDate = new Date(
-        document.getElementById("dateSelector").value
-      );
-      // xmlContent = await xmlRequest(selectedDate, this.value);
-      // displaySchedule(xmlContent);
-      // displayInfos(selectedDate, this.value);
-      launchDisplay(selectedDate, this.value);
-    });
-
-  document.getElementById("1day").addEventListener("click", function () {
-    localStorage.setItem("weekDisplay", "false");
-    const timeline = document.getElementById("timeline");
-    timeline.remove();
-    weekDisplay = false;
-    scheduleGrid();
-    const selectedDate = new Date(
-      document.getElementById("dateSelector").value
-    );
-    const selectedResource = document.getElementById("resourceSelector").value;
-    launchDisplay(selectedDate, selectedResource);
+  scheduleGrid.addEventListener("touchmove", (event) => {
+    currentX = event.touches[0].clientX;
   });
 
-  document.getElementById("week").addEventListener("click", function () {
-    localStorage.setItem("weekDisplay", "true");
-    const timeline = document.getElementById("timeline");
-    timeline.remove();
-    weekDisplay = true;
-    scheduleGrid();
-    const selectedDate = new Date(
-      document.getElementById("dateSelector").value
-    );
-    const selectedResource = document.getElementById("resourceSelector").value;
-    launchDisplay(selectedDate, selectedResource);
-  });
-
-  // Au clic sur le bouton plein écran
-  document
-    .querySelector("#fullScreen")
-    .addEventListener("click", () =>
-      document.fullscreenElement
-        ? document.exitFullscreen()
-        : document.documentElement.requestFullscreen()
-    );
-
-  // À l'appui sur les flèches
-  addEventListener("keydown", (event) => {
-    const selectedDate = new Date(
-      document.getElementById("dateSelector").value
-    );
-
-    if (event.key === "ArrowLeft") {
-      if (weekDisplay) {
-        const newDate = selectedDate;
-        newDate.setDate(newDate.getDate() - 7);
-        document.getElementById("dateSelector").valueAsDate = newDate;
-        const selectedResource =
-          document.getElementById("resourceSelector").value;
-        launchDisplay(newDate, selectedResource);
+  scheduleGrid.addEventListener("touchend", () => {
+    const translateX = currentX - startX;
+    if (Math.abs(translateX) > 200) {
+      if (currentX > startX) {
+        previousDate();
       } else {
-        const newDate = previousDate(selectedDate);
-        document.getElementById("dateSelector").valueAsDate = newDate;
-        const selectedResource =
-          document.getElementById("resourceSelector").value;
-        launchDisplay(newDate, selectedResource);
-      }
-    } else if (event.key === "ArrowRight") {
-      if (weekDisplay) {
-        const newDate = selectedDate;
-        newDate.setDate(newDate.getDate() + 7);
-        document.getElementById("dateSelector").valueAsDate = newDate;
-        const selectedResource =
-          document.getElementById("resourceSelector").value;
-        launchDisplay(newDate, selectedResource);
-      } else {
-        const newDate = nextDate(selectedDate);
-        document.getElementById("dateSelector").valueAsDate = newDate;
-        const selectedResource =
-          document.getElementById("resourceSelector").value;
-        launchDisplay(newDate, selectedResource);
+        nextDate();
       }
     }
-    // xmlContent = await xmlRequest(selectedDate, selectedResource);
-    // displaySchedule(xmlContent);
-    // displayInfos(selectedDate, selectedResource);
   });
-  document
-    .getElementById("imageDownload")
-    .addEventListener("click", function () {
-      // Sélectionnez la div contenant l'emploi du temps
-      const element = document.getElementById("display");
+}
 
-      // Utilisez html2canvas pour capturer l'élément en tant qu'image
-      html2canvas(element).then(function (canvas) {
-        // Convertissez le canevas en une URL de données
-        const imgData = canvas.toDataURL("image/png");
+function displayError(code, error) {
+  const emailLink = document.querySelector("#linkForErrorMail");
+  emailLink.setAttribute(
+    "href",
+    `mailto:${DEV_MAIL}?subject=[${code}-${error.status}]%20J%27ai%20rencontré%20une%20erreur%20sur%20${document.location.host}&body=J%27ai%20rencontré%20une%20erreur%20lors%20de%20ma%20navigation%20sur%20le%20site%20${document.location.origin}.%20J%27étais%20sur%20la%20page%20${document.location.pathname}%20et%20j%27ai%20obtenu%20une%20erreur%20${error.status}%20avec%20le%20code%20${code}.`
+  );
 
-        // Créez un élément <a> pour télécharger l'image
-        const link = document.createElement("a");
-        link.download = "emploiDuTemps.png";
-        link.href = imgData;
-        link.click();
-      });
-    });
+  const errorCodeDisplay = document.querySelector("#errorCode");
+  errorCodeDisplay.textContent = `${code}-${error.status}`;
 
-  const timetableContainer = document.getElementById("display");
-  timetableContainer.addEventListener("touchstart", handleTouchStart);
-  timetableContainer.addEventListener("touchend", handleTouchEnd);
-});
+  const errorDiv = document.querySelector("#error");
+  errorDiv.style.display = "flex";
+}
+
+function loader(visible) {
+  const loaderDiv = document.querySelector("#loader");
+  if (visible) {
+    loaderDiv.style.display = "flex";
+  } else {
+    loaderDiv.style.display = "none";
+  }
+}
+
+function checkColor(color) {
+  const rgb = color.split(",").map(Number);
+  const [r, g, b] = rgb;
+
+  const a = [r, g, b].map((v) => {
+    v /= 255;
+    return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+  });
+  const luminance = a[0] * 0.2126 + a[1] * 0.7152 + a[2] * 0.0722;
+
+  const threshold = 0.25;
+
+  const mode = localStorage.getItem("mode");
+  if (mode == "light" && luminance < threshold) return lightenColor(color, 0.5);
+  else if (mode == "dark" && luminance > 0.4) return darkenColor(color, 0.5);
+
+  return color;
+}
+
+function lightenColor(color, percent) {
+  const rgb = color.split(",");
+  for (let i = 0; i < rgb.length; i++) {
+    rgb[i] = Math.min(
+      255,
+      Math.floor(parseInt(rgb[i]) + (255 - parseInt(rgb[i])) * percent)
+    );
+  }
+  return rgb.join(",");
+}
+
+function darkenColor(color, percent) {
+  const rgb = color.split(",");
+  for (let i = 0; i < rgb.length; i++) {
+    rgb[i] = Math.max(0, Math.floor(parseInt(rgb[i]) * (1 - percent)));
+  }
+  return rgb.join(",");
+}

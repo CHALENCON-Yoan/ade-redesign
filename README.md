@@ -24,11 +24,22 @@ _Vous pouvez retrouver ci-dessous l'historique des versions du site classées pa
 
 &nbsp;
 
-- **&#x1FA79; [0.2.5](https://github.com/CHALENCON-Yoan/ade-redesign/commit/main) : Ajout d'un historique de versions** - _Version Actuelle_
+- **&#x1F9EA; [1.1.1.a](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : Première version** - _Version Actuelle_
+
+  - _Redesign_ complet du `header` avec l'ajout de nouvelles options.
+  - Mise en place d'une _sidebar_ pour les écrans ne permettant l'affichage de toutes les options.
+  - Réimplémentation de l'affichage des emplois avec réécriture du code JavaScript.
+  - Ajout de la prise en charge du _dark mode_.
+  - Ajout d'une _popup_ indiquant qu'une erreur est survenue.
+  - _Redesign_ du _modal_ de chargement.
+  - L'interface est entièrement _responsive_.
+  - Les emplois du temps des enseignants et des salles sont disponibles sur leur page respective.
+
+- **&#x1FA79; [0.2.5](https://github.com/CHALENCON-Yoan/ade-redesign/commit/8e203b843ae3eb13190281b7f02d634caa7bd001) : Ajout d'un historique de versions**
 
   - Ajout d'un historique de versions dans le README.
 
-- **&#x1F9EA; [0.2.5.a](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : Ajout d'un historique de versions**
+- **&#x1F9EA; [0.2.5.a](https://github.com/CHALENCON-Yoan/ade-redesign/commit/e2c76019ae9840ec227cc25f0bcc180e603ede82) : Ajout d'un historique de versions**
 
   - Ajout d'un historique de versions dans le README.
 
