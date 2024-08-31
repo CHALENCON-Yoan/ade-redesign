@@ -1,5 +1,5 @@
 const DEV_MAIL = "yoan@ade-edt.fr";
-const LOCALHOST = false;
+const LOCALHOST = true;
 const BASE_URL = "request";
 // "https://cors-anywhere.herokuapp.com/https://ade-uga-ro-vs.grenet.fr/jsp/webapi";
 const PORJECT_ID = "3";
@@ -10,6 +10,9 @@ let resourcesMap = {};
 let weekMap = {};
 
 window.addEventListener("load", async () => {
+  // Load Lottie file
+  loadLottie();
+
   // Set the mode
   setMode(localStorage.getItem("mode"));
 
@@ -26,6 +29,7 @@ window.addEventListener("load", async () => {
   displayScheduleGrid();
 
   // Make the datalist for resources
+  loader(true);
   await makeDatalist();
 
   // Get week map
@@ -33,9 +37,20 @@ window.addEventListener("load", async () => {
 
   // Restore resource value, set the next lesson date and display next lessons
   await restoreResourceValue();
+  loader(false);
 
   loadEventListeners();
 });
+
+function loadLottie() {
+  let animation = lottie.loadAnimation({
+    container: document.getElementById("loaderImage"),
+    renderer: "svg",
+    loop: true,
+    autoplay: true,
+    path: "/assets/loader.json",
+  });
+}
 
 function getOppositeMode(mode) {
   if (mode === "dark") {
@@ -255,10 +270,10 @@ async function getCalendar() {
 
     if (!request.ok) {
       console.error(
-        `Une erreur est survenue lors du chargement de la page. Merci de prévenir le développeur à l'adresse ${DEV_MAIL} en indiquant le code erreur ER03-${request.status}.`
+        `Une erreur est survenue lors du chargement de la page. Merci de prévenir le développeur à l'adresse ${DEV_MAIL} en indiquant le code erreur ER02-${request.status}.`
       );
+      displayError("ER02", request);
       throw new Error(`HTTP error! Status: ${request.status}`);
-      // Indiquer une erreur sur la page.
     }
     calendar = await request.text();
   }
@@ -333,8 +348,8 @@ async function makeDatalist() {
       console.error(
         `Une erreur est survenue lors du chargement de la page. Merci de prévenir le développeur à l'adresse ${DEV_MAIL} en indiquant le code erreur ER01-${request.status}.`
       );
+      displayError("ER01", request);
       throw new Error(`HTTP error! Status: ${request.status}`);
-      // Indiquer une erreur sur la page.
     }
 
     resourcesTree = await request.text();
@@ -392,7 +407,7 @@ function getResourceName(id) {
 
 async function setNextLessonsDate() {
   const dateSelector = document.querySelector("#dateSelector");
-  let currentDate = new Date(1725296459000);
+  let currentDate = new Date();
   if (localStorage.getItem("lastResource") !== null) {
     while (!(await haveLessons(currentDate))) {
       currentDate.setDate(currentDate.getDate() + 1);
@@ -403,15 +418,9 @@ async function setNextLessonsDate() {
   setDays();
 
   await displayLessons(currentDate, localStorage.getItem("lastResource"));
-  // await displayLessons(
-  //   new Date(1725235200000),
-  //   localStorage.getItem("lastResource")
-  // );
-  // displayLessons(new Date(1725148800000), localStorage.getItem("lastResource"));
 }
 
 async function haveLessons(date) {
-  console.log(`test for ${date}`);
   let result;
   if (LOCALHOST) {
     result = dayExample;
@@ -426,10 +435,10 @@ async function haveLessons(date) {
 
     if (!request.ok) {
       console.error(
-        `Une erreur est survenue lors du chargement de la page. Merci de prévenir le développeur à l'adresse ${DEV_MAIL} en indiquant le code erreur ER02-${request.status}.`
+        `Une erreur est survenue lors du chargement de la page. Merci de prévenir le développeur à l'adresse ${DEV_MAIL} en indiquant le code erreur ER03-${request.status}.`
       );
+      displayError("ER03", request);
       throw new Error(`HTTP error! Status: ${request.status}`);
-      // Indiquer une erreur sur la page.
     }
 
     result = await request.text();
@@ -438,43 +447,25 @@ async function haveLessons(date) {
   const xmlDoc = parser.parseFromString(result, "text/xml");
 
   const events = xmlDoc.getElementsByTagName("event");
-  console.log(`get ${events.length} events for ${date}`);
   if (events.length === 0) {
     return false;
-  } else if (sameDay(date, new Date(1725296519000))) {
+  } else if (sameDay(date, new Date())) {
     let lastEndHour = events[0].getAttribute("endHour");
-    console.log(`last hour for first event is ${lastEndHour}`);
     for (let i = 1; i < events.length; i++) {
-      console.log(
-        `last hour for event ${i} is ${events[i].getAttribute("endHour")}`
-      );
-
       if (events[i].getAttribute("endHour") > lastEndHour) {
         lastEndHour = events[i].getAttribute("endHour");
-        console.log(`new last hour: ${lastEndHour}`);
       }
     }
     if (lastEndHour.substring(0, 2) < date.getHours()) {
-      console.log(
-        `lastHours: ${lastEndHour.substring(
-          0,
-          2
-        )}, dateHours ${date.getHours()}`
-      );
       return false;
     } else if (lastEndHour.substring(2, 4) < date.getMinutes()) {
-      console.log(
-        `lastMinutes: ${lastEndHour.substring(
-          2,
-          4
-        )}, dateMinutes ${date.getMinutes()}`
-      );
       return false;
     }
   }
 
   return true;
 }
+
 function sameDay(date1, date2) {
   return (
     date1.getFullYear() === date2.getFullYear() &&
@@ -527,10 +518,10 @@ async function displayLessons(date, resource) {
 
       if (!request.ok) {
         console.error(
-          `Une erreur est survenue lors du chargement de la page. Merci de prévenir le développeur à l'adresse ${DEV_MAIL} en indiquant le code erreur ER02-${request.status}.`
+          `Une erreur est survenue lors du chargement de la page. Merci de prévenir le développeur à l'adresse ${DEV_MAIL} en indiquant le code erreur ER04-${request.status}.`
         );
+        displayError("ER04", request);
         throw new Error(`HTTP error! Status: ${request.status}`);
-        // Indiquer une erreur sur la page.
       }
 
       weekTree = await request.text();
@@ -558,10 +549,10 @@ async function displayLessons(date, resource) {
 
       if (!request.ok) {
         console.error(
-          `Une erreur est survenue lors du chargement de la page. Merci de prévenir le développeur à l'adresse ${DEV_MAIL} en indiquant le code erreur ER02-${request.status}.`
+          `Une erreur est survenue lors du chargement de la page. Merci de prévenir le développeur à l'adresse ${DEV_MAIL} en indiquant le code erreur ER05-${request.status}.`
         );
+        displayError("ER05", request);
         throw new Error(`HTTP error! Status: ${request.status}`);
-        // Indiquer une erreur sur la page.
       }
 
       dayTree = await request.text();
@@ -698,9 +689,14 @@ function displayBlankDay(dayIndex) {
   contentStartEvent.appendChild(eventDiv);
 }
 
-function refreshData() {
+async function refreshData() {
+  const errorDiv = document.querySelector("#error");
+  errorDiv.style.display = "none";
+
   document.querySelector("#scheduleGrid").remove();
   displayScheduleGrid();
+
+  loader(true);
 
   const resourceInput = document.querySelector("#resourceSelector");
   const dateInput = document.querySelector("#dateSelector");
@@ -717,10 +713,11 @@ function refreshData() {
     localStorage.setItem("lastResource", null);
   }
   setDays();
-  displayLessons(
+  await displayLessons(
     new Date(dateInput.value),
     localStorage.getItem("lastResource")
   );
+  loader(false);
   dragTimetableToChangeDate();
 }
 
@@ -836,7 +833,7 @@ function fullScreen() {
 }
 
 function downloadAsImage() {
-  const timetable = document.querySelector("#scheduleGrid");
+  const timetable = document.querySelector("#display");
 
   html2canvas(timetable, { scale: 4 }).then(function (canvas) {
     let link = document.createElement("a");
@@ -924,4 +921,27 @@ function dragTimetableToChangeDate() {
       }
     }
   });
+}
+
+function displayError(code, error) {
+  const emailLink = document.querySelector("#linkForErrorMail");
+  emailLink.setAttribute(
+    "href",
+    `mailto:${DEV_MAIL}?subject=[${code}-${error.status}]%20J%27ai%20rencontré%20une%20erreur%20sur%20${document.location.host}&body=J%27ai%20rencontré%20une%20erreur%20lors%20de%20ma%20navigation%20sur%20le%20site%20${document.location.origin}.%20J%27étais%20sur%20la%20page%20${document.location.pathname}%20et%20j%27ai%20obtenu%20une%20erreur%20${error.status}%20avec%20le%20code%20${code}.`
+  );
+
+  const errorCodeDisplay = document.querySelector("#errorCode");
+  errorCodeDisplay.textContent = `${code}-${error.status}`;
+
+  const errorDiv = document.querySelector("#error");
+  errorDiv.style.display = "flex";
+}
+
+function loader(visible) {
+  const loaderDiv = document.querySelector("#loader");
+  if (visible) {
+    loaderDiv.style.display = "flex";
+  } else {
+    loaderDiv.style.display = "none";
+  }
 }

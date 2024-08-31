@@ -6,6 +6,7 @@
     <title>Emploi du temps</title>
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js"></script>
   </head>
   <body class="mode lightMode">
     <header>
@@ -197,6 +198,28 @@
     <!-- Fond de transparence pour la sidebar -->
     <div id="backgroundBlur" class="backgroundBlur"></div>
     <main>
+      <div id="loader" class="popup">
+        <div id="loaderImage" class="popupImg"></div>
+        <p>
+          Chargement en cours, merci de patienter. <br />Si le chargement
+          persiste, rechargez la page.
+        </p>
+      </div>
+      <div id="error" class="popup">
+        <img
+          src="/assets/emojis/warning.svg"
+          alt="Warning Emoji"
+          class="popupImg"
+        />
+        <p>
+          Une erreur est survenue, merci de réessayer. <br />Si le problème
+          persiste, contactez le développeur
+          <a id="linkForErrorMail" href="" target="_blank">par mail</a>.
+          <br />Un message contenant le code erreur sera automatiquement édité.
+          S'il n'est pas présent merci de spécifier le code erreur
+          <code id="errorCode"></code> dans votre mail.
+        </p>
+      </div>
       <div id="display">
         <div id="days"></div>
       </div>
