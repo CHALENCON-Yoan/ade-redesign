@@ -24,7 +24,11 @@ _Vous pouvez retrouver ci-dessous l'historique des versions du site classées pa
 
 &nbsp;
 
-- **&#x1F9EA; [1.1.1.a](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : Première version** - _Version Actuelle_
+- **&#x1F9EA; [1.1.1.b](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : Correction d'une erreur d'orthographe** - _Version Actuelle_
+
+  - Correction d'une erreur d'orthographe dans une balise `meta` sur la page `classrooms`.
+
+- **&#x1F9EA; [1.1.1.a](https://github.com/CHALENCON-Yoan/ade-redesign/commit/0bc6ba649543df8f88fc5b67bcdf269bff9fe067) : Première version**
 
   - _Redesign_ complet du `header` avec l'ajout de nouvelles options.
   - Mise en place d'une _sidebar_ pour les écrans ne permettant l'affichage de toutes les options.
