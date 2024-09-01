@@ -24,7 +24,11 @@ _Vous pouvez retrouver ci-dessous l'historique des versions du site classées pa
 
 &nbsp;
 
-- **&#x1F9EA; [1.1.1.c](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : Ajout d'un `footer` & Correction du _bug_ empêchant l'ajout des événements commençant à XXh15 ou XXh45** - _Version Actuelle_
+- **&#x1F9EA; [1.1.1.d](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : Ajout de Google Analytics** - _Version Actuelle_
+
+  - Ajout du script pour Google Analytics.
+
+- **&#x1F9EA; [1.1.1.c](https://github.com/CHALENCON-Yoan/ade-redesign/commit/24b130fac6a7f22d0b9e650b7f9d6ffe306a4092) : Ajout d'un `footer` & Correction du _bug_ empêchant l'ajout des événements commençant à XXh15 ou XXh45**
 
   - Ajout de la prise en charge des événements qui commencent à XXh15 et à XXh45.
   - Ajout d'un footer contenant le copyright du site (avec lien vers la page d'accueil pour retrouver les pages légales).
