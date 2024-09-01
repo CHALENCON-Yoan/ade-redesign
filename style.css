@@ -57,6 +57,7 @@ button {
 body {
   margin: 0;
   position: relative;
+  width: 100%;
 }
 
 header {
@@ -362,6 +363,24 @@ p {
   margin: 0 5px;
   width: fit-content;
   text-align: center;
+}
+
+footer {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.blueLink,
+.blueLink:visited {
+  color: var(--color-main-blue);
+}
+
+.blueLink:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 360px) {

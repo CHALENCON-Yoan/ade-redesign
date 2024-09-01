@@ -24,7 +24,13 @@ _Vous pouvez retrouver ci-dessous l'historique des versions du site classées pa
 
 &nbsp;
 
-- **&#x1F9EA; [1.1.1.b](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : Correction d'une erreur d'orthographe** - _Version Actuelle_
+- **&#x1F9EA; [1.1.1.c](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : Ajout d'un `footer` & Correction du _bug_ empêchant l'ajout des événements commençant à XXh15 ou XXh45** - _Version Actuelle_
+
+  - Ajout de la prise en charge des événements qui commencent à XXh15 et à XXh45.
+  - Ajout d'un footer contenant le copyright du site (avec lien vers la page d'accueil pour retrouver les pages légales).
+  - Correction de la largeur du `body` pour prévenir un défilement horizontal non désiré.
+
+- **&#x1F9EA; [1.1.1.b](https://github.com/CHALENCON-Yoan/ade-redesign/commit/25ac5bf9e86fcff82e0f6a5f597a1093bca97470) : Correction d'une erreur d'orthographe**
 
   - Correction d'une erreur d'orthographe dans une balise `meta` sur la page `classrooms`.
 
