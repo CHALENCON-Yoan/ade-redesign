@@ -602,11 +602,21 @@ function displayDay(xml, date, dayIndex = 1) {
 }
 
 function displayEvent(event, dayIndex) {
-  const startHourId = `${event
-    .getAttribute("startHour")
-    .substring(0, 2)}_${event
+  let startHourId = `${event.getAttribute("startHour").substring(0, 2)}_${event
     .getAttribute("startHour")
     .substring(3, 5)}_${dayIndex}`;
+
+  let shift = false;
+
+  if (startHourId.substring(3, 5) == "15") {
+    shift = true;
+    startHourId =
+      startHourId.substring(0, 3) + "00" + startHourId.substring(5, 8);
+  } else if (startHourId.substring(3, 5) == "45") {
+    shift = true;
+    startHourId =
+      startHourId.substring(0, 3) + "30" + startHourId.substring(5, 8);
+  }
 
   const contentStartEvent = document.getElementById(startHourId);
   const eventDiv = document.createElement("div");
@@ -682,6 +692,8 @@ function displayEvent(event, dayIndex) {
   eventDiv.style.height = `${
     (parseInt(event.getAttribute("duration")) / 2) * 50 - 1
   }px`;
+
+  if (shift) eventDiv.style.top = "25px";
 
   contentStartEvent.appendChild(eventDiv);
 }
