@@ -1,5 +1,6 @@
 const DEV_MAIL = "yoan@ade-edt.fr";
-const LOCALHOST = location.hostname == "127.0.0.1";
+const LOCALHOST =
+  location.hostname == "127.0.0.1" || location.hostname == "192.168.1.10";
 const BASE_URL = "request";
 // "https://cors-anywhere.herokuapp.com/https://ade-uga-ro-vs.grenet.fr/jsp/webapi";
 const PORJECT_ID = "3";
@@ -12,6 +13,9 @@ let weekMap = {};
 window.addEventListener("load", async () => {
   // Load Lottie file
   loadLottie();
+
+  // Update Copyright Date
+  copyrightDate();
 
   // Set the mode
   setMode(localStorage.getItem("mode"));
@@ -50,6 +54,15 @@ function loadLottie() {
     autoplay: true,
     path: "/assets/loader.json",
   });
+}
+
+function copyrightDate() {
+  const copyrightDateSpan = document.querySelector("#copyrightDate");
+  const date = new Date();
+  if (date.getFullYear() != copyrightDateSpan.textContent) {
+    copyrightDateSpan.textContent =
+      copyrightDateSpan.textContent + " - " + date.getFullYear();
+  }
 }
 
 function getOppositeMode(mode) {
