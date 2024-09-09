@@ -5,7 +5,9 @@ export default async (req, context) => {
     
     const res = await fetch(url);
     res.headers.set("Access-Control-Allow-Origin", "*");
-    return res;
+    return new Response(res.body, {
+        headers: res.headers,
+    });
   };
   
   export const config = {
