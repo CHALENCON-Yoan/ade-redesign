@@ -3,13 +3,11 @@
   to = "https://ade-uga-ro-vs.grenet.fr/jsp/webapi"
   status = 200
   force = true
+  headers = {
+    access-control-allow-origin = "*"
+  }
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 404
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    access-control-allow-origin = "*"
