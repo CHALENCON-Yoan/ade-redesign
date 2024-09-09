@@ -3,15 +3,9 @@
   to = "https://ade-uga-ro-vs.grenet.fr/jsp/webapi"
   status = 200
   force = true
+  headers = {X-From = "Netlify"}
 
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 404
-
-[[headers]]
-  for = "/*"
-  [headers.values]
-    Access-Control-Allow-Origin = "*"
-    Access-Control-Allow-Methods = "GET, POST, OPTIONS"
-    Access-Control-Allow-Headers = "Content-Type, Authorization"
