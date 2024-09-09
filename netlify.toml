@@ -10,6 +10,6 @@
   status = 404
 
 [[headers]]
-  for = "/request"
+  for = "/*"
   [headers.values]
-    access-control-allow-origin = "no-cors"
+    access-control-allow-origin = "*"
