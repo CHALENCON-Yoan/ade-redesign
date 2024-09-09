@@ -1,3 +1,7 @@
+export default async (req, context) => {
+  return new Response("Hello, world!");
+};
+
 // export default async (req, context) => {
 //   try {
 //     console.log("test");
@@ -18,10 +22,7 @@
 //     return new Response("Une erreur est survenue", { status: 400 });
 //   }
 // };
-export default async (req, context) => {
-  return new Response("Hello, world!");
-};
 
-export const config = {
-  path: "/request",
-};
+// export const config = {
+//   path: "/request",
+// };
