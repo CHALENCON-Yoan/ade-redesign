@@ -12,4 +12,4 @@
 [[headers]]
   for = "/request"
   [headers.values]
-    access-control-allow-origin = "*"
+    access-control-allow-origin = "no-cors"
