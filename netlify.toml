@@ -8,3 +8,8 @@
   from = "/*"
   to = "/index.html"
   status = 404
+
+[[headers]]
+  for = "/request"
+  [headers.values]
+    access-control-allow-origin = "*"
