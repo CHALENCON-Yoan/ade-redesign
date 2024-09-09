@@ -17,6 +17,7 @@ export default async (req, context) => {
   }
 };
 
-export const config = {
-  path: "/test",
-};
+// Don't work for no reason
+// export const config = {
+//   path: "/request",
+// };
