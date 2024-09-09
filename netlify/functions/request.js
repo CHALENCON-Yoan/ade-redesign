@@ -1,5 +1,9 @@
 export default async (req, context) => {
   try {
+    console.log("test");
+    console.log(req);
+    
+    
     const url = new URL(req.url);
     url.host = "ade-uga-ro-vs.grenet.fr";
     url.pathname = "/jsp/webapi"

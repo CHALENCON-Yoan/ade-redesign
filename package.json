@@ -1,5 +1,0 @@
-{
-  "dependencies": {
-    "@netlify/functions": "^2.8.1"
-  }
-}
