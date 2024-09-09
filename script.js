@@ -490,9 +490,8 @@ async function haveLessons(date) {
         lastEndHour = events[i].getAttribute("endHour");
       }
     }
-    if (lastEndHour.substring(0, 2) < date.getHours()) {
-      return false;
-    } else if (lastEndHour.substring(2, 4) < date.getMinutes()) {
+    const [hours, minutes] = lastEndHour.split(":").map(Number);
+    if (hours < date.getHours() || minutes < date.getMinutes()) {
       return false;
     }
   }
