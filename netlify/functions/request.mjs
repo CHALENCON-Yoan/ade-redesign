@@ -16,8 +16,3 @@ export default async (req, context) => {
     return new Response("Une erreur est survenue", { status: 400 });
   }
 };
-
-// Don't work for no reason
-// export const config = {
-//   path: "/request",
-// };

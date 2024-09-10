@@ -1,7 +1,8 @@
 const DEV_MAIL = "yoan@ade-edt.fr";
-const LOCALHOST =
+let LOCALHOST =
   location.hostname == "127.0.0.1" || location.hostname == "192.168.1.10";
-const BASE_URL = "request";
+const BASE_URL = LOCALHOST ? "localRequest" : "request";
+LOCALHOST = false;
 // "https://cors-anywhere.herokuapp.com/https://ade-uga-ro-vs.grenet.fr/jsp/webapi";
 const PORJECT_ID = "3";
 const PROJECT_DATA =
