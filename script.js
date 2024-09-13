@@ -448,7 +448,14 @@ async function setNextLessonsDate() {
       currentDate.setDate(currentDate.getDate() + 1);
     }
   }
-  dateSelector.valueAsDate = currentDate;
+  const adjustedDate = new Date(
+    Date.UTC(
+      currentDate.getFullYear(),
+      currentDate.getMonth(),
+      currentDate.getDate()
+    )
+  );
+  dateSelector.valueAsDate = adjustedDate;
 
   setDays();
 
@@ -856,7 +863,10 @@ async function nextLessons() {
   while (!(await haveLessons(date))) {
     date.setDate(date.getDate() + 1);
   }
-  document.querySelector("#dateSelector").valueAsDate = date;
+  const adjustedDate = new Date(
+    Date.UTC(date.getFullYear(), date.getMonth(), date.getDate())
+  );
+  document.querySelector("#dateSelector").valueAsDate = adjustedDate;
   refreshData();
 }
 
