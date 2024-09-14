@@ -498,8 +498,14 @@ async function haveLessons(date) {
         lastEndHour = events[i].getAttribute("endHour");
       }
     }
-    const [hours, minutes] = lastEndHour.split(":").map(Number);
-    if (hours < date.getHours() || minutes < date.getMinutes()) {
+    const [lastEndHourHours, lastEndHourMinutes] = lastEndHour
+      .split(":")
+      .map(Number);
+    if (
+      (lastEndHourHours == date.getHours() &&
+        lastEndHourMinutes <= date.getMinutes()) ||
+      lastEndHourHours < date.getHours()
+    ) {
       return false;
     }
   }
