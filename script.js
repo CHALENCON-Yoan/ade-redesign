@@ -548,7 +548,7 @@ function convertFrenchDate(date) {
 
 async function displayLessons(date, resource) {
   if (localStorage.getItem("weekDisplay") == "true") {
-    date.setDate(startWeekDate(date).getDate());
+    date = weekStartkDate(date);
   }
 
   let frenchDate = convertFrenchDate(date);
@@ -936,7 +936,7 @@ function setDays() {
   const days = document.querySelectorAll(".day");
   let startDate = date;
   if (localStorage.getItem("weekDisplay") == "true") {
-    startDate = startWeekDate(date);
+    startDate = weekStartkDate(date);
   }
   for (
     let i = 0;
@@ -950,7 +950,7 @@ function setDays() {
   }
 }
 
-function startWeekDate(date) {
+function weekStartkDate(date) {
   let startDate = new Date(date);
   startDate.setDate(startDate.getDate() - startDate.getDay() + 1);
   return startDate;
