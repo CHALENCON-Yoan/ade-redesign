@@ -1,9 +1,9 @@
 const DEV_MAIL = "yoan@ade-edt.fr";
 const LOCALHOST = false;
-const BASE_URL = "request";
+const BASE_URL = "/request";
 const PORJECT_ID = "3";
 const PROJECT_DATA =
-  "08281677eda1e7f64e2d372185934117103d4fbbeeae8daf5feb097f6d188a31fa91aec4c63f8a2413abf3eb0200af77893b24c3f0ea376490a4df59bbd7d7dac1ce1c636bfed8c261cddb98478bb779bd1ac4646cfd5693729bf4b8e78c5956e3959a1b8d7feaef71a4b247eddc63b2,1";
+  "08281677eda1e7f64e2d372185934117103d4fbbeeae8daf5feb097f6d188a31fa91aec4c63f8a2413abf3eb0200af77893b24c3f0ea376490a4df59bbd7d7dac1ce1c636bfed8c261cddb98478bb779bd1ac4646cfd5693729bf4b8e78c59567ae83326afa226fea9096e273cc145b91561414a3d67e17424890a31962d0e88c0e824b72ad3aea61e43ef842c9e91c3,1";
 
 let resourcesMap = {};
 let weekMap = {};
@@ -444,7 +444,15 @@ async function setNextLessonsDate() {
       currentDate.setDate(currentDate.getDate() + 1);
     }
   }
-  dateSelector.valueAsDate = currentDate;
+
+  const adjustedDate = new Date(
+    Date.UTC(
+      currentDate.getFullYear(),
+      currentDate.getMonth(),
+      currentDate.getDate()
+    )
+  );
+  dateSelector.valueAsDate = adjustedDate;
 
   setDays();
 
@@ -487,9 +495,14 @@ async function haveLessons(date) {
         lastEndHour = events[i].getAttribute("endHour");
       }
     }
-    if (lastEndHour.substring(0, 2) < date.getHours()) {
-      return false;
-    } else if (lastEndHour.substring(2, 4) < date.getMinutes()) {
+    const [lastEndHourHours, lastEndHourMinutes] = lastEndHour
+      .split(":")
+      .map(Number);
+    if (
+      (lastEndHourHours == date.getHours() &&
+        lastEndHourMinutes <= date.getMinutes()) ||
+      lastEndHourHours < date.getHours()
+    ) {
       return false;
     }
   }
@@ -532,7 +545,7 @@ function convertFrenchDate(date) {
 
 async function displayLessons(date, resource) {
   if (localStorage.getItem("weekDisplay") == "true") {
-    date.setDate(startWeekDate(date).getDate());
+    date = weekStartDate(date);
   }
 
   let frenchDate = convertFrenchDate(date);
@@ -850,7 +863,10 @@ async function nextLessons() {
   while (!(await haveLessons(date))) {
     date.setDate(date.getDate() + 1);
   }
-  document.querySelector("#dateSelector").valueAsDate = date;
+  const adjustedDate = new Date(
+    Date.UTC(date.getFullYear(), date.getMonth(), date.getDate())
+  );
+  document.querySelector("#dateSelector").valueAsDate = adjustedDate;
   refreshData();
 }
 
@@ -914,7 +930,7 @@ function setDays() {
   const days = document.querySelectorAll(".day");
   let startDate = date;
   if (localStorage.getItem("weekDisplay") == "true") {
-    startDate = startWeekDate(date);
+    startDate = weekStartDate(date);
   }
   for (
     let i = 0;
@@ -928,7 +944,7 @@ function setDays() {
   }
 }
 
-function startWeekDate(date) {
+function weekStartDate(date) {
   let startDate = new Date(date);
   startDate.setDate(startDate.getDate() - startDate.getDay() + 1);
   return startDate;

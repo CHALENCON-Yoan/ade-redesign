@@ -24,7 +24,17 @@ _Vous pouvez retrouver ci-dessous l'historique des versions du site classées pa
 
 &nbsp;
 
-- **&#x1F9EA; [1.1.1.d](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : Ajout de Google Analytics** - _Version Actuelle_
+- **&#x1F9EA; [1.1.1.e](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : Correction de _bugs_ d'affichage des cours** - _Version Actuelle_
+
+  - Modification des données du projet d'emploi du temps pour correspondre à la nouvelle version déployée sur ADE par la composante de l'IUT de Valence.
+  - Correction du décalage d'un jour dans la date affichée lors de l'affichage des emplois du temps entre minuit et 2h (problème dû au fuseau horaire).
+  - Mise à jour des chemins d'accès aux fichiers CSS et JavaScript ainsi que de l'URL pour les requêtes à l'API. Ils sont désormais absolus et non relatifs pour permettre le fonctionnement total du site depuis des sous-dossiers.
+  - Mise à jour des _favicons_ des pages pour améliorer leur qualité. Les fichiers étaient au format SVG mais n'étaient pas supportés de partout. Ils sont désormais en PNG.
+  - Correction du non-affichage du prochain jour de cours lorsque tous les cours de la journée sont terminés. La comparaison de l'heure de fin des cours d'une journée avec l'heure courante n'était pas correcte.
+  - Correction de l'impossibilité d'afficher une semaine de cours "à cheval" sur 2 mois en utilisant une date du second mois. L'édition de la date utilisée pour récupérer les cours lorsque la date sélectionnée n'est pas celle du début de la semaine était erronée.
+  - Modification du nom de la fonction permettant de récupérer la date du début de la semaine pour une date donnée.
+
+- **&#x1F9EA; [1.1.1.d](https://github.com/CHALENCON-Yoan/ade-redesign/commit/145751dd57f0e0a4ff3b62d7ba6ad78847c7a0c3) : Ajout de Google Analytics**
 
   - Ajout du script pour Google Analytics.
 
