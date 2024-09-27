@@ -463,7 +463,8 @@ footer {
 @media (min-width: 1200px) {
   #teachersResources,
   #studentsResources,
-  #classroomsResources {
+  #classroomsResources,
+  #favorite {
     display: flex;
   }
 }
