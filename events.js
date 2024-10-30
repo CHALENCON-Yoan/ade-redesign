@@ -63,12 +63,13 @@ function changeDisplay() {
   if (localStorage.getItem("weekDisplay") == "true") {
     localStorage.setItem("weekDisplay", false);
     weekDayDisplaySidebarButton.textContent = "Afficher la semaine complète";
-    weekDayDisplayButton.textContent = "Afficher la semaine";
+    weekDayDisplayButton.textContent = "Vue semaine";
   } else {
     localStorage.setItem("weekDisplay", true);
     weekDayDisplaySidebarButton.textContent = "Afficher un seul jour";
-    weekDayDisplayButton.textContent = "Afficher un jour";
+    weekDayDisplayButton.textContent = "Vue jour";
   }
+
   refreshData();
 }
 

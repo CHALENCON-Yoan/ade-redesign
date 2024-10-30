@@ -219,6 +219,13 @@ function setDays() {
   let startDate = date;
   if (localStorage.getItem("weekDisplay") == "true") {
     startDate = weekStartkDate(date);
+    days.forEach((day) => {
+      day.style.width = "20%";
+    });
+  } else {
+    days.forEach((day) => {
+      day.style.width = "100%";
+    });
   }
   for (
     let i = 0;

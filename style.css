@@ -279,7 +279,7 @@ main {
 #days {
   display: flex;
   justify-content: center;
-  margin-left: 53.02px; /* le dernier margin pour le responsive */
+  margin-left: 36.891px;
   margin-bottom: 10px;
 }
 
@@ -369,7 +369,7 @@ footer {
   width: 100%;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
   font-size: 18px;
 }
 
@@ -399,6 +399,10 @@ footer {
     top: -7px;
   }
 
+  #days {
+    margin-left: 42.266px;
+  }
+
   .weekEvent {
     font-size: 10px;
   }
@@ -418,6 +422,10 @@ footer {
     top: -9px;
   }
 
+  #days {
+    margin-left: 47.641px;
+  }
+
   .weekEvent {
     font-size: 12px;
   }
@@ -431,6 +439,10 @@ footer {
   .hour {
     font-size: 16px;
     top: -10px;
+  }
+
+  #days {
+    margin-left: 53.016px;
   }
 
   .weekEvent {
