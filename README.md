@@ -24,7 +24,14 @@ _Vous pouvez retrouver ci-dessous l'historique des versions du site classées pa
 
 &nbsp;
 
-- **&#x1F9EA; [1.1.1.f](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : _Refactoring_, correction de _bugs_ et amélioration de la gestion des erreurs** - _Version Actuelle_
+- **&#x1F9EA; [1.1.1.g](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : Correction des erreurs de la précédente version** - _Version Actuelle_
+
+  - Correction d'une erreur d'orthographe dans une balise `meta`.
+  - Mise à jour de la description de la page `Enseignants`.
+  - Correction des fichiers de _favicons_.
+  - Renommage du fichier `color.js` en `colors.js`.
+
+- **&#x1F9EA; [1.1.1.f](https://github.com/CHALENCON-Yoan/ade-redesign/commit/0d472c98a849a5d78f1a79cb55bc098cb462b121) : _Refactoring_, correction de _bugs_ et amélioration de la gestion des erreurs**
 
   - Ajout du bouton de mise en favoris manquant sur le `header` (il était uniquement disponible dans la _sidebar_).
   - _Refactoring_ du code JavaScript, séparation du fichier principal en plusieurs petits fichiers.
