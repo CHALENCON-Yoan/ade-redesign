@@ -117,8 +117,14 @@ function keyPressed(event) {
 async function nextLessons() {
   loader(true);
   const date = new Date();
-  while (!(await haveLessons(date))) {
-    date.setDate(date.getDate() + 1);
+  console.log(localStorage.getItem("lastResource"));
+  if (
+    localStorage.getItem("lastResource") !== "null" &&
+    localStorage.getItem("lastResource") !== null
+  ) {
+    while (!(await haveLessons(date))) {
+      date.setDate(date.getDate() + 1);
+    }
   }
   const adjustedDate = new Date(
     Date.UTC(date.getFullYear(), date.getMonth(), date.getDate())
