@@ -42,8 +42,10 @@ function loadEventListeners() {
   });
 
   // Favorite
-  const favoriteButton = document.querySelector("#favoriteButton");
-  favoriteButton.addEventListener("click", favoriteResource);
+  const favoriteButtons = document.querySelectorAll(".favoriteButton");
+  favoriteButtons.forEach((button) => {
+    button.addEventListener("click", favoriteResource);
+  });
 
   // Key Events
   addEventListener("keydown", (event) => keyPressed(event));

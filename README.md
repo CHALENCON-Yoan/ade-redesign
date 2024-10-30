@@ -24,7 +24,11 @@ _Vous pouvez retrouver ci-dessous l'historique des versions du site classées pa
 
 &nbsp;
 
-- **&#x1F9EA; [1.1.1.g](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : Correction des erreurs de la précédente version** - _Version Actuelle_
+- **&#x1F9EA; [1.1.1.h](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : Correction d'un _bug_ d'ajout d'écouteurs d'événements** - _Version Actuelle_
+
+  - Correction du sélecteur d'élément lors de l'ajout des écouteurs d'événements sur les boutons permettant l'ajout de la ressource courante en favoris.
+
+- **&#x1F9EA; [1.1.1.g](https://github.com/CHALENCON-Yoan/ade-redesign/commit/336423a27e0f81b6b94684374feecee18fb46910) : Correction des erreurs de la précédente version**
 
   - Correction d'une erreur d'orthographe dans une balise `meta`.
   - Mise à jour de la description de la page `Enseignants`.
