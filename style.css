@@ -272,7 +272,13 @@ main {
   width: 30%;
 }
 
-#linkForErrorMail {
+#linkForErrorMail,
+#linkForTimeOutMail {
+  color: var(--color-main-blue);
+}
+
+#linkForErrorMail:hover,
+#linkForTimeOutMail:hover {
   text-decoration: underline;
 }
 
