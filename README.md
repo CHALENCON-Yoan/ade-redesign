@@ -24,7 +24,17 @@ _Vous pouvez retrouver ci-dessous l'historique des versions du site classées pa
 
 &nbsp;
 
-- **&#x1F9EA; [1.1.1.e](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : Correction de _bugs_ d'affichage des cours** - _Version Actuelle_
+- **&#x1F9EA; [1.1.1.f](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : _Refactoring_, correction de _bugs_ et amélioration de la gestion des erreurs** - _Version Actuelle_
+
+  - Ajout du bouton de mise en favoris manquant sur le `header` (il était uniquement disponible dans la _sidebar_).
+  - _Refactoring_ du code JavaScript, séparation du fichier principal en plusieurs petits fichiers.
+  - Correction de l'affichage tardif du _loader_ lors d'une demande d'affichage des prochains cours.
+  - Correction d'éventuelles boucles infinies lors de l'affichage des prochains cours si la dernière ressource enregistrée est nulle ou s'il n'y a plus de cours pour cette ressource jusqu'à la fin de l'année universitaire (délimitation au 31 juillet).
+  - Mise à jour du message d'erreur affiché en cas d'échec d'une requête (modification du mail généré) et ajout d'un message spécifique en cas de non-réponse du serveur de l'emploi du temps.
+  - Mise à jour du logo, des _favicons_ et de la bannière.
+  - Correction du décalage sur l'affichage des jours au-dessus des cours.
+
+- **&#x1F9EA; [1.1.1.e](https://github.com/CHALENCON-Yoan/ade-redesign/commit/59dcd791fc9c913450c1d1885edac12f52e51f8e) : Correction de _bugs_ d'affichage des cours**
 
   - Modification des données du projet d'emploi du temps pour correspondre à la nouvelle version déployée sur ADE par la composante de l'IUT de Valence.
   - Correction du décalage d'un jour dans la date affichée lors de l'affichage des emplois du temps entre minuit et 2h (problème dû au fuseau horaire).

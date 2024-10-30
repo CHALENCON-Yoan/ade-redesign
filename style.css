@@ -4,7 +4,7 @@
   --color-dark-80: rgba(32, 32, 32, 0.8);
   --color-light: #f5f5f5;
   --color-main-blue: #31a6ff;
-  font-family: Aptos;
+  font-family: Aptos, Arial, Helvetica, sans-serif;
 }
 
 a,
@@ -69,8 +69,7 @@ header {
 }
 
 #switchDarkLightMode,
-#logoLightMode,
-#logoDarkMode {
+#logo {
   width: 50px;
 }
 
@@ -273,14 +272,20 @@ main {
   width: 30%;
 }
 
-#linkForErrorMail {
+#linkForErrorMail,
+#linkForTimeOutMail {
+  color: var(--color-main-blue);
+}
+
+#linkForErrorMail:hover,
+#linkForTimeOutMail:hover {
   text-decoration: underline;
 }
 
 #days {
   display: flex;
   justify-content: center;
-  margin-left: 53.02px; /* le dernier margin pour le responsive */
+  margin-left: 36.891px;
   margin-bottom: 10px;
 }
 
@@ -370,7 +375,7 @@ footer {
   width: 100%;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  padding-bottom: 10px;
   font-size: 18px;
 }
 
@@ -400,6 +405,10 @@ footer {
     top: -7px;
   }
 
+  #days {
+    margin-left: 42.266px;
+  }
+
   .weekEvent {
     font-size: 10px;
   }
@@ -419,6 +428,10 @@ footer {
     top: -9px;
   }
 
+  #days {
+    margin-left: 47.641px;
+  }
+
   .weekEvent {
     font-size: 12px;
   }
@@ -432,6 +445,10 @@ footer {
   .hour {
     font-size: 16px;
     top: -10px;
+  }
+
+  #days {
+    margin-left: 53.016px;
   }
 
   .weekEvent {
@@ -463,7 +480,8 @@ footer {
 @media (min-width: 1200px) {
   #teachersResources,
   #studentsResources,
-  #classroomsResources {
+  #classroomsResources,
+  #favorite {
     display: flex;
   }
 }

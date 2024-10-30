@@ -31,10 +31,23 @@
     <meta property="og:url" content="https://iutv.ade-edt.fr/classrooms" />
     <meta property="og:image" content="/assets/cover.png" />
     <link
-      rel="shortcut icon"
-      href="/assets/favicons/door.png"
-      type="image/x-icon"
+      rel="icon"
+      href="/assets/favicons/dev-192.png"
+      sizes="192x192"
+      type="image/png"
     />
+    <link
+      rel="icon"
+      href="/assets/favicons/dev-512.png"
+      sizes="512x512"
+      type="image/png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="/assets/favicons/dev-180.png"
+      sizes="180x180"
+    />
+    <link rel="icon" href="/assets/favicons/dev.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="/font.css" />
     <link rel="stylesheet" href="/style.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -43,17 +56,8 @@
   <body class="mode lightMode">
     <header>
       <!-- Logo -->
-      <a href="https://ade-edt.fr" class="darkModeDisplay">
-        <img
-          id="logoDarkMode"
-          src="/assets/logo/logoLight.svg"
-          alt="Logo Temporaire"
-      /></a>
-      <a href="https://ade-edt.fr" class="lightModeDisplay">
-        <img
-          id="logoLightMode"
-          src="/assets/logo/logoDark.svg"
-          alt="Logo Temporaire"
+      <a href="https://ade-edt.fr" target="_blank">
+        <img id="logo" src="/assets/logo/logo.svg" alt="Logo ADE Redesign"
       /></a>
 
       <!-- Options -->
@@ -121,7 +125,15 @@
           id="nextLessonsButton"
           class="CTA inSidebar buttonMode lightModeButton nextLessonsButton"
         >
-          Afficher les prochains cours
+          Prochains cours
+        </button>
+
+        <!-- Mettre la ressource favoris -->
+        <button
+          id="favorite"
+          class="CTA inSidebar buttonMode lightModeButton favoriteButton"
+        >
+          Favoris
         </button>
 
         <!-- Télécharger l'EDT -->
@@ -129,7 +141,7 @@
           id="download"
           class="CTA inSidebar buttonMode lightModeButton downloadButton"
         >
-          Télécharger en image
+          Télécharger
         </button>
 
         <!-- Mettre en plein écran -->
@@ -137,7 +149,7 @@
           id="fullScreen"
           class="CTA inSidebar buttonMode lightModeButton fullScreenButton"
         >
-          Mettre en plein écran
+          Plein écran
         </button>
 
         <!-- Changer l'affichage (semaine/jour) -->
@@ -145,7 +157,7 @@
           class="CTA inSidebar buttonMode lightModeButton weekDayDisplayButton"
           id="weekDayDisplayButton"
         >
-          Afficher la semaine
+          Vue semaine
         </button>
       </div>
 
@@ -204,7 +216,7 @@
         </button>
 
         <!-- Ressource favorite -->
-        <button class="sidebarButton" id="favoriteButton">
+        <button class="sidebarButton favoriteButton">
           <img src="/assets/emojis/star.svg" alt="Star Emoji" />
           Définir cette ressource par défaut
         </button>
@@ -252,6 +264,21 @@
           <code id="errorCode"></code> dans votre mail.
         </p>
       </div>
+      <div id="timeOut" class="popup mode lightMode">
+        <img
+          src="/assets/emojis/hourglass.svg"
+          alt="Hourglass Emoji"
+          class="popupImg"
+        />
+        <p>
+          Le serveur qui héberge votre emploi du temps subit une surcharge de
+          connexion. Il n'est pas possible d'afficher les emplois du temps pour
+          l'instant.<br />Cette page sera rafraîchie automatiquement dans
+          quelques secondes.<br /><br />Si le problème persiste pendant
+          plusieurs minutes, merci de prévenir le développeur
+          <a id="linkForTimeOutMail" href="" target="_blank">par mail</a>.
+        </p>
+      </div>
       <div id="display">
         <div id="days"></div>
       </div>
@@ -266,5 +293,15 @@
       </p>
     </footer>
     <script src="/script.js"></script>
+    <script src="/pageInit.js"></script>
+    <script src="/mode.js"></script>
+    <script src="/sidebar.js"></script>
+    <script src="/pop-ups.js"></script>
+    <script src="/dataInit.js"></script>
+    <script src="/dates.js"></script>
+    <script src="/display.js"></script>
+    <script src="/colors.js"></script>
+    <script src="/timetable.js"></script>
+    <script src="/events.js"></script>
   </body>
 </html>
