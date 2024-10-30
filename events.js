@@ -115,6 +115,7 @@ function keyPressed(event) {
 }
 
 async function nextLessons() {
+  loader(true);
   const date = new Date();
   while (!(await haveLessons(date))) {
     date.setDate(date.getDate() + 1);
