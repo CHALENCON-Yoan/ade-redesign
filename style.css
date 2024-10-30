@@ -4,7 +4,7 @@
   --color-dark-80: rgba(32, 32, 32, 0.8);
   --color-light: #f5f5f5;
   --color-main-blue: #31a6ff;
-  font-family: Aptos;
+  font-family: Aptos, Arial, Helvetica, sans-serif;
 }
 
 a,
