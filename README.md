@@ -24,7 +24,11 @@ _Vous pouvez retrouver ci-dessous l'historique des versions du site classées pa
 
 &nbsp;
 
-- **&#x1F9EA; [1.1.1.h](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : Correction d'un _bug_ d'ajout d'écouteurs d'événements** - _Version Actuelle_
+- **&#x1F9EA; [1.1.1.i](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : Correction des _favicons_** - _Version Actuelle_
+
+  - Correction des _favicons_. La _favicon_ de taille `32x32` était manquante.
+
+- **&#x1F9EA; [1.1.1.h](https://github.com/CHALENCON-Yoan/ade-redesign/commit/3b15ae385c1a3a8fbff78980aa239a808c388995) : Correction d'un _bug_ d'ajout d'écouteurs d'événements**
 
   - Correction du sélecteur d'élément lors de l'ajout des écouteurs d'événements sur les boutons permettant l'ajout de la ressource courante en favoris.
 
