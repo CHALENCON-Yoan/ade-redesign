@@ -122,7 +122,7 @@ async function nextLessons() {
     localStorage.getItem("lastResource") !== "null" &&
     localStorage.getItem("lastResource") !== null
   ) {
-    while (!(await haveLessons(date))) {
+    while (date < MAX_DATE && !(await haveLessons(date))) {
       date.setDate(date.getDate() + 1);
     }
   }
