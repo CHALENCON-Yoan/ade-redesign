@@ -272,16 +272,6 @@ main {
   width: 30%;
 }
 
-#linkForErrorMail,
-#linkForTimeOutMail {
-  color: var(--color-main-blue);
-}
-
-#linkForErrorMail:hover,
-#linkForTimeOutMail:hover {
-  text-decoration: underline;
-}
-
 #days {
   display: flex;
   justify-content: center;
