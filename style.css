@@ -23,7 +23,7 @@ a:active {
 
 input,
 button {
-  font-family: Aptos;
+  font-family: Aptos, Arial, Helvetica, sans-serif;
 }
 
 .darkMode {
