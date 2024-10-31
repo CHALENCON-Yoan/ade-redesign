@@ -388,9 +388,6 @@ footer {
   text-decoration: underline;
 }
 
-@media (max-width: 360px) {
-}
-
 @media (min-width: 480px) {
   header {
     align-items: center;
