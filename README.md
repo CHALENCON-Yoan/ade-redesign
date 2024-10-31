@@ -9,8 +9,6 @@ Vous vous trouvez actuellement sur la version bêta du site qui correspond à un
 
 _Pour davantage d'informations sur le projet, merci de vous reporter à la [version principale](https://github.com/CHALENCON-Yoan/ade-redesign/blob/main/README.md)._
 
-**Le projet est actuellement en cours de développement. Le site web n'est pas encore disponible.**
-
 ## 🗂️ Historique des Versions
 
 _Vous pouvez retrouver ci-dessous l'historique des versions du site classées par ordre chronologique inverse (la version la plus ancienne est donc à la fin). Pour chaque version, le détail des modifications apportées est indiqué._
@@ -24,7 +22,17 @@ _Vous pouvez retrouver ci-dessous l'historique des versions du site classées pa
 
 &nbsp;
 
-- **&#x1F9EA; [1.1.1.j](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : Correction du style** - _Version Actuelle_
+- **&#x1F516; [1.1.1](https://github.com/CHALENCON-Yoan/ade-redesign/commit/5c9f32a2e826574d91d156e80d4e5bd021e5abb7) : Publication de la première version**
+
+  - Mise en place de la page d'accueil contenant les liens vers les instances des emplois du temps (uniquement l'IUT de Valence pour l'instant).
+  - Ajout d'une page `À propos` pour donner plus d'informations sur ADE Redesign.
+  - Ajout des pages légales (CGU, Mention Légales, Politique de Confidentialité).
+
+- **&#x1F9EA; [1.1.1.k](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : Annonce de la publication de la première version** - _Version Actuelle_
+
+  - Ajout d'une _pop-up_ d'annonce pour indiquer que la première version d'ADE Redesign est disponible.
+
+- **&#x1F9EA; [1.1.1.j](https://github.com/CHALENCON-Yoan/ade-redesign/commit/7bbe8b1a72b165ee30fd29ef145280a9fa6d3993) : Correction du style**
 
   - Ajout de polices d'écriture supplémentaires sur les `button` et les `input`.
   - Suppression d'une propriété CSS destinée au _responsive_ qui n'était pas utilisée.
