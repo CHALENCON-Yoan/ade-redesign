@@ -5,12 +5,7 @@
 \
 `ADE Redesign` est un projet qui a pour objectif de proposer une nouvelle interface de visualisation des emplois du temps aux étudiants scolarisés dans un établissement d'enseignement supérieur qui utilise Adesoft&#xAE;.
 
-Vous vous trouvez actuellement sur la page principale du site qui regroupera les informations générales du projet ainsi que les liens vers les différentes instances des emplois du temps.
-
-_Ce `README` sera complété au fur et à mesure de l'avancée du projet._
-
-**Le projet est actuellement en cours de développement. Le site web n'est pas encore disponible.\
-Une version bêta est accessible sur [beta.ade-edt.fr](https://beta.ade-edt.fr).**
+Vous vous trouvez actuellement sur la page principale du site qui regroupe les informations générales du projet ainsi que les liens vers les différentes instances des emplois du temps.
 
 ## 🗂️ Historique des Versions
 
@@ -24,7 +19,13 @@ _Vous pouvez retrouver ci-dessous l'historique des versions du site classées pa
 
 &nbsp;
 
-- **&#x1FA79; [0.2.5](https://github.com/CHALENCON-Yoan/ade-redesign/commit/main) : Ajout d'un historique de versions** - _Version Actuelle_
+- **&#x1F516; [1.1.1](https://github.com/CHALENCON-Yoan/ade-redesign/commit/main) : Publication de la première version** - _Version Actuelle_
+
+  - Mise en place de la page d'accueil contenant les liens vers les instances des emplois du temps (uniquement l'IUT de Valence pour l'instant).
+  - Ajout d'une page `À propos` pour donner plus d'informations sur ADE Redesign.
+  - Ajout des pages légales (CGU, Mention Légales, Politique de Confidentialité).
+
+- **&#x1FA79; [0.2.5](https://github.com/CHALENCON-Yoan/ade-redesign/commit/8e203b843ae3eb13190281b7f02d634caa7bd001) : Ajout d'un historique de versions**
 
   - Ajout d'un historique de versions dans le README.
 

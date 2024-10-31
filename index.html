@@ -1,35 +1,62 @@
 <!DOCTYPE html>
 <html lang="fr">
   <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-9QRP2YVYMP"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-9QRP2YVYMP");
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accueil - ADE Redesign</title>
     <meta
       name="description"
-      content="Ce site est encore en cours de développement. Une bêta sera bientôt proposée."
+      content="Nouvelle interface de visualisation des emplois du temps d'ADE."
     />
-    <meta property="og:title" content="Site en construction" />
+    <meta property="og:title" content="Accueil" />
     <meta
       property="og:description"
-      content="Ce site est encore en cours de développement. Une bêta sera bientôt proposée."
+      content="ADE Redesign est un projet proposant une nouvelle interface de visualisation d'emplois du temps."
     />
     <meta property="og:site_name" content="ADE Redesign" />
     <meta property="og:url" content="https://ade-edt.fr" />
-    <meta
-      property="og:image"
-      content="https://ade-edt.fr/assets/logo/logoLight.png"
+    <meta property="og:image" content="/assets/cover.png" />
+
+    <link
+      rel="icon"
+      href="/assets/favicons/logo-192.png"
+      sizes="192x192"
+      type="image/png"
     />
-    <title>Site en construction</title>
-    <link rel="shortcut icon" href="/assets/favicon.svg" type="image/x-icon" />
+    <link
+      rel="icon"
+      href="/assets/favicons/logo-512.png"
+      sizes="512x512"
+      type="image/png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="/assets/favicons/logo-180.png"
+      sizes="180x180"
+    />
+    <link rel="icon" href="/assets/favicons/logo.svg" type="image/svg+xml" />
+
     <link rel="stylesheet" href="/font.css" />
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body class="mode lightMode">
     <header>
-      <a href="/" class="darkModeDisplay">
-        <img id="logoDarkMode" src="/assets/logo/logoLight.svg" alt="Logo Soon"
-      /></a>
-      <a href="/" class="lightModeDisplay">
-        <img id="logoLightMode" src="/assets/logo/logoDark.svg" alt="Logo Soon"
+      <a href="/">
+        <img id="logo" src="/assets/logo/logo.svg" alt="Logo ADE Redesign"
       /></a>
       <img
         id="switchDarkLightMode"
@@ -38,15 +65,61 @@
       />
     </header>
     <main>
-      <span class="emoji">🏗️</span>
-      <h1>En cours de construction.</h1>
-      <h2>
-        Le site est actuellement en cours de développement. <br />
-        Une version bêta est accessible
-        <a href="https://beta.ade-edt.fr" target="_blank">ici</a>&nbsp;!
-      </h2>
-      <span class="emoji">🚧</span>
+      <section id="titles">
+        <h1>ADE Redesign</h1>
+        <h2>
+          Votre emploi du temps universitaire avec une toute nouvelle
+          interface&nbsp;!
+        </h2>
+        <h3>
+          Plus lisible, moderne et fonctionnel, ADE Redesign vous offre la
+          possibilité de consulter vos emplois du temps facilement sur toutes
+          les plateformes.
+        </h3>
+      </section>
+      <section id="schoolLinks">
+        <a href="https://iutv.ade-edt.fr" target="_blank">
+          <button class="schoolLink CTA buttonMode lightModeButton">
+            IUT de Valence
+            <img
+              src="/assets/icons/externalLinkDark.svg"
+              alt="External Link Icon"
+              class="icon"
+            />
+          </button>
+        </a>
+      </section>
+      <a href="about.html#addTimetable" class="blueLink"
+        >Ajouter mon emploi du temps</a
+      >
     </main>
+    <footer>
+      <section id="legalLinks">
+        <a href="/cgu.html">CGU</a>
+        <p>&ndash;</p>
+        <a href="/mentions-legales.html">Mentions Légales</a>
+        <p>&ndash;</p>
+        <a href="/politique-confidentialite.html"
+          >Politique de Confidentialité</a
+        >
+        <p>&ndash;</p>
+        <a href="mailto:contact@ade-edt.fr">Contact</a>
+      </section>
+      <section id="copyright">
+        &#x00A9;
+        <span id="copyrightDate">2024</span>&nbsp;&nbsp;&ndash;&nbsp;&nbsp;ADE
+        Redesign&nbsp;&nbsp;&ndash;&nbsp;&nbsp;Tous droits réservés.
+      </section>
+    </footer>
+    <div id="plus">
+      <a href="/about.html" id="plusLink">
+        <p id="plusText" class="plusTextLight">En savoir plus</p>
+        <p id="plusIcon" class="plusIconLight">?</p>
+      </a>
+    </div>
     <script src="/script.js"></script>
+    <script src="/pageInit.js"></script>
+    <script src="/mode.js"></script>
+    <script src="/events.js"></script>
   </body>
 </html>
