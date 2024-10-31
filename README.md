@@ -24,7 +24,14 @@ _Vous pouvez retrouver ci-dessous l'historique des versions du site classées pa
 
 &nbsp;
 
-- **&#x1F9EA; [1.1.1.i](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : Correction des _favicons_** - _Version Actuelle_
+- **&#x1F9EA; [1.1.1.j](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : Correction du style** - _Version Actuelle_
+
+  - Ajout de polices d'écriture supplémentaires sur les `button` et les `input`.
+  - Suppression d'une propriété CSS destinée au _responsive_ qui n'était pas utilisée.
+  - Simplification de la mise en couleur des liens sur les _pop-ups_ d'erreur (une classe était déjà destinée à cela).
+  - Suppression des icones non utilisés.
+
+- **&#x1F9EA; [1.1.1.i](https://github.com/CHALENCON-Yoan/ade-redesign/commit/590c45abb7227bca8b47f2dcd0944d7d4bca3fb8) : Correction des _favicons_**
 
   - Correction des _favicons_. La _favicon_ de taille `32x32` était manquante.
 

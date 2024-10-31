@@ -23,7 +23,7 @@ a:active {
 
 input,
 button {
-  font-family: Aptos;
+  font-family: Aptos, Arial, Helvetica, sans-serif;
 }
 
 .darkMode {
@@ -272,16 +272,6 @@ main {
   width: 30%;
 }
 
-#linkForErrorMail,
-#linkForTimeOutMail {
-  color: var(--color-main-blue);
-}
-
-#linkForErrorMail:hover,
-#linkForTimeOutMail:hover {
-  text-decoration: underline;
-}
-
 #days {
   display: flex;
   justify-content: center;
@@ -386,9 +376,6 @@ footer {
 
 .blueLink:hover {
   text-decoration: underline;
-}
-
-@media (max-width: 360px) {
 }
 
 @media (min-width: 480px) {
