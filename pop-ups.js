@@ -34,3 +34,16 @@ function loader(visible) {
     loaderDiv.style.display = "none";
   }
 }
+
+function showAnnounce() {
+  const announceDiv = document.querySelector("#announce");
+  announceDiv.style.display = "flex";
+
+  const hideAnnounceButton = document.querySelector("#hideAnnounceButton");
+  hideAnnounceButton.addEventListener("click", hideAnnounce);
+}
+
+function hideAnnounce() {
+  const announceDiv = document.querySelector("#announce");
+  announceDiv.style.display = "none";
+}

@@ -248,6 +248,27 @@
     <!-- Fond de transparence pour la sidebar -->
     <div id="backgroundBlur" class="backgroundBlur"></div>
     <main>
+      <div id="announce" class="popup mode lightMode">
+        <img
+          src="/assets/emojis/loudspeaker.svg"
+          alt="Loudspeaker Emoji"
+          class="popupImg"
+        />
+        <p>
+          <b
+            >Suite à un problème technique de l'UGA, les emplois du temps ne
+            sont plus disponibles !</b
+          >
+          <br />
+          Néanmoins, vous pouvez trouver votre emploi du temps pour la journée
+          du 19 novembre ci-dessous (certaines ressources uniquement). Il s'agit
+          simplement d'une sauvegarde temporaire et partielle. Un rétablissement
+          de la situation est espéré dans les plus brefs délais.
+        </p>
+        <button class="CTA buttonMode lightModeButton" id="hideAnnounceButton">
+          C'est noté&nbsp;!
+        </button>
+      </div>
       <div id="loader" class="popup mode lightMode">
         <div id="loaderImage" class="popupImg"></div>
         <p>
@@ -312,5 +333,9 @@
     <script src="/colors.js"></script>
     <script src="/timetable.js"></script>
     <script src="/events.js"></script>
+    <script src="/backup/lessons.js"></script>
+    <script src="/backup.js"></script>
+    <script src="/backup/calendar.js"></script>
+    <script src="/backup/resources.js"></script>
   </body>
 </html>

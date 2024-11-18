@@ -9,27 +9,34 @@ function getResourceName(id) {
 
 async function haveLessons(date) {
   let result;
-  if (LOCALHOST) {
-    result = dayExample;
-  } else {
-    const request = await fetch(
-      `${BASE_URL}?function=getEvents&resources=${localStorage.getItem(
-        "lastResource"
-      )}&projectId=${PORJECT_ID}&data=${PROJECT_DATA}&detail=8&date=${convertDate(
-        date
-      )}`
-    );
+  // if (LOCALHOST) {
+  //   result = dayExample;
+  // } else {
+  //   const request = await fetch(
+  //     `${BASE_URL}?function=getEvents&resources=${localStorage.getItem(
+  //       "lastResource"
+  //     )}&projectId=${PORJECT_ID}&data=${PROJECT_DATA}&detail=8&date=${convertDate(
+  //       date
+  //     )}`
+  //   );
 
-    if (!request.ok) {
-      console.error(
-        `Une erreur est survenue lors du chargement de la page. Merci de prévenir le développeur à l'adresse ${DEV_MAIL} en indiquant le code erreur ER03-${request.status}.`
-      );
-      displayError("ER03", request);
-      throw new Error(`HTTP error! Status: ${request.status}`);
-    }
+  //   if (!request.ok) {
+  //     console.error(
+  //       `Une erreur est survenue lors du chargement de la page. Merci de prévenir le développeur à l'adresse ${DEV_MAIL} en indiquant le code erreur ER03-${request.status}.`
+  //     );
+  //     displayError("ER03", request);
+  //     throw new Error(`HTTP error! Status: ${request.status}`);
+  //   }
 
-    result = await request.text();
-  }
+  //   result = await request.text();
+  // }
+
+  result = getBackup(
+    localStorage.getItem("lastResource"),
+    convertFrenchDate(date),
+    localStorage.getItem("weekDisplay") == "true"
+  );
+
   const parser = new DOMParser();
   const xmlDoc = parser.parseFromString(result, "text/xml");
 

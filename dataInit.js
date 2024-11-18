@@ -1,22 +1,7 @@
 async function getCalendar() {
   let calendar;
 
-  if (LOCALHOST) {
-    calendar = calendarExample;
-  } else {
-    const request = await fetch(
-      `${BASE_URL}?function=getCalendar&projectId=${PORJECT_ID}&data=${PROJECT_DATA}`
-    );
-
-    if (!request.ok) {
-      console.error(
-        `Une erreur est survenue lors du chargement de la page. Merci de prévenir le développeur à l'adresse ${DEV_MAIL} en indiquant le code erreur ER02-${request.status}.`
-      );
-      displayError("ER02", request);
-      throw new Error(`HTTP error! Status: ${request.status}`);
-    }
-    calendar = await request.text();
-  }
+  calendar = calendarExample;
 
   const parser = new DOMParser();
   const xmlDoc = parser.parseFromString(calendar, "text/xml");
@@ -30,23 +15,7 @@ async function getCalendar() {
 
 async function makeDatalist() {
   let resourcesTree;
-  if (LOCALHOST) {
-    resourcesTree = xmlResourcesTreeExample;
-  } else {
-    const request = await fetch(
-      `${BASE_URL}?function=getResources&tree=true&detail=3&projectId=${PORJECT_ID}&data=${PROJECT_DATA}`
-    );
-
-    if (!request.ok) {
-      console.error(
-        `Une erreur est survenue lors du chargement de la page. Merci de prévenir le développeur à l'adresse ${DEV_MAIL} en indiquant le code erreur ER01-${request.status}.`
-      );
-      displayError("ER01", request);
-      throw new Error(`HTTP error! Status: ${request.status}`);
-    }
-
-    resourcesTree = await request.text();
-  }
+  resourcesTree = xmlResourcesTreeExample;
 
   const parser = new DOMParser();
   const xmlDoc = parser.parseFromString(resourcesTree, "text/xml");

@@ -7,55 +7,79 @@ async function displayLessons(date, resource) {
 
   if (localStorage.getItem("weekDisplay") == "true") {
     let weekTree;
-    if (LOCALHOST) {
-      weekTree = weekExample;
-    } else {
-      const weekId = weekMap[frenchDate];
-      const request = await fetch(
-        `${BASE_URL}?function=getEvents&projectId=${PORJECT_ID}&data=${PROJECT_DATA}&weeks=${weekId}&resources=${resource}&detail=8`
-      );
+    // if (LOCALHOST) {
+    //   weekTree = weekExample;
+    // } else {
+    //   const weekId = weekMap[frenchDate];
+    //   const request = await fetch(
+    //     `${BASE_URL}?function=getEvents&projectId=${PORJECT_ID}&data=${PROJECT_DATA}&weeks=${weekId}&resources=${resource}&detail=8`
+    //   );
 
-      if (!request.ok) {
-        console.error(
-          `Une erreur est survenue lors du chargement de la page. Merci de prévenir le développeur à l'adresse ${DEV_MAIL} en indiquant le code erreur ER04-${request.status}.`
-        );
-        displayError("ER04", request);
-        throw new Error(`HTTP error! Status: ${request.status}`);
-      }
+    //   if (!request.ok) {
+    //     console.error(
+    //       `Une erreur est survenue lors du chargement de la page. Merci de prévenir le développeur à l'adresse ${DEV_MAIL} en indiquant le code erreur ER04-${request.status}.`
+    //     );
+    //     displayError("ER04", request);
+    //     throw new Error(`HTTP error! Status: ${request.status}`);
+    //   }
 
-      weekTree = await request.text();
-    }
+    //   weekTree = await request.text();
+    // }
+
+    // weekTree = getBackup(
+    //   resource,
+    //   frenchDate,
+    //   localStorage.getItem("weekDisplay") == "true"
+    // );
 
     const parser = new DOMParser();
-    const xmlDoc = parser.parseFromString(weekTree, "text/xml");
+    // const xmlDoc = parser.parseFromString(weekTree, "text/xml");
 
     for (let i = 0; i < 5; i++) {
       const newFrenchDate = convertFrenchDate(
         i !== 0 ? date.setDate(date.getDate() + 1) : date
       );
-      displayDay(xmlDoc, newFrenchDate, i + 1);
+      displayDay(
+        parser.parseFromString(
+          getBackup(
+            resource,
+            newFrenchDate,
+            localStorage.getItem("weekDisplay") == "true"
+          ),
+          "text/xml"
+        ),
+        newFrenchDate,
+        i + 1
+      );
     }
   } else {
     let dayTree;
-    if (LOCALHOST) {
-      dayTree = dayExample;
-    } else {
-      const request = await fetch(
-        `${BASE_URL}?function=getEvents&resources=${resource}&projectId=${PORJECT_ID}&data=${PROJECT_DATA}&detail=8&date=${convertDate(
-          date
-        )}`
-      );
+    // if (LOCALHOST) {
+    //   dayTree = dayExample;
+    // } else {
+    //   const request = await fetch(
+    //     `${BASE_URL}?function=getEvents&resources=${resource}&projectId=${PORJECT_ID}&data=${PROJECT_DATA}&detail=8&date=${convertDate(
+    //       date
+    //     )}`
+    //   );
 
-      if (!request.ok) {
-        console.error(
-          `Une erreur est survenue lors du chargement de la page. Merci de prévenir le développeur à l'adresse ${DEV_MAIL} en indiquant le code erreur ER05-${request.status}.`
-        );
-        displayError("ER05", request);
-        throw new Error(`HTTP error! Status: ${request.status}`);
-      }
+    //   if (!request.ok) {
+    //     console.error(
+    //       `Une erreur est survenue lors du chargement de la page. Merci de prévenir le développeur à l'adresse ${DEV_MAIL} en indiquant le code erreur ER05-${request.status}.`
+    //     );
+    //     displayError("ER05", request);
+    //     throw new Error(`HTTP error! Status: ${request.status}`);
+    //   }
 
-      dayTree = await request.text();
-    }
+    //   dayTree = await request.text();
+    // }
+
+    dayTree = getBackup(
+      resource,
+      frenchDate,
+      localStorage.getItem("weekDisplay") == "true"
+    );
+
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(dayTree, "text/xml");
 

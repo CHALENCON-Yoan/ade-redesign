@@ -31,6 +31,9 @@ window.addEventListener("load", async () => {
   // Display the schedule grid
   displayScheduleGrid();
 
+  //Show announce
+  showAnnounce(true);
+
   // Make the datalist for resources
   loader(true);
   await makeDatalist();
