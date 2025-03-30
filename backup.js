@@ -1,7 +1,7 @@
 function getBackup(resource, date, weekDisplay) {
   let result;
   // console.log(`resource: ${resource} ; date: ${date}`);
-  const dateReformat = date.replaceAll("/", "");
+  const dateReformat = date.split("/").reverse().join("");
   // console.log(`dateReformat: ${dateReformat}`);
   let variableName = `R${resource}D${dateReformat}`;
   // console.log(`variableName: ${variableName}`);
