@@ -1117,7 +1117,7 @@ globalThis.R73847D20250401 = `<?xml version="1.0" encoding="UTF-8"?>
 		</resources>
 		<additional/>
 	</event>
-	<event name="Développement d'applications avec IHM" endHour="18:30" startHour="17:00" date="01/04/2025" duration="2" color="0,128,255"> 
+	<event name="Développement d'applications avec IHM" endHour="18:30" startHour="17:00" date="01/04/2025" duration="6" color="0,128,255"> 
 		<resources>
 			<resource category="trainee" name="INFO1-TD3-TP3E"/> 
 			<resource category="instructor" name="MOKNI YANIS"/> 
@@ -1149,7 +1149,7 @@ globalThis.R73847D20250402 = `<?xml version="1.0" encoding="UTF-8"?>
 		</resources>
 		<additional/>
 	</event>
-	<event name="Développement orienté objet POO" endHour="11:00" startHour="09:30" date="02/04/2025" duration="6" color="0,128,255"> 
+	<event name="Développement orienté objet POO" endHour="12:30" startHour="11:00" date="02/04/2025" duration="6" color="0,128,255"> 
 		<resources>
 			<resource category="trainee" name="INFO1-TD3"/> 
 			<resource category="instructor" name="JEAN SEBASTIEN"/> 
@@ -1340,7 +1340,7 @@ globalThis.R73848D20250401 = `<?xml version="1.0" encoding="UTF-8"?>
 		</resources>
 		<additional/>
 	</event>
-	<event name="Développement d'applications avec IHM" endHour="18:30" startHour="17:00" date="01/04/2025" duration="2" color="0,128,255"> 
+	<event name="Développement d'applications avec IHM" endHour="18:30" startHour="17:00" date="01/04/2025" duration="6" color="0,128,255"> 
 		<resources>
 			<resource category="trainee" name="INFO1-TD3-TP3F"/> 
 			<resource category="instructor" name="GAUCHE SYLVAIN"/> 
@@ -1372,7 +1372,7 @@ globalThis.R73848D20250402 = `<?xml version="1.0" encoding="UTF-8"?>
 		</resources>
 		<additional/>
 	</event>
-	<event name="Développement orienté objet POO" endHour="11:00" startHour="09:30" date="02/04/2025" duration="6" color="0,128,255"> 
+	<event name="Développement orienté objet POO" endHour="12:30" startHour="11:00" date="02/04/2025" duration="6" color="0,128,255"> 
 		<resources>
 			<resource category="trainee" name="INFO1-TD3"/> 
 			<resource category="instructor" name="JEAN SEBASTIEN"/> 
