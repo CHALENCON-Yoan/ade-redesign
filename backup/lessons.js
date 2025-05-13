@@ -1455,6 +1455,56 @@ globalThis.R73848D20250404 = `<?xml version="1.0" encoding="UTF-8"?>
 
 // -------------------------------------------------------------------------------
 
+// TP1A 13/05/2025 
+globalThis.R73827D20250513 = `<?xml version="1.0" encoding="UTF-8"?> 
+<events>
+	<event name="Graphes" endHour="09:30" startHour="08:00" date="13/05/2025" duration="6" color="0,128,255"> 
+		<resources>
+			<resource category="trainee" name="INFO1"/> 
+			<resource category="instructor" name="CHARENSOL SYLVAIN"/> 
+			<resource category="category5" name="Non disponible"/>
+			<resource category="classroom" name="B001 (143 pl)"/> 
+		</resources>
+		<additional/>
+	</event>
+	<event name="Introduction au droit" endHour="11:00" startHour="09:30" date="13/05/2025" duration="6" color="0,128,255"> 
+		<resources>
+			<resource category="trainee" name="INFO1-TD1"/> 
+			<resource category="instructor" name="CONSTANT BLANDINE"/> 
+			<resource category="category5" name="Non disponible"/>
+			<resource category="classroom" name="B117"/> 
+		</resources>
+		<additional/>
+	</event>
+	<event name="Introduction aux services réseaux" endHour="12:30" startHour="11:00" date="13/05/2025" duration="6" color="0,128,255"> 
+		<resources>
+			<resource category="trainee" name="INFO1-TD1-TP1A"/> 
+			<resource category="instructor" name="OBJOIS PHILIPPE"/> 
+			<resource category="category5" name="Non disponible"/>
+			<resource category="classroom" name="D106"/> 
+		</resources>
+		<additional/>
+	</event>
+	<event name="Développement d'applications avec IHM swing" endHour="15:30" startHour="14:00" date="13/05/2025" duration="6" color="0,128,255"> 
+		<resources>
+			<resource category="trainee" name="INFO1-TD1-TP1A"/> 
+			<resource category="trainee" name="INFO1-TD1-TP1B"/> 
+			<resource category="instructor" name="JEAN SEBASTIEN"/> 
+			<resource category="category5" name="Non disponible"/>
+			<resource category="classroom" name="B123"/> 
+		</resources>
+		<additional/>
+	</event>
+	<event name="Anglais" endHour="17:00" startHour="15:30" date="13/05/2025" duration="6" color="0,128,255"> 
+		<resources>
+			<resource category="trainee" name="INFO1-TD1"/> 
+			<resource category="instructor" name="METGE CECILE"/> 
+			<resource category="category5" name="Non disponible"/>
+			<resource category="classroom" name="B118"/> 
+		</resources>
+		<additional/>
+	</event>
+</events>;`
 
 // TP2C 13/05/2025 
 globalThis.R73844D20250513 = `<?xml version="1.0" encoding="UTF-8"?> 
