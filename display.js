@@ -12,7 +12,7 @@ async function displayLessons(date, resource) {
     } else {
       const weekId = weekMap[frenchDate];
       const request = await fetch(
-        `${BASE_URL}?function=getEvents&projectId=${PORJECT_ID}&data=${PROJECT_DATA}&weeks=${weekId}&resources=${resource}&detail=8&days=0`
+        `${BASE_URL}?function=getEvents&projectId=${PORJECT_ID}&data=${PROJECT_DATA}&weeks=${weekId}&resources=${resource}&detail=8&days=0%7C1%7C2%7C3%7C4`
       );
 
       if (!request.ok) {
