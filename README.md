@@ -9,5 +9,4 @@ Vous vous trouvez actuellement sur la version de développement du site qui corr
 
 _Pour davantage d'informations sur le projet, merci de vous reporter à la [version principale](https://github.com/CHALENCON-Yoan/ade-redesign/blob/main/README.md)._
 
-**Le projet est actuellement en cours de développement. Le site web n'est pas encore disponible.\
-Une version bêta est accessible sur [beta.ade-edt.fr](https://beta.ade-edt.fr).**
+**Le projet est toujours en cours de développement. Le site web est disponible sur [ade-edt.fr](https://ade-edt.fr).**
