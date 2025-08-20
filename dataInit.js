@@ -106,17 +106,14 @@ async function restoreResourceValue() {
 async function setNextLessonsDate() {
   const dateSelector = document.querySelector("#dateSelector");
   let currentDate = new Date();
-  if (localStorage.getItem("lastResource") !== null) {
-    if (
-      localStorage.getItem("lastResource") !== null &&
-      localStorage.getItem("lastResource") !== "null"
-    ) {
-      while (currentDate < MAX_DATE && !(await haveLessons(currentDate))) {
-        currentDate.setDate(currentDate.getDate() + 1);
-      }
+  if (
+    localStorage.getItem("lastResource") !== null &&
+    localStorage.getItem("lastResource") !== "null"
+  ) {
+    while (currentDate < MAX_DATE && !(await haveLessons(currentDate))) {
+      currentDate.setDate(currentDate.getDate() + 1);
     }
   }
-
   const adjustedDate = new Date(
     Date.UTC(
       currentDate.getFullYear(),

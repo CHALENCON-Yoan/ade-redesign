@@ -69,6 +69,7 @@ function changeDisplay() {
     weekDayDisplaySidebarButton.textContent = "Afficher un seul jour";
     weekDayDisplayButton.textContent = "Vue jour";
   }
+
   refreshData();
 }
 
