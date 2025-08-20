@@ -5,6 +5,12 @@
   force = true
 
 [[redirects]]
+  from = "/localRequest"
+  to = "/.netlify/functions/request"
+  status = 200
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 404

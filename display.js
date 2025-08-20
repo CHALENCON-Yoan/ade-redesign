@@ -159,6 +159,9 @@ function displayEvent(event, dayIndex) {
   if (group.textContent.length != 0) {
     eventDiv.appendChild(group);
   }
+  // if (resource.textContent.length != 0) {
+  //   eventDiv.appendChild(resource);
+  // }
 
   eventDiv.style.backgroundColor = `rgb(${checkColor(
     event.getAttribute("color")

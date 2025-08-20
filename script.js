@@ -1,6 +1,8 @@
 const DEV_MAIL = "yoan@ade-edt.fr";
-const LOCALHOST = false;
-const BASE_URL = "/request";
+let LOCALHOST =
+    location.hostname == "127.0.0.1" || location.hostname == "192.168.1.10";
+const BASE_URL = LOCALHOST ? "https://dev.ade-edt.fr/localRequest" : "/request";
+LOCALHOST = false;
 const PORJECT_ID = "3";
 const PROJECT_DATA =
   "08281677eda1e7f64e2d372185934117103d4fbbeeae8daf5feb097f6d188a31fa91aec4c63f8a2413abf3eb0200af77893b24c3f0ea376490a4df59bbd7d7dac1ce1c636bfed8c261cddb98478bb779bd1ac4646cfd5693729bf4b8e78c59567ae83326afa226fea9096e273cc145b91561414a3d67e17424890a31962d0e88c0e824b72ad3aea61e43ef842c9e91c3,1";
