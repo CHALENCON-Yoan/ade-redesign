@@ -15,7 +15,7 @@ async function haveLessons(date) {
     const request = await fetch(
       `${BASE_URL}?function=getEvents&resources=${localStorage.getItem(
         "lastResource"
-      )}&projectId=${PORJECT_ID}&data=${PROJECT_DATA}&detail=8&date=${convertDate(
+      )}&projectId=${PROJECT_ID}&data=${PROJECT_DATA}&detail=8&days=0&date=${convertDate(
         date
       )}`
     );
