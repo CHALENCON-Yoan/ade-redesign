@@ -24,11 +24,15 @@ _Vous pouvez retrouver ci-dessous l'historique des versions du site classées pa
 
 &nbsp;
 
+-   **&#x1F9EA; [2.0.1.a](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : Correctif largeur _pop-ups_ sur mobile**
+
+    -   Ajout d'une propriété CSS pour adapter la largeur des _pop-ups_ sur mobile.
+
 -   **&#x1FA79; [2.0.1](https://github.com/CHALENCON-Yoan/ade-redesign/commit/iutv) : _Pop-up_ d'annonces/informations dynamique** - _Version Actuelle_
 
     -   La _pop-up_ pour les annonces et informations est désormais dynamique.
 
--   **&#x1F9EA; [2.0.0.b](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : Modification du message par défaut pour les annonces**
+-   **&#x1F9EA; [2.0.0.b](https://github.com/CHALENCON-Yoan/ade-redesign/commit/6a757d54b035120a85e0e6f5002a17b594f34c61) : Modification du message par défaut pour les annonces**
 
     -   Remplacement d'un ancien message (affiché par défaut) par un texte indiquant qu'il n'y a aucune annonce actuellement.
     -   Ce texte ne sera normalement jamais affiché.
