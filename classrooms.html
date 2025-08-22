@@ -1,335 +1,389 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-05L99PWYBH"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+    <head>
+        <!-- Google tag (gtag.js) -->
+        <script
+                async
+                src="https://www.googletagmanager.com/gtag/js?id=G-05L99PWYBH"
+        ></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+            gtag("js", new Date());
 
-      gtag("config", "G-05L99PWYBH");
-    </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Salles - ADE Redesign - IUT Valence</title>
-    <meta
-      name="description"
-      content="Nouvelle interface de visualisation des emplois du temps d'ADE."
-    />
-    <meta property="og:title" content="Salles - IUT de Valence" />
-    <meta
-      property="og:description"
-      content="Retrouvez les emplois du temps des salles de l'IUT de Valence sur une toute nouvelle interface."
-    />
-    <meta property="og:site_name" content="ADE Redesign" />
-    <meta property="og:url" content="https://iutv.ade-edt.fr/classrooms" />
-    <meta property="og:image" content="/assets/cover.png" />
-    <link
-      rel="icon"
-      href="/assets/favicons/door-32.png"
-      sizes="32x32"
-      type="image/png"
-    />
-    <link
-      rel="icon"
-      href="/assets/favicons/door-192.png"
-      sizes="192x192"
-      type="image/png"
-    />
-    <link
-      rel="icon"
-      href="/assets/favicons/door-512.png"
-      sizes="512x512"
-      type="image/png"
-    />
-    <link
-      rel="apple-touch-icon"
-      href="/assets/favicons/door-180.png"
-      sizes="180x180"
-    />
-    <link rel="icon" href="/assets/favicons/door.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="/font.css" />
-    <link rel="stylesheet" href="/style.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js"></script>
-  </head>
-  <body class="mode lightMode">
-    <header>
-      <!-- Logo -->
-      <a href="https://ade-edt.fr" target="_blank">
-        <img id="logo" src="/assets/logo/logo.svg" alt="Logo ADE Redesign"
-      /></a>
+            gtag("config", "G-05L99PWYBH");
+        </script>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Salles - ADE Redesign - IUT Valence</title>
+        <meta
+            name="description"
+            content="Nouvelle interface de visualisation des emplois du temps d'ADE."
+        />
+        <meta property="og:title" content="Salles - IUT de Valence" />
+        <meta
+            property="og:description"
+            content="Retrouvez les emplois du temps des salles de l'IUT de Valence sur une toute nouvelle interface."
+        />
+        <meta property="og:site_name" content="ADE Redesign" />
+        <meta property="og:url" content="https://iutv.ade-edt.fr/classrooms" />
+        <meta property="og:image" content="/assets/cover.png" />
+        <link
+            rel="icon"
+            href="/assets/favicons/door-32.png"
+            sizes="32x32"
+            type="image/png"
+        />
+        <link
+            rel="icon"
+            href="/assets/favicons/door-192.png"
+            sizes="192x192"
+            type="image/png"
+        />
+        <link
+            rel="icon"
+            href="/assets/favicons/door-512.png"
+            sizes="512x512"
+            type="image/png"
+        />
+        <link
+            rel="apple-touch-icon"
+            href="/assets/favicons/door-180.png"
+            sizes="180x180"
+        />
+        <link
+            rel="icon"
+            href="/assets/favicons/door.svg"
+            type="image/svg+xml"
+        />
+        <link rel="stylesheet" href="/font.css" />
+        <link rel="stylesheet" href="/style.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.7.4/lottie.min.js"></script>
+    </head>
+    <body class="mode lightMode">
+        <header>
+            <!-- Logo -->
+            <a href="https://ade-edt.fr" target="_blank">
+                <img
+                    id="logo"
+                    src="/assets/logo/logo.svg"
+                    alt="Logo ADE Redesign"
+            /></a>
 
-      <!-- Options -->
-      <div id="options">
-        <!-- Sélecteur de ressource -->
-        <div class="inputFloatingLabel">
-          <label for="resourceSelector" class="mode lightMode">Ressource</label>
-          <input
-            list="resourcesList"
-            id="resourceSelector"
-            placeholder="Choisir une salle."
-            class="inputMode lightModeInput"
-          />
-          <datalist id="resourcesList"> </datalist>
-        </div>
+            <!-- Options -->
+            <div id="options">
+                <!-- Sélecteur de ressource -->
+                <div class="inputFloatingLabel">
+                    <label for="resourceSelector" class="mode lightMode"
+                        >Ressource</label
+                    >
+                    <input
+                        list="resourcesList"
+                        id="resourceSelector"
+                        placeholder="Choisir une salle."
+                        class="inputMode lightModeInput"
+                    />
+                    <datalist id="resourcesList"></datalist>
+                </div>
 
-        <!-- Voir l'EDT des étudiants -->
-        <a href="/" class="inSidebar" id="studentsResources">
-          <button class="CTA buttonMode lightModeButton">Étudiants</button>
-        </a>
+                <!-- Voir l'EDT des étudiants -->
+                <a href="/" class="inSidebar" id="studentsResources">
+                    <button class="CTA buttonMode lightModeButton">
+                        Étudiants
+                    </button>
+                </a>
 
-        <!-- Voir l'EDT des enseignants -->
-        <a href="/teachers.html" class="inSidebar" id="teachersResources">
-          <button class="CTA buttonMode lightModeButton">Enseignants</button>
-        </a>
+                <!-- Voir l'EDT des enseignants -->
+                <a
+                    href="/teachers.html"
+                    class="inSidebar"
+                    id="teachersResources"
+                >
+                    <button class="CTA buttonMode lightModeButton">
+                        Enseignants
+                    </button>
+                </a>
 
-        <!-- Sélecteur de date -->
-        <div id="datePicker">
-          <!-- Jour/Semaine précédent(e) -->
-          <img
-            src="/assets/emojis/previous.svg"
-            alt="Reverse Emoji"
-            class="emojiButton"
-            id="previousButton"
-          />
+                <!-- Sélecteur de date -->
+                <div id="datePicker">
+                    <!-- Jour/Semaine précédent(e) -->
+                    <img
+                        src="/assets/emojis/previous.svg"
+                        alt="Reverse Emoji"
+                        class="emojiButton"
+                        id="previousButton"
+                    />
 
-          <div class="inputFloatingLabel">
-            <label for="dateSelector" class="mode lightMode">Date</label>
-            <input
-              type="date"
-              id="dateSelector"
-              class="inputMode lightModeInput"
+                    <div class="inputFloatingLabel">
+                        <label for="dateSelector" class="mode lightMode"
+                            >Date</label
+                        >
+                        <input
+                            type="date"
+                            id="dateSelector"
+                            class="inputMode lightModeInput"
+                        />
+                    </div>
+
+                    <!-- Jour/Semaine suivant(e) -->
+                    <img
+                        src="/assets/emojis/next.svg"
+                        alt="Play Emoji"
+                        class="emojiButton"
+                        id="nextButton"
+                    />
+
+                    <!-- "Prochains cours" mobile -->
+                    <img
+                        src="/assets/emojis/calendar.svg"
+                        alt="Calendar Emoji"
+                        id="nextLessonsEmoji"
+                        class="emojiButton nextLessonsButton"
+                    />
+                </div>
+
+                <!-- "Prochains cours" desktop -->
+                <button
+                    id="nextLessonsButton"
+                    class="CTA inSidebar buttonMode lightModeButton nextLessonsButton"
+                >
+                    Prochains cours
+                </button>
+
+                <!-- Mettre la ressource favoris -->
+                <button
+                    id="favorite"
+                    class="CTA inSidebar buttonMode lightModeButton favoriteButton"
+                >
+                    Favoris
+                </button>
+
+                <!-- Télécharger l'EDT -->
+                <button
+                    id="download"
+                    class="CTA inSidebar buttonMode lightModeButton downloadButton"
+                >
+                    Télécharger
+                </button>
+
+                <!-- Mettre en plein écran -->
+                <button
+                    id="fullScreen"
+                    class="CTA inSidebar buttonMode lightModeButton fullScreenButton"
+                >
+                    Plein écran
+                </button>
+
+                <!-- Changer l'affichage (semaine/jour) -->
+                <button
+                    class="CTA inSidebar buttonMode lightModeButton weekDayDisplayButton"
+                    id="weekDayDisplayButton"
+                >
+                    Vue semaine
+                </button>
+            </div>
+
+            <!-- Switch de mode -->
+            <img
+                id="switchDarkLightMode"
+                src="/assets/switchDarkLightMode/lightMode.svg"
+                alt="Switch Dark/Light Mode"
+                class="inSidebar"
             />
-          </div>
 
-          <!-- Jour/Semaine suivant(e) -->
-          <img
-            src="/assets/emojis/next.svg"
-            alt="Play Emoji"
-            class="emojiButton"
-            id="nextButton"
-          />
+            <!-- Ouverture de la sidebar -->
+            <img
+                src="/assets/icons/openSidebarDark.svg"
+                alt="Open sidebar Icon"
+                id="openSidebar"
+            />
 
-          <!-- "Prochains cours" mobile -->
-          <img
-            src="/assets/emojis/calendar.svg"
-            alt="Calendar Emoji"
-            id="nextLessonsEmoji"
-            class="emojiButton nextLessonsButton"
-          />
-        </div>
+            <!-- Sidebar -->
+            <aside id="sidebar" class="sidebar mode lightMode">
+                <!-- Fermeture de la sidebar -->
+                <img
+                    src="/assets/icons/closeSidebarDark.svg"
+                    alt="Close sidebar Icon"
+                    id="closeSidebar"
+                />
 
-        <!-- "Prochains cours" desktop -->
-        <button
-          id="nextLessonsButton"
-          class="CTA inSidebar buttonMode lightModeButton nextLessonsButton"
-        >
-          Prochains cours
-        </button>
+                <!-- Switch de mode -->
+                <button class="sidebarButton" id="sidebarSwitchDarkLightMode">
+                    <img
+                        src="/assets/switchDarkLightMode/lightMode.svg"
+                        alt="Switch Dark/Light Mode"
+                    />
+                    Changer de mode
+                </button>
 
-        <!-- Mettre la ressource favoris -->
-        <button
-          id="favorite"
-          class="CTA inSidebar buttonMode lightModeButton favoriteButton"
-        >
-          Favoris
-        </button>
+                <!-- Switch d'affichage -->
+                <button
+                    class="sidebarButton weekDayDisplayButton"
+                    id="weekDayDisplaySidebarButton"
+                >
+                    <img
+                        src="/assets/emojis/calendar.svg"
+                        alt="Calendar Emoji"
+                    />
+                    <span>Afficher la semaine complète</span>
+                </button>
 
-        <!-- Télécharger l'EDT -->
-        <button
-          id="download"
-          class="CTA inSidebar buttonMode lightModeButton downloadButton"
-        >
-          Télécharger
-        </button>
+                <!-- Plein écran -->
+                <button class="sidebarButton fullScreenButton">
+                    <img
+                        src="/assets/emojis/fullScreen.svg"
+                        alt="Full Screen Emoji"
+                    />
+                    Mettre en plein écran
+                </button>
 
-        <!-- Mettre en plein écran -->
-        <button
-          id="fullScreen"
-          class="CTA inSidebar buttonMode lightModeButton fullScreenButton"
-        >
-          Plein écran
-        </button>
+                <!-- Télécharger l'EDT -->
+                <button class="sidebarButton downloadButton">
+                    <img src="/assets/emojis/picture.svg" alt="Picture Emoji" />
+                    Télécharger en image
+                </button>
 
-        <!-- Changer l'affichage (semaine/jour) -->
-        <button
-          class="CTA inSidebar buttonMode lightModeButton weekDayDisplayButton"
-          id="weekDayDisplayButton"
-        >
-          Vue semaine
-        </button>
-      </div>
+                <!-- Ressource favorite -->
+                <button class="sidebarButton favoriteButton">
+                    <img src="/assets/emojis/star.svg" alt="Star Emoji" />
+                    Définir cette ressource par défaut
+                </button>
 
-      <!-- Switch de mode -->
-      <img
-        id="switchDarkLightMode"
-        src="/assets/switchDarkLightMode/lightMode.svg"
-        alt="Switch Dark/Light Mode"
-        class="inSidebar"
-      />
+                <!-- EDT des étudiants -->
+                <a href="/">
+                    <button class="sidebarButton">
+                        <img
+                            src="/assets/emojis/student.svg"
+                            alt="Student Emoji"
+                        />
+                        Voir l'EDT des étudiants
+                    </button>
+                </a>
 
-      <!-- Ouverture de la sidebar -->
-      <img
-        src="/assets/icons/openSidebarDark.svg"
-        alt="Open sidebar Icon"
-        id="openSidebar"
-      />
+                <!-- EDT des enseignants -->
+                <a href="/teachers.html">
+                    <button class="sidebarButton">
+                        <img
+                            src="/assets/emojis/teacher.svg"
+                            alt="Teacher Emoji"
+                        />
+                        Voir l'EDT des enseignants
+                    </button>
+                </a>
+            </aside>
+        </header>
 
-      <!-- Sidebar -->
-      <aside id="sidebar" class="sidebar mode lightMode">
-        <!-- Fermeture de la sidebar -->
-        <img
-          src="/assets/icons/closeSidebarDark.svg"
-          alt="Close sidebar Icon"
-          id="closeSidebar"
-        />
-
-        <!-- Switch de mode -->
-        <button class="sidebarButton" id="sidebarSwitchDarkLightMode">
-          <img
-            src="/assets/switchDarkLightMode/lightMode.svg"
-            alt="Switch Dark/Light Mode"
-          />
-          Changer de mode
-        </button>
-
-        <!-- Switch d'affichage -->
-        <button
-          class="sidebarButton weekDayDisplayButton"
-          id="weekDayDisplaySidebarButton"
-        >
-          <img src="/assets/emojis/calendar.svg" alt="Calendar Emoji" />
-          <span>Afficher la semaine complète</span>
-        </button>
-
-        <!-- Plein écran -->
-        <button class="sidebarButton fullScreenButton">
-          <img src="/assets/emojis/fullScreen.svg" alt="Full Screen Emoji" />
-          Mettre en plein écran
-        </button>
-
-        <!-- Télécharger l'EDT -->
-        <button class="sidebarButton downloadButton">
-          <img src="/assets/emojis/picture.svg" alt="Picture Emoji" />
-          Télécharger en image
-        </button>
-
-        <!-- Ressource favorite -->
-        <button class="sidebarButton favoriteButton">
-          <img src="/assets/emojis/star.svg" alt="Star Emoji" />
-          Définir cette ressource par défaut
-        </button>
-
-        <!-- EDT des étudiants -->
-        <a href="/">
-          <button class="sidebarButton">
-            <img src="/assets/emojis/student.svg" alt="Student Emoji" />
-            Voir l'EDT des étudiants
-          </button>
-        </a>
-
-        <!-- EDT des enseignants -->
-        <a href="/teachers.html">
-          <button class="sidebarButton">
-            <img src="/assets/emojis/teacher.svg" alt="Teacher Emoji" />
-            Voir l'EDT des enseignants
-          </button>
-        </a>
-      </aside>
-    </header>
-
-    <!-- Fond de transparence pour la sidebar -->
-    <div id="backgroundBlur" class="backgroundBlur"></div>
-    <main>
-      <div id="announce" class="popup mode lightMode">
-        <img
-          src="/assets/emojis/loudspeaker.svg"
-          alt="Loudspeaker Emoji"
-          class="popupImg"
-        />
-        <p>
-          <b>La première version d'ADE Redesign est maintenant disponible !</b>
-          <br />
-          Vous pouvez accéder à la page d'accueil sur
-          <a href="https://ade-edt.fr" class="blueLink">ade-edt.fr</a> et aux
-          emplois du temps de l'IUT de Valence sur
-          <a href="https://iutv.ade-edt.fr" class="blueLink">iutv.ade-edt.fr</a
-          >.
-        </p>
-        <button class="CTA buttonMode lightModeButton" id="hideAnnounceButton">
-          C'est noté&nbsp;!
-        </button>
-      </div>
-      <div id="loader" class="popup mode lightMode">
-        <div id="loaderImage" class="popupImg"></div>
-        <p>
-          Chargement en cours, merci de patienter. <br />Si le chargement
-          persiste, rechargez la page.
-        </p>
-      </div>
-      <div id="error" class="popup mode lightMode">
-        <img
-          src="/assets/emojis/warning.svg"
-          alt="Warning Emoji"
-          class="popupImg"
-        />
-        <p>
-          Une erreur est survenue, merci de réessayer. <br />Si le problème
-          persiste, contactez le développeur
-          <a id="linkForErrorMail" href="" target="_blank" class="blueLink"
-            >par mail</a
-          >. <br />Un message contenant le code erreur sera automatiquement
-          édité. S'il n'est pas présent merci de spécifier le code erreur
-          <code id="errorCode"></code> dans votre mail.
-        </p>
-      </div>
-      <div id="timeOut" class="popup mode lightMode">
-        <img
-          src="/assets/emojis/hourglass.svg"
-          alt="Hourglass Emoji"
-          class="popupImg"
-        />
-        <p>
-          Le serveur qui héberge votre emploi du temps subit une surcharge de
-          connexion. Il n'est pas possible d'afficher les emplois du temps pour
-          l'instant.<br />Cette page sera rafraîchie automatiquement dans
-          quelques secondes.<br /><br />Si le problème persiste pendant
-          plusieurs minutes, merci de prévenir le développeur
-          <a id="linkForTimeOutMail" href="" target="_blank" class="blueLink"
-            >par mail</a
-          >.
-        </p>
-      </div>
-      <div id="display">
-        <div id="days"></div>
-      </div>
-    </main>
-    <footer>
-      <p id="copyright">
-        &#x00A9; <span id="copyrightDate">2024</span>
-        <a href="https://ade-edt.fr" class="blueLink" target="_blank"
-          >ade-edt.fr</a
-        >
-        Tous droits réservés.
-      </p>
-    </footer>
-    <script src="/script.js"></script>
-    <script src="/pageInit.js"></script>
-    <script src="/mode.js"></script>
-    <script src="/sidebar.js"></script>
-    <script src="/pop-ups.js"></script>
-    <script src="/dataInit.js"></script>
-    <script src="/dates.js"></script>
-    <script src="/display.js"></script>
-    <script src="/colors.js"></script>
-    <script src="/timetable.js"></script>
-    <script src="/events.js"></script>
-  </body>
+        <!-- Fond de transparence pour la sidebar -->
+        <div id="backgroundBlur" class="backgroundBlur"></div>
+        <main>
+            <div id="announce" class="popup mode lightMode">
+                <img
+                    src="/assets/emojis/loudspeaker.svg"
+                    alt="Loudspeaker Emoji"
+                    class="popupImg"
+                    id="announceImage"
+                />
+                <p>
+                    <span id="announceTitle">
+                        Suite à une mise à jour, ADE Redesign n'est plus en
+                        capacité de fonctionner !
+                    </span>
+                    <br />
+                    <br />
+                    <span id="announceContent">
+                        La migration vers les emplois du temps de l'année
+                        2025/2026 a été faite fin juin et permettait de
+                        consulter les emplois du temps. Cependant, des
+                        modifications récentes de la part d'Adesoft ou de l'UGA
+                        semblent avoir compromis les processus permettant de
+                        récupérer les cours de l'emploi du temps.
+                        <br />Une solution alternative est en cours de
+                        recherche.
+                    </span>
+                </p>
+                <button
+                    class="CTA buttonMode lightModeButton"
+                    id="hideAnnounceButton"
+                >
+                    C'est noté&nbsp;!
+                </button>
+            </div>
+            <div id="loader" class="popup mode lightMode">
+                <div id="loaderImage" class="popupImg"></div>
+                <p>
+                    Chargement en cours, merci de patienter. <br />Si le
+                    chargement persiste, rechargez la page.
+                </p>
+            </div>
+            <div id="error" class="popup mode lightMode">
+                <img
+                    src="/assets/emojis/warning.svg"
+                    alt="Warning Emoji"
+                    class="popupImg"
+                />
+                <p>
+                    Une erreur est survenue, merci de réessayer. <br />Si le
+                    problème persiste, contactez le développeur
+                    <a
+                        id="linkForErrorMail"
+                        href=""
+                        target="_blank"
+                        class="blueLink"
+                        >par mail</a
+                    >. <br />Un message contenant le code erreur sera
+                    automatiquement édité. S'il n'est pas présent merci de
+                    spécifier le code erreur <code id="errorCode"></code> dans
+                    votre mail.
+                </p>
+            </div>
+            <div id="timeOut" class="popup mode lightMode">
+                <img
+                    src="/assets/emojis/hourglass.svg"
+                    alt="Hourglass Emoji"
+                    class="popupImg"
+                />
+                <p>
+                    Le serveur qui héberge votre emploi du temps subit une
+                    surcharge de connexion. Il n'est pas possible d'afficher les
+                    emplois du temps pour l'instant.<br />Cette page sera
+                    rafraîchie automatiquement dans quelques secondes.<br /><br />Si
+                    le problème persiste pendant plusieurs minutes, merci de
+                    prévenir le développeur
+                    <a
+                        id="linkForTimeOutMail"
+                        href=""
+                        target="_blank"
+                        class="blueLink"
+                        >par mail</a
+                    >.
+                </p>
+            </div>
+            <div id="display">
+                <div id="days"></div>
+            </div>
+        </main>
+        <footer>
+            <p id="copyright">
+                &#x00A9; <span id="copyrightDate">2024</span>
+                <a href="https://ade-edt.fr" class="blueLink" target="_blank"
+                    >ade-edt.fr</a
+                >
+                Tous droits réservés.
+            </p>
+        </footer>
+        <script src="/scripts/script.js"></script>
+        <script src="/scripts/pageInit.js"></script>
+        <script src="/scripts/mode.js"></script>
+        <script src="/scripts/sidebar.js"></script>
+        <script src="/scripts/pop-ups.js"></script>
+        <script src="/scripts/dataInit.js"></script>
+        <script src="/scripts/dates.js"></script>
+        <script src="/scripts/display.js"></script>
+        <script src="/scripts/colors.js"></script>
+        <script src="/scripts/timetable.js"></script>
+        <script src="/scripts/events.js"></script>
+    </body>
 </html>

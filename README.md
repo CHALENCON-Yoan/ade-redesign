@@ -1,13 +1,14 @@
 # ADE Redesign
 
-## &#x1F9EA; Version Bêta
-
-\
 `ADE Redesign` est un projet qui a pour objectif de proposer une nouvelle interface de visualisation des emplois du temps aux étudiants scolarisés dans un établissement d'enseignement supérieur qui utilise Adesoft&#xAE;.
 
-Vous vous trouvez actuellement sur la version bêta du site qui correspond à une version préliminaire fonctionnelle du site pouvant, néanmoins, comporter des bugs.
+Ce projet comporte différentes versions et instances.
+- `dev` : Version de développement, utilisée pour le développement du projet. Merci de ne pas pour référer à cette version pour consulter les emplois du temps.
+- [`beta`](https://beta.ade-edt.fr) : Version bêta, utilisée pour tester les fonctionnalités du projet avant leur publication dans la version stable. Merci de faire remonter les éventuels bugs rencontrés.
+- `prod` : Version stable, utilisée pour la consultation des emplois du temps.
+  - [`iutv`](https://iutv.ade-edt.fr) : Instance de l'IUT de Valence.
 
-_Pour davantage d'informations sur le projet, merci de vous reporter à la [version principale](https://github.com/CHALENCON-Yoan/ade-redesign/blob/main/README.md)._
+_Pour davantage d'informations sur le projet, merci de vous reporter à la [page d'accueil](https://github.com/CHALENCON-Yoan/ade-redesign/blob/main/README.md)._
 
 ## 🗂️ Historique des Versions
 
@@ -22,13 +23,13 @@ _Vous pouvez retrouver ci-dessous l'historique des versions du site classées pa
 
 &nbsp;
 
-- **&#x1F516; [1.1.1](https://github.com/CHALENCON-Yoan/ade-redesign/commit/5c9f32a2e826574d91d156e80d4e5bd021e5abb7) : Publication de la première version**
+- **&#x1F516; [1.1.1](https://github.com/CHALENCON-Yoan/ade-redesign/commit/5c9f32a2e826574d91d156e80d4e5bd021e5abb7) : Publication de la première version** - _Version Actuelle_
 
   - Mise en place de la page d'accueil contenant les liens vers les instances des emplois du temps (uniquement l'IUT de Valence pour l'instant).
   - Ajout d'une page `À propos` pour donner plus d'informations sur ADE Redesign.
   - Ajout des pages légales (CGU, Mention Légales, Politique de Confidentialité).
 
-- **&#x1F9EA; [1.1.1.k](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : Annonce de la publication de la première version** - _Version Actuelle_
+- **&#x1F9EA; [1.1.1.k](https://github.com/CHALENCON-Yoan/ade-redesign/commit/beta) : Annonce de la publication de la première version**
 
   - Ajout d'une _pop-up_ d'annonce pour indiquer que la première version d'ADE Redesign est disponible.
 

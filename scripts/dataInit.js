@@ -5,7 +5,7 @@ async function getCalendar() {
     calendar = calendarExample;
   } else {
     const request = await fetch(
-      `${BASE_URL}?function=getCalendar&projectId=${PORJECT_ID}&data=${PROJECT_DATA}`
+      `${BASE_URL}?function=getCalendar&projectId=${PROJECT_ID}&data=${PROJECT_DATA}`
     );
 
     if (!request.ok) {
@@ -34,7 +34,7 @@ async function makeDatalist() {
     resourcesTree = xmlResourcesTreeExample;
   } else {
     const request = await fetch(
-      `${BASE_URL}?function=getResources&tree=true&detail=3&projectId=${PORJECT_ID}&data=${PROJECT_DATA}`
+      `${BASE_URL}?function=getResources&tree=true&detail=3&projectId=${PROJECT_ID}&data=${PROJECT_DATA}`
     );
 
     if (!request.ok) {
