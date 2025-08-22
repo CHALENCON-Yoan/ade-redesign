@@ -109,6 +109,12 @@ async function setAnnouce() {
                 const imgRes = await fetch(imgPath, { method: "HEAD" });
                 if (imgRes.ok) {
                     announceImage.src = imgPath;
+                    announceImage.setAttribute(
+                        "alt",
+                        `${
+                            emoji.charAt(0).toUpperCase() + emoji.slice(1)
+                        } Emoji`
+                    );
                 }
             }
 
