@@ -14,3 +14,9 @@
   from = "/*"
   to = "/index.html"
   status = 404
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    Cache-Control = "no-cache"
