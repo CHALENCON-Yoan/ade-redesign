@@ -47,6 +47,9 @@ async function displayScheduleGrid() {
         await getITClassrooms();
     }
 
+    const oldSpacer = document.querySelector(".hourSpacer");
+    if (oldSpacer) oldSpacer.remove();
+
     const days = document.querySelectorAll(".day");
     days.forEach((day) => {
         day.remove();
@@ -74,9 +77,8 @@ async function displayScheduleGrid() {
 
                 const hourDiv = document.createElement("div");
                 hourDiv.classList.add("hour");
-                hourDiv.textContent = `${i < 10 ? `0${i}` : i}h${
-                    j === 0 ? "00" : "30"
-                }`;
+                const hourText = `${i < 10 ? `0${i}` : i}h${j === 0 ? "00" : "30"}`;
+                hourDiv.dataset.hour = hourText;
                 halfHourDiv.appendChild(hourDiv);
 
                 for (let k = 1; k <= nbColumns; k++) {
@@ -112,6 +114,27 @@ async function displayScheduleGrid() {
         }
     if (IS_IT_CLASSROOMS_PAGE) {
         daysDiv.style.justifyContent = "flex-start";
+        daysDiv.style.marginLeft = "0";
+
+        // Spacer invisible collé à gauche : même classe que .hour pour avoir
+        // la même largeur, il masque les en-têtes qui scrolleraient par-dessus
+        const hourSpacer = document.createElement("div");
+        hourSpacer.classList.add("hour", "hourSpacer");
+        hourSpacer.dataset.hour = "00h00"; // donne la bonne largeur via ::after
+        hourSpacer.style.color = "transparent";
+        hourSpacer.setAttribute("aria-hidden", "true");
+        daysDiv.prepend(hourSpacer);
+
+        // Wrapper commun : #days et #scheduleGrid partagent la même largeur
+        let scheduleWrapper = displayDiv.querySelector("#scheduleWrapper");
+        if (!scheduleWrapper) {
+            scheduleWrapper = document.createElement("div");
+            scheduleWrapper.id = "scheduleWrapper";
+            displayDiv.appendChild(scheduleWrapper);
+        }
+        scheduleWrapper.prepend(daysDiv);
+        scheduleWrapper.appendChild(scheduleGrid);
+    } else {
+        displayDiv.appendChild(scheduleGrid);
     }
-    displayDiv.appendChild(scheduleGrid);
 }
