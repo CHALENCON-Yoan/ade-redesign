@@ -14,6 +14,8 @@ const MAX_DATE = new Date("2026-07-31");
 const IS_IT_CLASSROOMS_PAGE = document.title.includes("Salles Informatiques");
 const IT_CLASSROOMS_RESOURCE_ID = 64244;
 
+const IT_CLASSROOMS_MIN_COL_WIDTH = 60;
+
 let resourcesMap = {};
 let weekMap = {};
 let itClassrooms = [];

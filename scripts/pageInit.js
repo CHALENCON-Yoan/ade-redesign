@@ -90,16 +90,29 @@ async function displayScheduleGrid() {
                         `${localStorage.getItem("mode")}Mode`,
                     );
                     content.id = idHour;
+                    if (IS_IT_CLASSROOMS_PAGE) {
+                        content.style.minWidth =
+                            IT_CLASSROOMS_MIN_COL_WIDTH + "px";
+                    }
                     halfHourDiv.appendChild(content);
 
                     if (i === 7 && j === 1) {
                         const dayDiv = document.createElement("div");
                         dayDiv.classList.add("day");
                         dayDiv.textContent = "";
+                        if (IS_IT_CLASSROOMS_PAGE) {
+                            dayDiv.style.minWidth =
+                                IT_CLASSROOMS_MIN_COL_WIDTH + "px";
+                            dayDiv.style.width =
+                                IT_CLASSROOMS_MIN_COL_WIDTH + "px";
+                        }
                         daysDiv.appendChild(dayDiv);
                     }
                 }
             }
         }
+    if (IS_IT_CLASSROOMS_PAGE) {
+        daysDiv.style.justifyContent = "flex-start";
+    }
     displayDiv.appendChild(scheduleGrid);
 }
