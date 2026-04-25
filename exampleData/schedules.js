@@ -469,3 +469,169 @@ const oldScheduleDataDoubleResource = `<?xml version="1.0" encoding="UTF-8"?>
 		<additional/>
 	</event>
 </events>`;
+
+const itClassroomsExample = `<?xml version="1.0" encoding="UTF-8"?>
+<events>
+	<event id="340195" activityId="144552" session="0" repetition="4" name="Graphes" endHour="09:30" startHour="08:00" date="24/04/2026" absoluteSlot="17888" slot="4" day="4" week="37" additionalResources="0" duration="6" info="" note="" color="153,51,255" isLockPosition="false" oldDuration="-1" oldSlot="-1" oldDay="-1" oldWeek="-1" lastUpdate="01/20/2026 15:17" creation="01/20/2026 07:28" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
+		<resources>
+			<resource fromWorkflow="false" nodeId="1120169" nodeOrId="-1" quantity="1" category="trainee" name="INFO1-TD2-TP2C" id="73844"/>
+			<resource fromWorkflow="false" nodeId="1120170" nodeOrId="-1" quantity="1" category="instructor" name="CHARENSOL SYLVAIN" id="74301"/>
+			<resource fromWorkflow="false" nodeId="1120171" nodeOrId="-1" quantity="1" category="category5" name="R2.07 Graphes" id="72144"/>
+			<resource fromWorkflow="false" nodeId="1120173" nodeOrId="1120172" quantity="1" category="classroom" name="B103" id="65516"/>
+		</resources>
+		<additional/>
+	</event>
+	<event id="339653" activityId="143990" session="0" repetition="2" name="Introduction à la GSI" endHour="11:00" startHour="09:30" date="24/04/2026" absoluteSlot="17894" slot="10" day="4" week="37" additionalResources="0" duration="6" info="" note="" color="153,255,51" isLockPosition="false" oldDuration="6" oldSlot="14" oldDay="1" oldWeek="37" lastUpdate="01/20/2026 15:22" creation="01/20/2026 07:28" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
+		<resources>
+			<resource fromWorkflow="false" nodeId="1117053" nodeOrId="-1" quantity="1" category="trainee" name="INFO1-TD1-TP1B" id="73841"/>
+			<resource fromWorkflow="false" nodeId="1117055" nodeOrId="-1" quantity="1" category="instructor" name="CONSTANT BLANDINE" id="74571"/>
+			<resource fromWorkflow="false" nodeId="1117056" nodeOrId="-1" quantity="1" category="category5" name="R2.10 Introduction à la gestion des systèmes..." id="70891"/>
+			<resource fromWorkflow="false" nodeId="1117059" nodeOrId="1117058" quantity="1" category="classroom" name="B122" id="65533"/>
+		</resources>
+		<additional/>
+	</event>
+	<event id="340213" activityId="144593" session="0" repetition="0" name="Outils numériques pour les statistiques descriptives" endHour="15:30" startHour="14:00" date="24/04/2026" absoluteSlot="17912" slot="28" day="4" week="37" additionalResources="0" duration="6" info="" note="" color="124,0,166" isLockPosition="false" oldDuration="6" oldSlot="34" oldDay="4" oldWeek="37" lastUpdate="01/20/2026 15:31" creation="01/20/2026 07:28" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
+		<resources>
+			<resource fromWorkflow="false" nodeId="1120402" nodeOrId="-1" quantity="1" category="trainee" name="INFO1-TD1-TP1A" id="73827"/>
+			<resource fromWorkflow="false" nodeId="1120403" nodeOrId="-1" quantity="1" category="instructor" name="CHARENSOL SYLVAIN" id="74301"/>
+			<resource fromWorkflow="false" nodeId="1120407" nodeOrId="-1" quantity="1" category="category5" name="R2.08 Outils numériques pour les statistiques descriptives" id="72132"/>
+			<resource fromWorkflow="false" nodeId="1120409" nodeOrId="1120408" quantity="1" category="classroom" name="B102" id="65421"/>
+		</resources>
+		<additional/>
+	</event>
+	<event id="340192" activityId="144547" session="0" repetition="11" name="Exploitation d&apos;une BDD" endHour="11:00" startHour="09:30" date="24/04/2026" absoluteSlot="17894" slot="10" day="4" week="37" additionalResources="0" duration="6" info="" note="" color="255,255,204" isLockPosition="false" oldDuration="6" oldSlot="4" oldDay="2" oldWeek="39" lastUpdate="01/20/2026 15:16" creation="01/20/2026 07:28" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
+		<resources>
+			<resource fromWorkflow="false" nodeId="1120143" nodeOrId="-1" quantity="1" category="trainee" name="INFO1-TD2-TP2C" id="73844"/>
+			<resource fromWorkflow="false" nodeId="1120144" nodeOrId="-1" quantity="1" category="instructor" name="BOULLE DIDIER" id="74760"/>
+			<resource fromWorkflow="false" nodeId="1120146" nodeOrId="-1" quantity="1" category="category5" name="R2.06 Exploitation d&apos;une base de données" id="71959"/>
+			<resource fromWorkflow="false" nodeId="1120148" nodeOrId="1120147" quantity="1" category="classroom" name="B103" id="65516"/>
+		</resources>
+		<additional/>
+	</event>
+	<event id="339269" activityId="144489" session="0" repetition="0" name="Introduction aux services réseaux" endHour="15:30" startHour="14:00" date="24/04/2026" absoluteSlot="17912" slot="28" day="4" week="37" additionalResources="0" duration="6" info="" note="" color="204,255,255" isLockPosition="false" oldDuration="6" oldSlot="40" oldDay="4" oldWeek="37" lastUpdate="01/20/2026 15:14" creation="01/20/2026 07:28" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
+		<resources>
+			<resource fromWorkflow="false" nodeId="1119710" nodeOrId="-1" quantity="1" category="trainee" name="INFO1-TD1-TP1B" id="73841"/>
+			<resource fromWorkflow="false" nodeId="1119712" nodeOrId="-1" quantity="1" category="instructor" name="OBJOIS PHILIPPE" id="74174"/>
+			<resource fromWorkflow="false" nodeId="1119713" nodeOrId="-1" quantity="1" category="category5" name="R2.05 Introduction aux services réseaux" id="73132"/>
+			<resource fromWorkflow="false" nodeId="1119716" nodeOrId="1119714" quantity="1" category="classroom" name="B101" id="65311"/>
+		</resources>
+		<additional/>
+	</event>
+	<event id="207847" activityId="143345" session="0" repetition="0" name="SAE S6" endHour="15:30" startHour="14:00" date="24/04/2026" absoluteSlot="17912" slot="28" day="4" week="37" additionalResources="0" duration="6" info="" note="" color="0,153,153" isLockPosition="false" oldDuration="6" oldSlot="34" oldDay="4" oldWeek="37" lastUpdate="04/02/2026 10:20" creation="03/05/2026 10:14" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
+		<resources>
+			<resource fromWorkflow="false" nodeId="1112470" nodeOrId="-1" quantity="1" category="trainee" name="INFO3-TD1" id="73794"/>
+			<resource fromWorkflow="false" nodeId="1112471" nodeOrId="-1" quantity="1" category="category5" name="S6.A.01 : Évolution d&apos;une application existante" id="72130"/>
+			<resource fromWorkflow="false" nodeId="1112474" nodeOrId="1112472" quantity="2" category="classroom" name="!  !" id="65657"/>
+			<resource fromWorkflow="false" nodeId="1112478" nodeOrId="1112472" quantity="1" category="classroom" name="B123" id="65578"/>
+		</resources>
+		<additional/>
+	</event>
+	<event id="207837" activityId="143345" session="0" repetition="10" name="SAE S6" endHour="12:30" startHour="11:00" date="24/04/2026" absoluteSlot="17900" slot="16" day="4" week="37" additionalResources="0" duration="6" info="" note="" color="0,153,153" isLockPosition="false" oldDuration="6" oldSlot="16" oldDay="4" oldWeek="37" lastUpdate="03/05/2026 10:14" creation="03/05/2026 10:14" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
+		<resources>
+			<resource fromWorkflow="false" nodeId="1112470" nodeOrId="-1" quantity="1" category="trainee" name="INFO3-TD1" id="73794"/>
+			<resource fromWorkflow="false" nodeId="1112471" nodeOrId="-1" quantity="1" category="category5" name="S6.A.01 : Évolution d&apos;une application existante" id="72130"/>
+			<resource fromWorkflow="false" nodeId="1112474" nodeOrId="1112472" quantity="2" category="classroom" name="!  !" id="65657"/>
+			<resource fromWorkflow="false" nodeId="1112478" nodeOrId="1112472" quantity="1" category="classroom" name="B123" id="65578"/>
+		</resources>
+		<additional/>
+	</event>
+	<event id="263146" activityId="20023" session="0" repetition="5" name="TD Etude Marketing-2 - Groupe 1" endHour="17:00" startHour="15:30" date="24/04/2026" absoluteSlot="17918" slot="34" day="4" week="37" additionalResources="0" duration="6" info="" note="" color="255,186,238" isLockPosition="false" oldDuration="6" oldSlot="28" oldDay="4" oldWeek="31" lastUpdate="03/12/2026 09:24" creation="03/12/2026 06:59" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
+		<resources>
+			<resource fromWorkflow="false" nodeId="66442" nodeOrId="-1" quantity="1" category="trainee" name="TC1-G1" id="73693"/>
+			<resource fromWorkflow="false" nodeId="82750" nodeOrId="-1" quantity="1" category="instructor" name="CARTON ANTOINE" id="8055"/>
+			<resource fromWorkflow="false" nodeId="75537" nodeOrId="-1" quantity="1" category="category5" name="R2.04 : Études marketing 2" id="71010"/>
+			<resource fromWorkflow="false" nodeId="90512" nodeOrId="86731" quantity="1" category="classroom" name="A104" id="65668"/>
+		</resources>
+		<additional/>
+	</event>
+	<event id="340186" activityId="144327" session="0" repetition="0" name="Communication technique" endHour="12:30" startHour="11:00" date="24/04/2026" absoluteSlot="17900" slot="16" day="4" week="37" additionalResources="0" duration="6" info="" note="" color="217,0,217" isLockPosition="false" oldDuration="6" oldSlot="40" oldDay="4" oldWeek="26" lastUpdate="01/20/2026 15:15" creation="01/20/2026 07:28" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
+		<resources>
+			<resource fromWorkflow="false" nodeId="1118725" nodeOrId="-1" quantity="1" category="trainee" name="INFO1-TD2-TP2C" id="73844"/>
+			<resource fromWorkflow="false" nodeId="1118726" nodeOrId="-1" quantity="1" category="instructor" name="DE SAUZA GUILLAUME" id="74645"/>
+			<resource fromWorkflow="false" nodeId="1118728" nodeOrId="-1" quantity="1" category="category5" name="R2.13 Communication technique" id="73101"/>
+			<resource fromWorkflow="false" nodeId="1118730" nodeOrId="1118729" quantity="1" category="classroom" name="B103" id="65516"/>
+		</resources>
+		<additional/>
+	</event>
+	<event id="307579" activityId="144525" session="0" repetition="1" name="PPP" endHour="18:30" startHour="17:00" date="24/04/2026" absoluteSlot="17924" slot="40" day="4" week="37" additionalResources="0" duration="6" info="" note="" color="255,153,153" isLockPosition="false" oldDuration="-1" oldSlot="-1" oldDay="-1" oldWeek="-1" lastUpdate="03/12/2026 09:51" creation="03/12/2026 09:50" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
+		<resources>
+			<resource fromWorkflow="false" nodeId="1120029" nodeOrId="-1" quantity="1" category="trainee" name="INFO1-TD1-TP1A" id="73827"/>
+			<resource fromWorkflow="false" nodeId="1105860" nodeOrId="-1" quantity="1" category="instructor" name="DE SAUZA GUILLAUME" id="74645"/>
+			<resource fromWorkflow="false" nodeId="1120031" nodeOrId="-1" quantity="1" category="category5" name="R2.14 Projet professionnel et personnel" id="72180"/>
+			<resource fromWorkflow="false" nodeId="1120033" nodeOrId="1120032" quantity="1" category="classroom" name="B122" id="65533"/>
+		</resources>
+		<additional/>
+	</event>
+	<event id="339253" activityId="144499" session="0" repetition="5" name="Introduction aux services réseaux" endHour="17:00" startHour="15:30" date="24/04/2026" absoluteSlot="17918" slot="34" day="4" week="37" additionalResources="0" duration="6" info="" note="" color="204,255,255" isLockPosition="false" oldDuration="6" oldSlot="40" oldDay="1" oldWeek="37" lastUpdate="03/06/2026 17:52" creation="01/20/2026 07:28" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
+		<resources>
+			<resource fromWorkflow="false" nodeId="1119792" nodeOrId="-1" quantity="1" category="trainee" name="INFO1-TD1-TP1A" id="73827"/>
+			<resource fromWorkflow="false" nodeId="1119793" nodeOrId="-1" quantity="1" category="instructor" name="OBJOIS PHILIPPE" id="74174"/>
+			<resource fromWorkflow="false" nodeId="1119795" nodeOrId="-1" quantity="1" category="category5" name="R2.05 Introduction aux services réseaux" id="73132"/>
+			<resource fromWorkflow="false" nodeId="1119803" nodeOrId="1119796" quantity="1" category="classroom" name="B122" id="65533"/>
+		</resources>
+		<additional/>
+	</event>
+	<event id="340223" activityId="144395" session="0" repetition="12" name="Développement d&apos;applications avec IHM" endHour="17:00" startHour="15:30" date="24/04/2026" absoluteSlot="17918" slot="34" day="4" week="37" additionalResources="0" duration="6" info="" note="" color="255,102,102" isLockPosition="false" oldDuration="6" oldSlot="40" oldDay="1" oldWeek="31" lastUpdate="01/20/2026 15:19" creation="01/20/2026 07:28" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
+		<resources>
+			<resource fromWorkflow="false" nodeId="908670" nodeOrId="-1" quantity="1" category="trainee" name="INFO1-TD1-TP1B" id="73841"/>
+			<resource fromWorkflow="false" nodeId="908672" nodeOrId="-1" quantity="1" category="instructor" name="GENTHIAL DAMIEN" id="74594"/>
+			<resource fromWorkflow="false" nodeId="1119113" nodeOrId="-1" quantity="1" category="category5" name="R2.02 Développement d&apos;applications avec IHM" id="71575"/>
+			<resource fromWorkflow="false" nodeId="1119115" nodeOrId="1119114" quantity="1" category="classroom" name="B101" id="65311"/>
+		</resources>
+		<additional/>
+	</event>
+	<event id="207840" activityId="143345" session="0" repetition="7" name="SAE S6" endHour="09:30" startHour="08:00" date="24/04/2026" absoluteSlot="17888" slot="4" day="4" week="37" additionalResources="0" duration="6" info="" note="" color="0,153,153" isLockPosition="false" oldDuration="6" oldSlot="4" oldDay="4" oldWeek="37" lastUpdate="03/05/2026 10:14" creation="03/05/2026 10:14" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
+		<resources>
+			<resource fromWorkflow="false" nodeId="1112470" nodeOrId="-1" quantity="1" category="trainee" name="INFO3-TD1" id="73794"/>
+			<resource fromWorkflow="false" nodeId="1112471" nodeOrId="-1" quantity="1" category="category5" name="S6.A.01 : Évolution d&apos;une application existante" id="72130"/>
+			<resource fromWorkflow="false" nodeId="1112474" nodeOrId="1112472" quantity="2" category="classroom" name="!  !" id="65657"/>
+			<resource fromWorkflow="false" nodeId="1112478" nodeOrId="1112472" quantity="1" category="classroom" name="B123" id="65578"/>
+		</resources>
+		<additional/>
+	</event>
+	<event id="339636" activityId="143899" session="0" repetition="6" name="Développement orienté objet POO" endHour="18:30" startHour="17:00" date="24/04/2026" absoluteSlot="17924" slot="40" day="4" week="37" additionalResources="0" duration="6" info="" note="" color="51,51,255" isLockPosition="false" oldDuration="6" oldSlot="4" oldDay="3" oldWeek="37" lastUpdate="04/20/2026 11:09" creation="01/20/2026 07:28" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
+		<resources>
+			<resource fromWorkflow="false" nodeId="817179" nodeOrId="-1" quantity="1" category="trainee" name="INFO1-TD1-TP1B" id="73841"/>
+			<resource fromWorkflow="false" nodeId="1116773" nodeOrId="-1" quantity="1" category="instructor" name="GELIBERT ANTHONY" id="74588"/>
+			<resource fromWorkflow="false" nodeId="1116774" nodeOrId="-1" quantity="1" category="category5" name="R2.01 Développement orienté objets" id="73338"/>
+			<resource fromWorkflow="false" nodeId="1116777" nodeOrId="1116775" quantity="1" category="classroom" name="A105" id="64506"/>
+		</resources>
+		<additional/>
+	</event>
+	<event id="36307" activityId="141514" session="0" repetition="3" name="Excel avancé" endHour="17:00" startHour="13:30" date="24/04/2026" absoluteSlot="17910" slot="26" day="4" week="37" additionalResources="0" duration="14" info="" note="" color="102,255,204" isLockPosition="true" oldDuration="14" oldSlot="26" oldDay="0" oldWeek="40" lastUpdate="03/09/2026 10:30" creation="07/09/2025 07:20" isLockResources="true" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
+		<resources>
+			<resource fromWorkflow="false" nodeId="1078986" nodeOrId="-1" quantity="1" category="trainee" name="M1 FINANCE -AP/CP VALENCE" id="73809"/>
+			<resource fromWorkflow="false" nodeId="383672" nodeOrId="-1" quantity="1" category="category5" name="Excel avancé" id="27597"/>
+			<resource fromWorkflow="false" nodeId="1175446" nodeOrId="1174605" quantity="1" category="classroom" name="E105" id="64555"/>
+			<resource fromWorkflow="false" nodeId="267965" nodeOrId="267962" quantity="1" category="instructor" name="REVEL JEAN FRANCOIS" id="74539"/>
+		</resources>
+		<additional/>
+	</event>
+	<event id="340236" activityId="144495" session="0" repetition="4" name="Introduction aux services réseaux" endHour="09:30" startHour="08:00" date="24/04/2026" absoluteSlot="17888" slot="4" day="4" week="37" additionalResources="0" duration="6" info="" note="" color="204,255,255" isLockPosition="false" oldDuration="6" oldSlot="14" oldDay="4" oldWeek="33" lastUpdate="03/06/2026 17:53" creation="01/20/2026 07:28" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
+		<resources>
+			<resource fromWorkflow="false" nodeId="927532" nodeOrId="-1" quantity="1" category="trainee" name="INFO1-TD2-TP2D" id="73845"/>
+			<resource fromWorkflow="false" nodeId="1119768" nodeOrId="-1" quantity="1" category="instructor" name="GENTHIAL DAMIEN" id="74594"/>
+			<resource fromWorkflow="false" nodeId="1119769" nodeOrId="-1" quantity="1" category="category5" name="R2.05 Introduction aux services réseaux" id="73132"/>
+			<resource fromWorkflow="false" nodeId="1119771" nodeOrId="1119770" quantity="1" category="classroom" name="B101" id="65311"/>
+		</resources>
+		<additional/>
+	</event>
+	<event id="340245" activityId="143908" session="0" repetition="1" name="Méthodes numériques" endHour="11:00" startHour="09:30" date="24/04/2026" absoluteSlot="17894" slot="10" day="4" week="37" additionalResources="0" duration="6" info="" note="" color="204,153,255" isLockPosition="false" oldDuration="6" oldSlot="16" oldDay="3" oldWeek="35" lastUpdate="01/20/2026 15:23" creation="01/20/2026 07:28" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
+		<resources>
+			<resource fromWorkflow="false" nodeId="1116821" nodeOrId="-1" quantity="1" category="trainee" name="INFO1-TD1-TP1A" id="73827"/>
+			<resource fromWorkflow="false" nodeId="1116822" nodeOrId="-1" quantity="1" category="instructor" name="CHARENSOL SYLVAIN" id="74301"/>
+			<resource fromWorkflow="false" nodeId="1116823" nodeOrId="-1" quantity="1" category="category5" name="R2.09 Méthodes numériques" id="73263"/>
+			<resource fromWorkflow="false" nodeId="1116828" nodeOrId="1116827" quantity="1" category="classroom" name="B102" id="65421"/>
+		</resources>
+		<additional/>
+	</event>
+	<event id="262331" activityId="20023" session="0" repetition="4" name="TD Etude Marketing-2 - Groupe 1" endHour="15:30" startHour="14:00" date="24/04/2026" absoluteSlot="17912" slot="28" day="4" week="37" additionalResources="0" duration="6" info="" note="" color="255,186,238" isLockPosition="false" oldDuration="6" oldSlot="16" oldDay="4" oldWeek="31" lastUpdate="03/12/2026 09:24" creation="03/12/2026 06:59" isLockResources="false" isSoftKeepResources="false" isNoteLock="false" isStrongLock="false">
+		<resources>
+			<resource fromWorkflow="false" nodeId="66442" nodeOrId="-1" quantity="1" category="trainee" name="TC1-G1" id="73693"/>
+			<resource fromWorkflow="false" nodeId="82750" nodeOrId="-1" quantity="1" category="instructor" name="CARTON ANTOINE" id="8055"/>
+			<resource fromWorkflow="false" nodeId="75537" nodeOrId="-1" quantity="1" category="category5" name="R2.04 : Études marketing 2" id="71010"/>
+			<resource fromWorkflow="false" nodeId="90512" nodeOrId="86731" quantity="1" category="classroom" name="A104" id="65668"/>
+		</resources>
+		<additional/>
+	</event>
+</events>`;

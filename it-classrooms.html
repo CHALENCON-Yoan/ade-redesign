@@ -19,45 +19,51 @@
         <meta name="googlebot" content="noindex, nofollow" />
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Enseignants - ADE Redesign - IUT Valence</title>
+        <title>Salles Informatiques - ADE Redesign - IUT Valence</title>
         <meta
             name="description"
             content="Nouvelle interface de visualisation des emplois du temps d'ADE."
         />
-        <meta property="og:title" content="Enseignants - IUT de Valence" />
+        <meta
+            property="og:title"
+            content="Salles Informatiques - IUT de Valence"
+        />
         <meta
             property="og:description"
-            content="Retrouvez les emplois du temps des enseignants de l'IUT de Valence sur une toute nouvelle interface."
+            content="Retrouvez les emplois du temps des salles informatiques de l'IUT de Valence sur une toute nouvelle interface."
         />
         <meta property="og:site_name" content="ADE Redesign" />
-        <meta property="og:url" content="https://iutv.ade-edt.fr/teachers" />
+        <meta
+            property="og:url"
+            content="https://iutv.ade-edt.fr/it-classrooms"
+        />
         <meta property="og:image" content="/assets/cover.png" />
         <link
             rel="icon"
-            href="/assets/favicons/teacher-32.png"
+            href="/assets/favicons/laptop-32.png"
             sizes="32x32"
             type="image/png"
         />
         <link
             rel="icon"
-            href="/assets/favicons/teacher-192.png"
+            href="/assets/favicons/laptop-192.png"
             sizes="192x192"
             type="image/png"
         />
         <link
             rel="icon"
-            href="/assets/favicons/teacher-512.png"
+            href="/assets/favicons/laptop-512.png"
             sizes="512x512"
             type="image/png"
         />
         <link
             rel="apple-touch-icon"
-            href="/assets/favicons/teacher-180.png"
+            href="/assets/favicons/laptop-180.png"
             sizes="180x180"
         />
         <link
             rel="icon"
-            href="/assets/favicons/teacher.svg"
+            href="/assets/favicons/laptop.svg"
             type="image/svg+xml"
         />
         <link rel="stylesheet" href="/font.css" />
@@ -78,14 +84,14 @@
             <!-- Options -->
             <div id="options">
                 <!-- Sélecteur de ressource -->
-                <div class="inputFloatingLabel">
+                <div class="inputFloatingLabel hidden">
                     <label for="resourceSelector" class="mode lightMode"
                         >Ressource</label
                     >
                     <input
                         list="resourcesList"
                         id="resourceSelector"
-                        placeholder="Choisir un enseignant."
+                        placeholder="Choisir une salle."
                         class="inputMode lightModeInput"
                     />
                     <datalist id="resourcesList"></datalist>
@@ -98,6 +104,17 @@
                     </button>
                 </a>
 
+                <!-- Voir l'EDT des enseignants -->
+                <a
+                    href="/teachers.html"
+                    class="inSidebar"
+                    id="teachersResources"
+                >
+                    <button class="CTA buttonMode lightModeButton">
+                        Enseignants
+                    </button>
+                </a>
+
                 <!-- Voir l'EDT des salles -->
                 <a
                     href="/classrooms.html"
@@ -106,17 +123,6 @@
                 >
                     <button class="CTA buttonMode lightModeButton">
                         Salles
-                    </button>
-                </a>
-
-                <!-- Voir l'EDT des salles informatiques -->
-                <a
-                    href="/it-classrooms.html"
-                    class="inSidebar"
-                    id="itClassroomsResources"
-                >
-                    <button class="CTA buttonMode lightModeButton">
-                        Salles informatiques
                     </button>
                 </a>
 
@@ -161,7 +167,7 @@
                 <!-- "Prochains cours" desktop -->
                 <button
                     id="nextLessonsButton"
-                    class="CTA inSidebar buttonMode lightModeButton nextLessonsButton"
+                    class="CTA inSidebar buttonMode lightModeButton nextLessonsButton hidden"
                 >
                     Prochains cours
                 </button>
@@ -169,7 +175,7 @@
                 <!-- Mettre la ressource favoris -->
                 <button
                     id="favorite"
-                    class="CTA inSidebar buttonMode lightModeButton favoriteButton"
+                    class="CTA inSidebar buttonMode lightModeButton favoriteButton hidden"
                 >
                     Favoris
                 </button>
@@ -192,7 +198,7 @@
 
                 <!-- Changer l'affichage (semaine/jour) -->
                 <button
-                    class="CTA inSidebar buttonMode lightModeButton weekDayDisplayButton"
+                    class="CTA inSidebar buttonMode lightModeButton weekDayDisplayButton hidden"
                     id="weekDayDisplayButton"
                 >
                     Vue semaine
@@ -234,7 +240,7 @@
 
                 <!-- Switch d'affichage -->
                 <button
-                    class="sidebarButton weekDayDisplayButton"
+                    class="sidebarButton weekDayDisplayButton hidden"
                     id="weekDayDisplaySidebarButton"
                 >
                     <img
@@ -260,7 +266,7 @@
                 </button>
 
                 <!-- Ressource favorite -->
-                <button class="sidebarButton favoriteButton">
+                <button class="sidebarButton favoriteButton hidden">
                     <img src="/assets/emojis/star.svg" alt="Star Emoji" />
                     Définir cette ressource par défaut
                 </button>
@@ -276,22 +282,22 @@
                     </button>
                 </a>
 
+                <!-- EDT des enseignants -->
+                <a href="/teachers.html">
+                    <button class="sidebarButton">
+                        <img
+                            src="/assets/emojis/teacher.svg"
+                            alt="Teacher Emoji"
+                        />
+                        Voir l'EDT des enseignants
+                    </button>
+                </a>
+
                 <!-- EDT des salles -->
                 <a href="/classrooms.html">
                     <button class="sidebarButton">
                         <img src="/assets/emojis/door.svg" alt="Door Emoji" />
                         Voir l'EDT des salles
-                    </button>
-                </a>
-
-                <!-- EDT des salles informatiques -->
-                <a href="/it-classrooms.html">
-                    <button class="sidebarButton">
-                        <img
-                            src="/assets/emojis/laptop.svg"
-                            alt="Laptop Emoji"
-                        />
-                        Voir l'EDT des salles informatiques
                     </button>
                 </a>
             </aside>
