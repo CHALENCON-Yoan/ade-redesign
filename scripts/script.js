@@ -3,7 +3,7 @@ let LOCALHOST =
     location.hostname === "localhost" ||
     location.hostname === "127.0.0.1" ||
     location.hostname === "192.168.1.10";
-const BASE_URL = LOCALHOST ? "https://dev.ade-edt.fr/localRequest" : "/request";
+const BASE_URL = LOCALHOST ? "https://ade.yoanc.dev/localRequest" : "/request";
 const API_URL = "https://api.ade-edt.fr";
 LOCALHOST = false;
 // "https://cors-anywhere.herokuapp.com/https://ade-uga-ro-vs.grenet.fr/jsp/webapi";
