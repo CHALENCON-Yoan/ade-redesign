@@ -2,7 +2,9 @@ const DEV_MAIL = "yoan@ade-edt.fr";
 let LOCALHOST =
     location.hostname === "localhost" ||
     location.hostname === "127.0.0.1" ||
-    location.hostname === "192.168.1.10";
+    location.hostname === "192.168.1.10" ||
+    location.hostname.includes("devtunnels.ms");
+
 const BASE_URL = LOCALHOST ? "https://ade.yoanc.dev/localRequest" : "/request";
 const API_URL = "https://api.ade-edt.fr";
 LOCALHOST = false;
