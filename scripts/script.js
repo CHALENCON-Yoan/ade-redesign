@@ -11,9 +11,12 @@ const PROJECT_ID = "1";
 const PROJECT_DATA =
     "08281677eda1e7f64e2d372185934117103d4fbbeeae8daf5feb097f6d188a31fa91aec4c63f8a2413abf3eb0200af7710df8dec5d859664f2e9534343758872ea63fdddf2e0bb3bc6a427c07829845b2adf41a8f1c053f79442ee207709b605e9b4141706c3679ed859fefe34f0d7ea,1";
 const MAX_DATE = new Date("2026-07-31");
+const IS_IT_CLASSROOMS_PAGE = document.title.includes("Salles Informatiques");
+const IT_CLASSROOMS_RESOURCE_ID = 64244;
 
 let resourcesMap = {};
 let weekMap = {};
+let itClassrooms = [];
 
 window.addEventListener("load", async () => {
     // Load Lottie file
@@ -34,14 +37,14 @@ window.addEventListener("load", async () => {
     // Set the correct display (week/day)
     setWeekDayDisplay();
 
-    // Display the schedule grid
-    displayScheduleGrid();
-
     // Show announce
     displayAnnounce(true);
 
-    // Make the datalist for resources
+    // Display the schedule grid
     loader(true);
+    await displayScheduleGrid();
+
+    // Make the datalist for resources
     await makeDatalist();
 
     // Get week map
