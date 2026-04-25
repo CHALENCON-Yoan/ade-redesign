@@ -103,8 +103,7 @@ async function displayScheduleGrid() {
                         if (IS_IT_CLASSROOMS_PAGE) {
                             dayDiv.style.minWidth =
                                 IT_CLASSROOMS_MIN_COL_WIDTH + "px";
-                            dayDiv.style.width =
-                                IT_CLASSROOMS_MIN_COL_WIDTH + "px";
+                            dayDiv.style.flex = "1";
                         }
                         daysDiv.appendChild(dayDiv);
                     }
