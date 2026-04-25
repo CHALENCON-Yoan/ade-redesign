@@ -95,12 +95,15 @@ async function refreshData() {
 function dragTimetableToChangeDate() {
     let startX = 0;
     let currentX = 0;
+    let startScrollLeft = 0;
 
     const scheduleGrid = document.querySelector("#scheduleGrid");
+    const displayDiv = document.querySelector("#display");
 
     scheduleGrid.addEventListener("touchstart", (event) => {
         startX = event.touches[0].clientX;
         currentX = event.touches[0].clientX;
+        startScrollLeft = displayDiv.scrollLeft;
     });
 
     scheduleGrid.addEventListener("touchmove", (event) => {
@@ -109,7 +112,8 @@ function dragTimetableToChangeDate() {
 
     scheduleGrid.addEventListener("touchend", () => {
         const translateX = currentX - startX;
-        if (Math.abs(translateX) > 200) {
+        const scrollChanged = displayDiv.scrollLeft !== startScrollLeft;
+        if (!scrollChanged && Math.abs(translateX) > 200) {
             if (currentX > startX) {
                 previousDate();
             } else {
