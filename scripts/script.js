@@ -9,7 +9,7 @@ const BASE_URL = LOCALHOST ? "https://ade.yoanc.dev/localRequest" : "/request";
 const API_URL = "https://api.ade-edt.fr";
 LOCALHOST = false;
 // "https://cors-anywhere.herokuapp.com/https://ade-uga-ro-vs.grenet.fr/jsp/webapi";
-const PROJECT_ID = "1";
+const PROJECT_ID = "2";
 const PROJECT_DATA =
     "51278da58f6a6c7ad5fcd549aa2f4a9c34de0dcc7e6cb24620e53cf126d92d3fc34cfa7aa7219893fea211191e62f25c1626fc70ebe695d3e9443b957ae71d752040ad8c0ef361b6dac81cd684a15da7611d8cae932951ebf652274408fff92849eabbf8221cc6a5d6208bdd05050567,1";
 const MAX_DATE = new Date("2027-07-31");
